@@ -1,0 +1,449 @@
+@charset "UTF-8";
+
+// @mixin      通过@include调用，适用于单个元素，传递参数
+// %           通过@extend调用，适用于多个元素，无须传参数  
+// @function   返回值，用于调用
+// -----------------------------------------------------
+
+// inline-block 内联块
+@mixin inline-block {
+  display: inline-block;
+  @if $lte7 {
+    *vertical-align: auto;
+    *display: inline;
+    zoom: 1;
+  }
+}
+%inline-block{
+  @include inline-block;
+}
+
+// center-block 水平居中，block需定义宽度
+@mixin center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+%center-block{
+  @include center-block;
+}
+
+// float 浮动
+@mixin float($float:left) {
+  float: $float;
+  @if $lte7 {
+    display: inline;
+  }
+}
+%float{
+  @include float;
+}
+
+// clearfix 清除浮动
+@mixin clearfix {
+  @if $lte7 {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    overflow: hidden;
+  }
+}
+%clearfix{
+  @include clearfix;
+}
+
+// hidden 浏览器、屏幕阅读器都隐藏
+@mixin hidden {
+  display: none !important;
+  visibility: hidden;
+}
+%hidden{
+  @include hidden;
+}
+
+// visually-hidden 只隐藏浏览器，屏幕浏览器不隐藏
+@mixin visually-hidden {
+  position: absolute;
+  @if $lte7 {
+    clip:rect(1px 1px 1px 1px);//ie6/7
+  }
+  clip:rect(1px, 1px, 1px, 1px);//standard
+}
+%visually-hidden{
+  @include visually-hidden;
+}
+
+// invisible 占据布局空间的隐藏元素
+@mixin invisible {
+    visibility: hidden;
+}
+
+%invisible {
+    @include invisible;
+}
+
+// opacity 透明度，若要兼容IE低版本需在_setting.scss打开开关
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  @if $filter{
+    filter: alpha(opacity=$opacity);
+  }
+}
+%opacity{
+  @include opacity;
+}
+
+// ellipsis 截取文本，元素设置宽度才可用
+@mixin ellipsis($width:100%) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  width: $width;
+}
+
+%ellipsis{
+  @include ellipsis;
+}
+
+// disabled 禁用样式
+@mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
+  background-color: $bgColor !important;
+  color: $textColor !important;
+  cursor: not-allowed !important;
+}
+%disabled{
+  @include disabled;
+}
+
+// min-height 最小高度
+@mixin min-height($height){
+  min-height: $height;
+  height: auto !important;
+  @if $lte7{
+    _height: $height;
+  }
+}
+
+// ul-has-style 带符号列表
+@mixin ul-has-style($style:disc){
+  margin-left: 25px;
+  list-style: $style;
+}
+%ul-has-style{
+  @include ul-has-style;
+}
+
+// triangle 三角形
+%triangle-basic{
+  content:"";
+  height: 0;
+  width: 0;
+  overflow:hidden;
+}
+@mixin triangle($direction, $size, $borderColor) {
+  @extend %triangle-basic;
+  @if $direction == top {
+    border-bottom:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  } 
+  @else if $direction == right {
+    border-left:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  } 
+  @else if $direction == bottom {
+    border-top:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  } 
+  @else if $direction == left {
+    border-right:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  }
+}
+
+// bgcolor-alpha 半透明背景，默认黑色半透明
+@mixin bgcolor-alpha($bgcolor: rgba(0,0,0,.5)){
+  color:#fff;
+  @if $filter{
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#{ie-hex-str($bgcolor)}', endColorstr='#{ie-hex-str($bgcolor)}');
+  }@else{
+    background-color: #333;
+  }
+  background-color: $bgcolor;
+}
+%bgcolor-alpha{
+  @include bgcolor-alpha;
+}
+
+// horizontal-line 水平间隔线
+@mixin horizontal-line($border:1px dashed $gray, $padding:10px){
+  border-bottom: $border;
+  padding-top: $padding;
+  padding-bottom: $padding;  
+}
+%horizontal-line{
+  @include horizontal-line;
+}
+
+
+// 图片替换文字，如果要兼容ie6需设置元素高度
+@mixin ir($height:99){
+  font: 0/0 a; //1
+  text-shadow: none;
+  border:0 none;
+  color: transparent; //2
+  @if $lte7{ 
+    _overflow:hidden; //3
+    _font-size: 10px; //3
+    _line-height: $height; //3
+  }
+}
+%ir{
+  @include ir;
+}
+
+// 以下为 @mixin，只能通过 @include 来调用
+// -----------------------------------------------------
+
+// rem单位
+@mixin rem($property, $px) {
+  #{$property}: $px * $baseFontSize;
+  #{$property}: #{$px}rem;
+}
+// 调用方法：@include rem(width,20)
+
+@mixin rem-font-size($px) {
+  font-size: $px * $baseFontSize;
+  font-size: #{$px}rem;
+}
+// 调用方法：@include rem-font-size(2)
+
+
+// image-2x Retina图片
+@mixin image-2x($url, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    // on retina, use image that's scaled by 2
+    background-image: url('#{$url}');
+    background-size: $width $height;
+  }
+}
+// 调用方法：@include image-2x("../images/img-2x.png", 200px, 200px);
+
+
+// 针对火狐浏览器打bug
+@mixin firefox {
+  @-moz-document url-prefix(){
+    @content;
+  }
+}
+// 调用方法：@include firefox{.test{padding-bottom:3px;}}
+
+
+// 以下为 %，只能通过 @extend 来调用
+// -----------------------------------------------------
+
+//为高级浏览器准备的box-sizing盒子模型，ie8+
+%box-sizing-border{
+  @include box-sizing;
+}
+
+// 普通all transition特效
+%all-transition{
+  @include transition;
+}
+
+// ie6/7 haslayout
+%zoom{
+  @if $lte7 {
+    *zoom:1;
+  }
+}
+
+// 垂直渐变，渐变背景是半透明到全透明，这样就可以通过设置背景色来表现渐变
+// -------------------------
+// 白色，由半透明到全透明
+%gradient-linear-light {
+  // IE9 SVG, needs conditional override of 'filter' to 'none' 
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iNDYlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  @include gradient-vertical(rgba(255,255,255,0.3),rgba(255,255,255,0));
+  @if $filter{
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-8 */
+    :root &{
+      @extend %reset-filter;
+    }
+  }
+}
+// 黑色，由全透明到半透明
+%gradient-linear-dark {
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  @include gradient-vertical(rgba(0,0,0,0), rgba(0,0,0,0.25));
+  @if $filter{
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 ); /* IE6-8 */
+    :root &{
+       @extend %reset-filter;
+    }
+  }
+}
+// Reset gradient filters for IE
+%reset-filter{
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+
+//function
+//-----------------------------------------------------  
+
+// px转em
+@function pxToEm($px, $base: 16) {
+  @return ($px / $base) * 1em;
+}
+
+// 为颜色添加白色，以百分比形式
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// 为颜色添加黑色，以百分比形式
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+
+// 定义一些常见元素的简单样式(btn,table,form)
+// 这里只是满足简单的使用，更全更好的请参考各自的组件
+//-----------------------------------------------------
+
+// btn
+// @include simple-btn;
+// @include simple-btn(true);
+// @include simple-btn($bgColor:$green);
+@mixin simple-btn($formbtn:false, $bgColor: $primary, $textColor:$white){
+  @include inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  text-align: center;
+
+  font-size: 12px;
+  padding:0  15px;
+  @if $formbtn {
+    height: 28px;
+  }@else{
+    line-height: 28px;
+  }
+  color: $textColor;
+  background-color: $bgColor;
+  border:0 none;
+
+  &:hover{
+    color: $textColor;
+    background-color: darken($bgColor,5%);
+  }
+}
+
+// table
+// @include simple-table;
+// @include simple-table(false);
+// @include simple-table(true, $thBgColor: $orange);
+@mixin simple-table($th:true, $borderColor: $gray, $thBgColor: $primary, $thTextColor:$white){
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: $baseGap;
+
+  & th,
+  & td{
+    border:1px solid $borderColor;
+  }
+
+  th,td{
+    padding: 8px;
+    text-align: left;
+  }
+  // 如果
+  @if $th{
+    th{
+      color: $thTextColor;
+      background-color: $thBgColor;
+      border-color:$thBgColor;
+      border-bottom:0 none;
+    }
+  }
+}
+
+// input, select, textarea的基础样式
+// 边框，padding
+%simple-form-basic{
+  border: 1px solid $gray;
+  padding: 4px;
+  vertical-align: middle;
+  &:focus{
+    outline: 0 none;
+  }
+}
+
+// 输入框
+@mixin simple-text($borderColorFocus: #52a8ec){
+  @extend %simple-form-basic;
+  height: 18px;
+  
+  @include transition(border linear 0.2s, box-shadow linear 0.2s);
+  @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1));
+
+  &:focus{
+    border-color: rgba($borderColorFocus, 0.8);
+    @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba($borderColorFocus, 0.6));
+  }  
+}
+%simple-text{
+  @include simple-text;
+}
+
+// textarea
+@mixin simple-textarea($borderColorFocus:#52a8ec, $width:500px, $height:80px){
+  @include simple-text($borderColorFocus);
+  height: $height;
+  width: $width;
+  vertical-align: top;
+}
+%simple-textarea{
+  @include simple-textarea;
+}
+
+// select
+%simple-select{
+  @extend %simple-form-basic;
+
+  // select lte ie7
+  // ie6,7 不支持select的padding
+  @if $lte7 {
+      *margin-top:5px;
+      *margin-bottom:5px;
+      *vertical-align:top;
+  }
+}
+
+// radio & checkbox 的重置
+%reset-radio-checkbox{
+  margin:0 5px 0 0;
+  padding:0;
+  font-size: 13px;
+  //ie6,7得设置宽度和高度才能表现和其他浏览器一样的重置
+  //radio和checkbox的大小为13px
+  @if $lte7 {
+    *width:13px;
+    *height:13px;
+  }
+}

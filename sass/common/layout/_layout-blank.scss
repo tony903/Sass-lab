@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// 内部滚动条开关
+// -----------------------------------------------------
+$innerBoxScroll:        true !default; 
+
+// 绝对定位，内部溢出显示纵向滚动条
+@if not $wrapperAutoWidth and $wrapperAbsolute and $innerBoxScroll  {
+  
+  .t-wrap-container {
+    overflow: hidden;
+  }
+
+  #t-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: $innerContainer;
+    left: 50%;
+    margin-left: -$wrapInnerWidth/2;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+}

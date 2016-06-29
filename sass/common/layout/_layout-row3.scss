@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+// 内部滚动条开关
+// -----------------------------------------------------
+$innerBoxScroll:        true !default; 
+
+// 参数设置
+// -----------------------------------------------------
+$whoAuto:               right !default; // 谁自适应？left,right
+$fixedWidth:            200px 240px !default; // 固定宽度值
+$gapWidth:              10px !default; // 间隔宽度值
+
+// 左侧自适应
+@if $whoAuto == left {
+  $sideA: left;
+  $sideB: right;
+}
+
+// 右侧自适应
+@if $whoAuto == right {
+  $sideA: right;
+  $sideB: left;
+}
+
+// 公用
+%Yscroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+%boxAbsolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+// 默认，不控制滚动条显示
+@if not $innerBoxScroll {
+
+  // 清除父级
+  .t-wrap-container, .t-container, .t-layout {
+    @extend clearfix;
+  }
+  
+  .t-layout {
+
+    .t-layout-#{$sideB}1, .t-layout-#{$sideB}2 {
+      position: relative;
+      @include float(#{$sideB});
+    }
+
+    .t-layout-#{$sideB}1 {
+      width: nth($fixedWidth,1);
+      margin-#{$sideA}: $gapWidth;
+    }
+
+    .t-layout-#{$sideB}2 {
+      width: nth($fixedWidth,2);
+    }
+
+    .t-layout-#{$sideA} {
+      @include float(#{$sideA});
+      width: 100%;
+      margin-#{$sideB}: -(nth($fixedWidth,1) + nth($fixedWidth,2) + $gapWidth);
+    }
+
+    .t-layout-#{$sideA}inner {
+      margin-#{$sideB}: nth($fixedWidth,1) + nth($fixedWidth,2) + $gapWidth * 2;
+    }
+
+  }
+}
+
+// 绝对定位，内部溢出显示纵向滚动条
+@if $wrapperAbsolute and $innerBoxScroll {
+  
+  .t-wrap-container {
+    overflow: hidden;
+  }
+  
+  // 固定宽度
+  @if not $wrapperAutoWidth {
+    #t-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      #{$sideA}: 50%;
+      margin-#{$sideA}: -$wrapInnerWidth/2;
+    }
+  }
+  
+  // 自适应宽度
+  @if $wrapperAutoWidth {
+    #t-container {
+      position: static;
+    }
+  }
+  
+  .t-layout {
+    @extend %boxAbsolute;
+    width: 100%;
+
+    .t-layout-#{$sideB}1 {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      #{$sideB}: 0;
+      width: nth($fixedWidth,1);
+    }
+
+    .t-layout-#{$sideB}2 {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      #{$sideB}: nth($fixedWidth,1) + $gapWidth;
+      width: nth($fixedWidth,2);
+    }
+
+    .t-layout-#{$sideA} {
+      @extend %boxAbsolute;
+      #{$sideB}: nth($fixedWidth,1) + nth($fixedWidth,2) + $gapWidth * 2;
+      #{$sideA}: 0;
+      width: auto;
+    }
+
+    .t-layout-#{$sideA}inner {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      #{$sideB}: 0;
+      #{$sideA}: 0;
+    }
+
+  }
+
+}

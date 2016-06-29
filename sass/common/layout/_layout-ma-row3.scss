@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+// 内部滚动条开关
+// -----------------------------------------------------
+$innerBoxScroll:        true !default; 
+
+// 参数设置
+// -----------------------------------------------------
+$fixedWidth:            200px 240px; //左侧、右侧固定宽度
+$gapWidth:              10px; //间隔宽度
+
+// 公用
+%Yscroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+%boxAbsolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+// 默认，不控制滚动条显示
+@if not $innerBoxScroll {
+
+  // 清除父级
+  .t-wrap-container, .t-container, .t-layout-ma-row3 {
+    @extend clearfix;
+  }
+  
+  .t-layout-ma-row3 {
+  
+    .t-layout-left, .t-layout-right {
+      position: relative;
+    }
+
+    .t-layout-left {
+      @include float(left);
+      width: nth($fixedWidth,1);
+      margin-right: - nth($fixedWidth,1);
+    }
+
+    .t-layout-right {
+      @include float(right);
+      width: nth($fixedWidth,2);
+      margin-left: - nth($fixedWidth,2);
+    }
+
+    .t-layout-middle {
+      @include float(left);
+      width: 100%;
+    }
+
+    .t-layout-middleinner {
+      margin-left: nth($fixedWidth,1) + $gapWidth;
+      margin-right: nth($fixedWidth,2) + $gapWidth;
+    }
+
+  }
+}
+
+// 绝对定位，内部溢出显示纵向滚动条
+@if $wrapperAbsolute and $innerBoxScroll {
+  
+  .t-wrap-container {
+    overflow: hidden;
+  }
+  
+  // 固定宽度
+  @if not $wrapperAutoWidth {
+    #t-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -$wrapInnerWidth/2;
+    }
+  }
+  
+  // 自适应宽度
+  @if $wrapperAutoWidth {
+    #t-container {
+      position: static;
+    }
+  }
+  
+  .t-layout-ma-row3 {
+    @extend %boxAbsolute;
+    width: 100%;
+
+    .t-layout-left {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      left: 0;
+      width: nth($fixedWidth,1);
+    }
+
+    .t-layout-right {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      right: 0;
+      width: nth($fixedWidth,2);
+    }
+
+    .t-layout-middle {
+      @extend %boxAbsolute;
+      left: nth($fixedWidth,1) + $gapWidth;
+      right: nth($fixedWidth,2) + $gapWidth;
+      width: auto;
+    }
+
+    .t-layout-middleinner {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      left: 0;
+      right: 0;
+    }
+
+  }
+
+}

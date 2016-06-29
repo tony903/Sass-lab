@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#t-footer {
+  color: $white;
+  text-align: center;
+  
+  p {
+    @include inline-block;
+    @include center-block;
+    line-height: nth($wrapFooter,1);
+  }
+
+  a {
+    color: $green;
+    text-decoration: none;
+  }
+
+}

@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+// 内部滚动条开关
+// -----------------------------------------------------
+$innerBoxScroll:        true !default; 
+
+// 参数设置
+// -----------------------------------------------------
+$whoAuto:               right !default; // 谁自适应？left,right
+$fixedWidth:            240px !default; // 固定宽度值
+$gapWidth:              10px !default; // 间隔宽度值
+
+// 左侧自适应
+@if $whoAuto == left {
+  $sideA: right;
+  $sideB: left;
+}
+
+// 右侧自适应
+@if $whoAuto == right {
+  $sideA: left;
+  $sideB: right;
+}
+
+// 公用
+%Yscroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+%boxAbsolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+// 默认，不控制滚动条显示
+@if not $innerBoxScroll {
+  
+  // 清除父级
+  .t-wrap-container, .t-container, .t-layout {
+    @extend clearfix;
+  }
+
+  .t-layout {
+
+    .t-layout-#{$sideA} {
+      position: relative;
+      @include float(#{$sideA});
+      width: $fixedWidth;
+      margin-#{$sideB}: -$fixedWidth;
+    }
+
+    .t-layout-#{$sideB} {
+      @include float(#{$sideB});
+      width: 100%;
+    }
+
+    .t-layout-#{$sideB}inner {
+      margin-#{$sideA}: $fixedWidth + $gapWidth;
+    }
+
+  }
+}
+
+// 绝对定位，内部溢出显示纵向滚动条
+@if $wrapperAbsolute and $innerBoxScroll {
+  
+  .t-wrap-container {
+    overflow: hidden;
+  }
+  
+  // 固定宽度
+  @if not $wrapperAutoWidth {
+    #t-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      #{$sideB}: 50%;
+      margin-#{$sideB}: -$wrapInnerWidth/2;
+    }
+  }
+  
+  // 自适应宽度
+  @if $wrapperAutoWidth {
+    #t-container {
+      position: static;
+    }
+  }
+  
+  .t-layout {
+    @extend %boxAbsolute;
+    width: 100%;
+
+    .t-layout-#{$sideA} {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      #{$sideA}: 0;
+      width: $fixedWidth;
+    }
+
+    .t-layout-#{$sideB} {
+      @extend %boxAbsolute;
+      #{$sideA}: $fixedWidth + $gapWidth;
+      #{$sideB}: 0;
+      width: auto;
+    }
+
+    .t-layout-#{$sideB}inner {
+      @extend %boxAbsolute;
+      @extend %Yscroll;
+      #{$sideA}: 0;
+      #{$sideB}: 0;
+    }
+
+  }
+
+}

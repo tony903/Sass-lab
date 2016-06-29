@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+// 包装器开关
+// -----------------------------------------------------
+$wrapperAutoWidth:      true !default; // 自适应宽度，false为固定宽度
+$wrapperFooter:         false !default; // 含底部，false为不含底部
+$wrapperAbsolute:       true !default; // 绝对定位，false为非绝对定位布局(static)
+// 注意：static状态下，内部layout容器内滚动条开关必须设置为false，设置为true无效
+
+// 固定宽度参数设置
+// -----------------------------------------------------
+$wrapInnerWidth:        1200px; // 容器内部宽度
+$wrapHeader:            40px $color01; // 头部内部高度、背景色
+$innerContainer:        $white; // 内容容器背景色
+$wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
+
+// 公用
+%layoutAbsolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+%containerAbsolute {
+  @extend %layoutAbsolute;
+  top: nth($wrapHeader,1);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// 自适应宽度
+// -----------------------------------------------------
+@if $wrapperAutoWidth {
+
+  .t-wrapper {
+    width: 100%;
+  }
+
+  .t-wrap-header {
+    // 如果绝对定位
+    @if $wrapperAbsolute {
+      @extend %layoutAbsolute; 
+      top: 0;
+    }
+    height: nth($wrapHeader,1);
+    background-color: nth($wrapHeader,2);
+  }
+
+  .t-wrap-container {
+    // 如果绝对定位
+    @if $wrapperAbsolute and $wrapperFooter {
+      @extend %containerAbsolute;
+      bottom: nth($wrapFooter,1);
+    }
+    @if $wrapperAbsolute and not $wrapperFooter {
+      @extend %containerAbsolute;
+      bottom: 0;
+    }
+    background-color: $innerContainer;
+  }
+  
+  // 含底部
+  @if $wrapperFooter {
+    .t-wrap-footer {
+      // 如果绝对定位
+      @if $wrapperAbsolute {
+        @extend %layoutAbsolute;
+        bottom: 0;
+      }
+      height: nth($wrapFooter,1);
+      background-color: nth($wrapFooter,2);
+    }
+  }
+  
+  // 不含底部
+  @if not $wrapperFooter {
+    .t-wrap-footer {
+      @include hidden;
+    }
+  }
+
+}
+
+// 固定宽度
+// -----------------------------------------------------
+@if not $wrapperAutoWidth {
+  
+  .t-wrapper {
+    width: 100%;
+  }
+
+  .t-wrap-header {
+    // 如果绝对定位
+    @if $wrapperAbsolute {
+      @extend %layoutAbsolute; 
+      top: 0;
+    }
+    height: nth($wrapHeader,1);
+    background-color: nth($wrapHeader,2);
+  }
+
+  .t-wrap-container {
+    // 如果绝对定位
+    @if $wrapperAbsolute and $wrapperFooter {
+      @extend %containerAbsolute;
+      bottom: nth($wrapFooter,1);
+    }
+    @if $wrapperAbsolute and not $wrapperFooter {
+      @extend %containerAbsolute;
+      bottom: 0;
+    }
+    background-color: $innerContainer;
+  }
+
+  // 含底部
+  @if $wrapperFooter {
+    .t-wrap-footer {
+      // 如果绝对定位
+      @if $wrapperAbsolute {
+        @extend %layoutAbsolute;
+        bottom: 0;
+      }
+      height: nth($wrapFooter,1);
+      background-color: nth($wrapFooter,2);
+    }
+
+  }
+
+  // 不含底部
+  @if not $wrapperFooter {
+    .t-wrap-footer {
+      @include hidden;
+    }
+  }
+
+  #t-header, #t-container, #t-footer {
+    width: $wrapInnerWidth;
+    @include center-block;
+  }
+
+}
