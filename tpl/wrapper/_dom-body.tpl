@@ -25,7 +25,7 @@
   </div>
   <div class="t-wrap-container">
     <div id="t-container">
-      @@if (inner) {app
+      @@if (inner) {
         @@include('../@@inner')
       }
     </div>

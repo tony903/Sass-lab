@@ -1,19 +1,5 @@
 @charset "UTF-8";
 
-// 包装器开关
-// -----------------------------------------------------
-$wrapperAutoWidth:      true !default; // 自适应宽度，false为固定宽度
-$wrapperFooter:         false !default; // 含底部，false为不含底部
-$wrapperAbsolute:       true !default; // 绝对定位，false为非绝对定位布局(static)
-// 注意：static状态下，内部layout容器内滚动条开关必须设置为false，设置为true无效
-
-// 固定宽度参数设置
-// -----------------------------------------------------
-$wrapInnerWidth:        1200px; // 容器内部宽度
-$wrapHeader:            40px $color01; // 头部内部高度、背景色
-$innerContainer:        $white; // 内容容器背景色
-$wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
-
 // 公用
 %layoutAbsolute {
   position: absolute;
@@ -31,7 +17,8 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
 // 自适应宽度
 // -----------------------------------------------------
 @if $wrapperAutoWidth {
-
+  
+  /* wrapper */
   .t-wrapper {
     width: 100%;
   }
@@ -48,19 +35,19 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
 
   .t-wrap-container {
     // 如果绝对定位
-    @if $wrapperAbsolute and $wrapperFooter {
+    @if $wrapperAbsolute and $wrapperHasFooter {
       @extend %containerAbsolute;
       bottom: nth($wrapFooter,1);
     }
-    @if $wrapperAbsolute and not $wrapperFooter {
+    @if $wrapperAbsolute and not $wrapperHasFooter {
       @extend %containerAbsolute;
       bottom: 0;
     }
-    background-color: $innerContainer;
+    background-color: nth($wrapContainerBg,1);
   }
   
   // 含底部
-  @if $wrapperFooter {
+  @if $wrapperHasFooter {
     .t-wrap-footer {
       // 如果绝对定位
       @if $wrapperAbsolute {
@@ -73,7 +60,7 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
   }
   
   // 不含底部
-  @if not $wrapperFooter {
+  @if not $wrapperHasFooter {
     .t-wrap-footer {
       @include hidden;
     }
@@ -85,6 +72,7 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
 // -----------------------------------------------------
 @if not $wrapperAutoWidth {
   
+  /* wrapper */
   .t-wrapper {
     width: 100%;
   }
@@ -101,19 +89,19 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
 
   .t-wrap-container {
     // 如果绝对定位
-    @if $wrapperAbsolute and $wrapperFooter {
+    @if $wrapperAbsolute and $wrapperHasFooter {
       @extend %containerAbsolute;
       bottom: nth($wrapFooter,1);
     }
-    @if $wrapperAbsolute and not $wrapperFooter {
+    @if $wrapperAbsolute and not $wrapperHasFooter {
       @extend %containerAbsolute;
       bottom: 0;
     }
-    background-color: $innerContainer;
+    background-color: nth($wrapContainerBg,1);
   }
 
   // 含底部
-  @if $wrapperFooter {
+  @if $wrapperHasFooter {
     .t-wrap-footer {
       // 如果绝对定位
       @if $wrapperAbsolute {
@@ -127,7 +115,7 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
   }
 
   // 不含底部
-  @if not $wrapperFooter {
+  @if not $wrapperHasFooter {
     .t-wrap-footer {
       @include hidden;
     }
@@ -136,6 +124,10 @@ $wrapFooter:            30px $blackLight; // 尾部内部高度、背景色
   #t-header, #t-container, #t-footer {
     width: $wrapInnerWidth;
     @include center-block;
+  }
+
+  #t-container {
+    background-color: nth($wrapContainerBg,2);
   }
 
 }

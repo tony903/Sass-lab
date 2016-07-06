@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/* ========== tag components ========== */
+%tagBox {
+  display: inline-block;
+  line-height: 1.5;
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: $white;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+// 默认标签
+@if $tagOutput {
+  .t-tag {
+    @extend %tagBox;
+    background: #E3E3E3;
+    color: $grayDark;
+  }
+
+  .t-tag-todo {
+    @extend %tagBox;
+    background: #82be38;
+  }
+
+  .t-tag-done {
+    @extend %tagBox;
+    background: #ffab00;
+  }
+}
+
+// 可关闭标签
+@if $tagDeleteOutput {
+  .t-tag-del {
+    @extend %tagBox;
+    background: $blue;;
+    padding-right:3px;
+
+    a.icon-chahao {
+      display: inline-block;
+      margin-left:3px;
+      padding: 1px 0px 0px 0px;
+      font-family: "iconfont" !important;
+      font-style: normal;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}
+
+// 可选择标签
+@if $tagCategoryOutput {
+  %tagCategory {
+    display: inline-block;
+    margin-bottom:5px;
+    cursor: pointer;
+  }
+
+  %tagCategoryText {
+    box-sizing:content-box;
+    border:solid 1px #ddd;
+    text-align: center;
+    color: $blackLight;
+  }
+
+  %tagCategorySelected {
+    border: solid 1px #ffaa00;
+    background-image: url(../imgs/ui-lib-tag.gif);
+    background-repeat: no-repeat;
+  }
+
+  .t-tag-category {
+    @extend %tagCategory;
+    p {
+      @extend %tagCategoryText;
+      line-height: 21px;
+      height: 21px;
+      font-size: 12px;
+      padding: 3px 12px 3px 8px;
+    }
+    &:hover p {
+      @extend %tagCategorySelected;
+      background-color: #F8F8F8;
+      background-position: right top;
+    }
+    &.selected p {
+      @extend %tagCategorySelected;
+      background-color: $white;
+      background-position: right -190px;
+    }
+  }
+}
+
+// 大号可选择标签
+@if $tagCategoryLargeOutput {
+  .t-tag-category-lg {
+    @extend %tagCategory;
+    p {
+      @extend %tagCategoryText;
+      line-height: 28px;
+      height: 28px;
+      font-size:14px;
+      padding:3px 14px 3px 10px;
+    }
+    &:hover p {
+      @extend %tagCategorySelected;
+      background-color: #F8F8F8;
+      background-position: right -666px; 
+    }
+    &.selected p {
+      @extend %tagCategorySelected;
+      background-color: $white;
+      background-position: right -434px;
+    }
+  }
+}
+
+// 星级
+@if $starsOutput {
+  /* ========== stars components ========== */
+  .t-stars { 
+    font-size: 14px;
+    @extend %clearfix;
+    i {
+      @include float(left);
+      color: $orange;
+      &.disabled { 
+        color: #CCC;
+      }
+    }
+  }
+}
+
+// 徽章
+@if $badgeOutput { 
+  /* ========== badge components ========== */
+  %badgeBox {
+    display: inline-block;
+    line-height: 1.5;
+    padding: 2px 6px;
+    border-radius: 6px;
+    color: $white;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .t-badge {
+    @extend %badgeBox;
+    background: $blue;
+  }
+  .t-badge-red {
+    @extend %badgeBox;
+    background: $red;
+  }
+}
+
+// loading
+@if $loadingOutput {
+  /* ========== loading components ========== */
+  %loadingBox {
+    display: inline-block;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 3px #ccc;
+    -moz-box-shadow: 1px 1px 3px #ccc;
+    box-shadow:1px 1px 3px #ccc;
+    color: $grayDark;
+  }
+
+  .t-loading {
+    @extend %loadingBox;
+    font-size: 12px;
+    padding: 8px 20px 8px 40px;
+    background: #fff url(../imgs/loading.gif) no-repeat 10px 4px;
+  }
+
+  .t-loading-cmcc {
+    @extend %loadingBox;
+    font-size: 12px;
+    padding: 8px 20px 8px 35px;
+    background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px;
+  }
+
+  .t-loading-cmcc-lg {
+    @extend %loadingBox;
+    font-size: 14px;
+    padding: 14px 20px 14px 50px; 
+    background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px;
+  }
+
+}

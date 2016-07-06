@@ -10,8 +10,10 @@
         </div>
         <div class="t-layout-right">
           <div class="t-layout-rightinner"> 
-            <!-- 右侧内容 -->
-            <p class="example-p">右侧宽度自适应</p>
+            @@include('../table/_table.tpl')
+            @@include('../table/_table-info.tpl')
+            @@include('../tag/_tags.tpl')
+            @@include('../loading/_loading-cmcc.tpl')
           </div>
         </div>
       </div>

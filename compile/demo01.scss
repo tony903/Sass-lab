@@ -7,23 +7,23 @@
 @import "../sass/core/mixin";
 @import "../sass/core/reset";
 
+// Config
+@import "../sass/config/config";
+
 // Wrapper
 @import "../sass/common/wrapper";
 @import "../sass/common/header";
 @import "../sass/common/footer";
 
 // Layout
-// @import "../sass/common/layout/layout-blank"; // 空白
-@import "../sass/common/layout/layout-row2"; // 两列
-// @import "../sass/common/layout/layout-row3"; // 三列
-// @import "../sass/common/layout/layout-ma-row3"; // 三列，中间自适应
-
+@import "../sass/common/layout/layout";
 
 // Common
 @import "../iconfont/iconfont.css"; //矢量图标
 
 // Components
+@import "../sass/components/table";
+@import "../sass/components/tags";
 
-
-// 临时样式，DEMO演示使用
-@import "../sass/temporary/style01";
+@import "../sass/components/popup";
+@import "../sass/components/popup-layer";

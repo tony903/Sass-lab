@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+/* ========== list components ========== */
+
+// 查询表单自适应多列布局，支持1,2,3,4列及混排
+.t-list { 
+  background: $white;
+}
+
+// 标题
+.t-list-title { 
+  height: nth($listTitle,1);
+  line-height: nth($listTitle,1);
+  background: nth($listTitle,2);
+  border-bottom: 4px solid #bdddf2;
+  
+  & > h2 { 
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: $blackLight;
+    @extend %inline-block;
+  }
+
+  & > div { 
+    @extend %inline-block;
+    @include float(right);
+    text-align: right;
+    font-size: 12px;
+  }
+
+}
+
+// 搜索区域
+.t-list-search { 
+  padding: 10px 0;
+  background: #F9F9F9;
+  border: 1px solid #E8E8E8;
+  border-top: 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+// 下拉小箭头
+.t-list-search-more {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px;
+  height: 10px;
+  box-sizing: border-box;
+  background: #F9F9F9;
+  cursor: pointer;
+  border: 1px solid #E8E8E8;
+  border-top: none;
+  text-align: center;
+  font-size: 12px;
+  line-height: 10px;
+  color: $grayDark;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+// 多列设置，与.t-list-search组合使用
+.t-columns-1 {
+  .t-columns-group { 
+    padding-right: 12%;
+  }
+  li { 
+    width: 100%;
+    & > label { 
+      width: 28%;
+    }
+    & > div {
+      width: 66%;
+    }
+  }
+}
+
+.t-columns-2 {
+  .t-columns-group { 
+    padding-right: 9%;
+  }
+  li { 
+    width: 50%;
+    & > label { 
+      width: 35%;
+    }
+    & > div {
+      width: 60%;
+    }
+    &.width-all > label {
+      width: 17.5%;
+    }
+    &.width-all > div {
+       width: 80%; margin-left: 1%;
+    }
+  }
+}
+
+.t-columns-3 {
+  .t-columns-group { 
+    padding-right: 6%;
+  }
+  li { 
+    width: 33.33%;
+    & > label { 
+      width: 36%;
+    }
+    & > div {
+      width: 58%;
+    }
+    &.width-all > label {
+      width: 12%;
+    }
+    &.width-all > div {
+       width: 86%; margin-left: 0.666%;
+    }
+  }
+}
+
+.t-columns-4 {
+  li { 
+    width: 25%;
+    & > label { 
+      width: 32%;
+    }
+    & > div {
+      width: 62%;
+    }
+    &.width-half > label {
+      width: 16%;
+    }
+    &.width-half > div {
+       width: 81%; margin-left: 1%;
+    }
+    &.width-all > label {
+      width: 8%;
+    }
+    &.width-all > div {
+       width: 90.5%; margin-left: 0.5%;
+    }
+  }
+}
+
+// 列字段组
+.t-columns-group {
+  margin: 0;
+  padding: 0;
+  @extend %clearfix;
+
+  & > li {
+    list-style: none;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    vertical-align: top;
+    
+    // 字段标签
+    & > label {
+      display: block;
+      float: left;
+      height: 36px;
+      line-height: 36px;
+      color: $grayDark;
+      text-align: right;
+      @extend %ellipsis;
+      
+      // 必填字段星标
+      &.necessary:before {
+        content: "*";
+        color: #ff595f;
+      }
+    }
+    
+    // 字段文本框区域
+    & > div {
+      display: block;
+      float: left;
+      height: 36px;
+      color: $blackLight;
+      text-align: left;
+      margin-left: 2%;
+      
+      %formBox {
+        padding: 3px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      input {
+        @extend %formBox;
+        height: 26px;
+        line-height: 18px\9;
+        margin-top: 5px;
+        background: $white;
+        border: 1px solid #DDD;
+        &[type="checkbox"], &[type="radio"], &.check, &.radio {
+          border: none;
+          width: auto;
+          height: auto;
+          padding: auto; 
+        }
+      }
+
+      select {
+        @extend %formBox;
+      }
+
+      textarea {
+        @extend %formBox;
+        border: 1px solid #DDD;
+        margin-top: 6px;
+        line-height: 22px;
+        resize: none;
+      }
+      
+      // 输入框右侧图标
+      @if $listInputIconBgOutput {
+        .bg-date { 
+          background: #FFF url(../imgs/mini-icons.png) no-repeat right 4px;
+        }
+        .bg-tree { 
+          background: #FFF url(../imgs/mini-icons.png) no-repeat right -27px;
+        }
+        .bg-select { 
+          background: #FFF url(../imgs/mini-icons.png) no-repeat right -57px;
+        }
+      }
+   
+    }
+    
+    // 一半宽度
+    &.width-half { 
+      width: 50%;
+    }
+
+    // 全部宽度
+    &.width-all {
+      width: 100%;
+      height: auto;
+      line-height: 24px;
+      padding: 6px 0;
+      & > div {
+        height: auto;
+      }
+    }
+    
+    // 时间组
+    &.timegroup > div {
+      & > div { 
+        width: 45%;
+        float: left;
+      }
+      & > span {
+        display: block;
+        height: 36px;
+        width: 10%;
+        line-height: 36px;
+        float: left;
+        color: #666;
+        text-align: center;
+      }
+    }
+    
+    // 重置按钮行高
+    & > div > .t-btn { 
+      line-height: 1;
+    } 
+
+  }
+
+  // 警示文本框
+  @if $listWarningInputOutput {
+    %errorStyle {
+      border: 1px solid #dd808e;
+      background: #fff2f4;
+      color: #d83030;
+    }
+    %warningStyle {
+      border: 1px solid #dfc48c;
+      background: #fff8d5;
+      color: #ad8032;
+    }
+    %successStyle {
+      border: 1px solid #8ec73b;
+      background: #f7ffeb;
+      color: #6ba21c;
+    }
+    li > {
+      div input.error, div select.error, div textarea.error {
+        @extend %errorStyle;
+      }
+    }
+    li > {
+      div input.warning, div select.warning, div textarea.warning {
+        @extend %warningStyle;
+      }
+    }
+    li > {
+      div input.success, div select.success, div textarea.success {
+        @extend %successStyle;
+      }
+    }
+  }
+
+}
+
+// 列表主操作按钮、记录条数信息
+.t-list-btns { 
+  padding: 6px 10px;
+  margin-top: 10px;
+  background: #f1f5f8;
+  border-bottom: 1px solid #e6ecec;
+  vertical-align: middle;
+  @extend %clearfix;
+
+  %listBtnUnit {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 28px; 
+  }
+
+  p {
+    @extend %listBtnUnit;
+    color: $blackLight;
+  }
+
+  span {
+    @extend %listBtnUnit;
+    color: $gray;
+    padding-left: 6px;
+  }
+
+  & > a {
+    display: block;
+    float: left;
+    width: 28px;
+    height: 28px;
+    padding-left: 10px;
+    line-height: 28px;
+    font-size: 18px;
+    color: $gray;
+    text-align: center;  
+    text-decoration: none;
+    &:hover {
+      color: $blackLight;
+    }
+  }
+
+  & > div {
+    float: right;
+    text-align: left;
+  }
+
+  .t-btn {
+    margin-left: 4px;
+  }
+
+}
+
+// 列表显示区域
+.t-list-result { 
+  margin-top: 6px;
+  & > .t-table {
+    th {
+      background: $white;
+      border-top: none;
+    }
+  }
+}

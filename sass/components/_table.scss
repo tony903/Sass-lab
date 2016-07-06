@@ -1,106 +1,182 @@
 @charset "UTF-8";
 
-// 开关
-$tableHaveCaption:        true !default; //有标题
-
-/* 表格 */
-.t-table {
-  margin-bottom: 10px;
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
+/* ========== table components ========== */
+.t-table { 
+  width: 100%; 
+  margin-bottom: 10px; 
+  font-size: 12px; 
+  border-collapse: collapse; 
   border-spacing: 0;
-  
-  // 有标题
-  @if $tableHaveCaption {
-    caption {
-      padding: 6px 8px;
+
+  @if $tableCaptionOutput {
+    & > caption {
+      padding: 6px 8px; 
+      font-weight: bold; 
+      color: $grayDark; 
+      line-height: 16px; 
       border-bottom: 1px solid #DDD;
-      color: #666;
-      font-weight: 700;
-      line-height: 16px;
+    }
+  }
+
+  th, td {
+    padding: 8px; 
+    border-bottom: 1px solid #DDD;
+  }
+
+  th {
+    background: #FAFAFA; 
+    font-weight: bold; 
+    color: $grayDark; 
+    border-top: 1px solid #DDD; 
+  }
+
+  td {
+    line-height: 16px;
+  }
+
+  thead {
+    th {
+      text-align: left;
+    }
+  }
+
+  tbody {
+    & > tr:hover {
+      & > td {
+        background-color: #e9f5ff;
+      }
+    }
+    
+    // 输出行状态
+    @if $trStatusOutput {
+
+      & > tr.selected {
+        td {
+          background-color: #fff5cc;
+        }
+        &:hover td {
+          background-color: #fff5cc;
+        }
+      }
+
+      & > tr.info {
+        td {
+          background-color: #d5edf8;
+        }
+        &:hover td {
+          background-color: #bfe4f4;
+        }
+      }
+
+      & > tr.success {
+        td {
+          background-color: #e6efc2;
+        }
+        &:hover td {
+          background-color: #deeaae;
+        }
+      }
+
+      & > tr.error {
+        td {
+          background-color: #fbe3e4;
+        }
+        &:hover td {
+          background-color: #f8cdce;
+        }
+      }
+
+      & > tr.warning {
+        td {
+          background-color: #fff6bf;
+        }
+        &:hover td {
+          background-color: #fff2a6;
+        }
+      }
+
+    }
+
+  }
+
+  tfoot {
+    td {
+      border-bottom: none;
     }
   }
 
 }
 
+@if $tableAppendOutput {
+  
+  // 边线
+  .t-table-bordered th, .t-table-bordered td { 
+    border: 1px solid #DDD;
+  }
 
-.t-table th {
-  padding: 8px;
-  border-top: 1px solid #DDD;
-  border-bottom: 1px solid #DDD;
-  background: #FAFAFA;
-  color: #666;
-  font-weight: 700;
+  // 斑马线
+  .t-table-striped tr:nth-child(2n) { 
+    background-color: #f8f8f8;
+  }
+
+  // 斑马线 for IE8, 需在页面<table>中隔行定义
+  .t-bg-gray { 
+    background-color: #f8f8f8;
+  }
+
+  // 紧凑
+  .t-table-condensed th, .t-table-condensed td { 
+    padding: 5px;
+  }
+  
+  // 输出表格信息
+  @if $tableInfoOutput {
+
+    /* ========== table-info components ========== */
+    .t-table-info {
+      & > caption {
+        border: 1px solid #DDD;
+        border-bottom: none;
+        text-align: left;
+        background: #f1f5f8;
+      }
+
+      th, td {
+        padding: 5px 8px;
+        border: 1px solid #DDD;
+      }
+
+      .td-label { 
+        background-color: #f8f8f8;
+        text-align: right;
+        width: 120px;
+        color: $grayDark;
+      }
+
+      .td-content { 
+        color: $blackLight;
+      }
+
+    }
+  }
+  
 }
 
-.t-table td {
-  padding: 8px;
-  border-bottom: 1px solid #DDD;
-  line-height: 16px;
+@if $norecordOutput {
+  /* ========== norecord components ========== */
+  .t-norecord { 
+    text-align: center;
+    padding-top: 10px;
+    i {
+      font-size: 30px;
+      line-height: 30px;
+      color: #D8D8D8;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+      line-height: 24px;
+      color: #999;
+    }
+  }
 }
-
-.t-table tfoot td {
-  padding: 8px 0;
-  border-bottom: none;
-}
-
-.t-table td.tooltip a {
-  color: #9aacbd;
-  text-decoration: none;
-}
-
-.t-table thead th {
-  text-align: left;
-}
-
-.t-table tbody>tr:hover>td {
-  background-color: #e9f5ff;
-}
-
-
-/* 有边线 */
-.t-table-bordered th, .t-table-bordered td { border: 1px solid #DDD;}
-
-/* 有斑马线 */
-.t-table-striped tr:nth-child(2n) { background-color: #f8f8f8;}
-
-/* 紧凑 */
-.t-table-condensed th, .t-table-condensed td { padding: 5px; }
-
-/* 表格信息 */
-.t-table-info { }
-.t-table-info caption { border: 1px solid #DDD; border-bottom: none; text-align: left; background: #f1f5f8; }
-.t-table-info th, .t-table-info td { padding: 5px 8px; border: 1px solid #DDD; }
-.t-table-info .td-label { background-color: #f8f8f8; text-align: right; width: 120px; color: #666; }
-.t-table-info .td-content { color: #333;}
-
-/* 斑马线forIE8 */
-.t-bg-gray { background-color: #f8f8f8;}
-
-/* 选中整行、消息、成功、错误、警告 */
-.t-table tbody > tr.selected td { background-color: #fff5cc; }
-.t-table tbody > tr.selected:hover td { background-color: #fff5cc; }
-.t-table tbody > tr.info td { background-color: #d5edf8; }
-.t-table tbody > tr.info:hover td { background-color: #bfe4f4; }
-.t-table tbody > tr.success td { background-color: #e6efc2; }
-.t-table tbody > tr.success:hover td { background-color: #deeaae; }
-.t-table tbody > tr.error td { background-color: #fbe3e4; }
-.t-table tbody > tr.error:hover td { background-color: #f8cdce; }
-.t-table tbody > tr.warning td { background-color: #fff6bf; }
-.t-table tbody > tr.warning:hover td { background-color: #fff2a6; }
-
-/* 暂无数据记录 */
-.t-norecord { text-align: center; padding-top: 10px; }
-.t-norecord i { font-size: 30px; line-height: 30px; color: #D8D8D8;}
-.t-norecord p { font-size: 12px; margin: 0; line-height: 24px; color: #999;}
-
-/* 星级、操作状态 */
-.star-level { font-size: 14px;}
-.star-level i { float: left; color: #ff9628;}
-.star-level i.disabled { color: #CCC;}
-.status span, .status-done span, .status-todo span { display: inline-block; padding: 2px 8px; border-radius: 3px; color: #FFF; font-weight: normal; }
-.status span { background: #E3E3E3; color: #777;}
-.status-todo span { background: #82be38; }
-.status-done span { background: #ffab00; }
-.star-level:after, .star-level:before { display: block; content: ""; clear: both; height: 0; font-size: 0; overflow: hidden; }

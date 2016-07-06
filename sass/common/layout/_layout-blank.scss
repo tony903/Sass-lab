@@ -1,25 +1,72 @@
 @charset "UTF-8";
 
-// 内部滚动条开关
+// 参数设置
 // -----------------------------------------------------
-$innerBoxScroll:        true !default; 
+$innerPadding:          10px !default; // 内间距
 
-// 绝对定位，内部溢出显示纵向滚动条
-@if not $wrapperAutoWidth and $wrapperAbsolute and $innerBoxScroll  {
+// 如果不是绝对定位，销毁内部容器滚动条
+@if not $wrapperAbsolute {
+  $innerBoxScroll: false;
+}
+
+/* layout */
+
+// 公用
+%Yscroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+%boxAbsolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+// 默认，不控制滚动条显示
+@if not $innerBoxScroll {
   
-  .t-wrap-container {
-    overflow: hidden;
+  // 清除父级
+  .t-wrap-container, .t-container, .t-layout {
+    @extend %clearfix;
   }
 
-  #t-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: $innerContainer;
-    left: 50%;
-    margin-left: -$wrapInnerWidth/2;
-    overflow-x: hidden;
-    overflow-y: auto;
+  .t-layout {
+    padding: $innerPadding;
+  }
+}
+
+// 绝对定位，内部溢出显示纵向滚动条
+@if $wrapperAbsolute and $innerBoxScroll {
+
+  // 固定宽度
+  @if not $wrapperAutoWidth {
+
+    .t-wrap-container {
+      overflow: hidden;
+    }
+  
+    #t-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: $wrapInnerWidth;
+      left: 50%;
+      margin-left: -$wrapInnerWidth/2;
+      @extend %Yscroll;
+    }
+  }
+  
+  // 自适应宽度
+  @if $wrapperAutoWidth {
+    #t-container {
+      position: static;
+      @extend %Yscroll;
+    }
+  }
+  
+  .t-layout {
+    padding: $innerPadding;
   }
 
 }

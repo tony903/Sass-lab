@@ -8,7 +8,7 @@ Sass-lab可根据项目需要量身定制，自由组合，抛弃冗余。避免
 
 Sass-lab含有非常丰富的UI组件，通过简单配置，就可以生成不同内容、不同风格的样式及页面代码。在代码执行效率、可扩展、可维护等方面优势明显。
 
-<img src="https://raw.githubusercontent.com/tony903/Sass-lab/master/src/assets/imgs/sass-lab.png" width="500" height="280" align="center" />
+<img src="https://raw.githubusercontent.com/tony903/Sass-lab/master/src/assets/imgs/sass-lab.png" width="600" height="336" style="margin:0 auto;" />
 
 ## 操作
 

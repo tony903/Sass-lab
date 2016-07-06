@@ -46,7 +46,7 @@ gulp.task('connect', function() {
 // outputStyle: compressed 压缩; compact 简洁; nested 嵌套; expanded 展开;
 gulp.task('sass',function(){
     return gulp.src(['compile/**/*.scss'])
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
         .pipe( gulp.dest('src/assets/css/'));
 });
 

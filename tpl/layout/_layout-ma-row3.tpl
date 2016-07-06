@@ -6,8 +6,10 @@
         </div>
         <div class="t-layout-middle">
           <div class="t-layout-middleinner"> 
-            <!-- 中间内容 -->
-            <p class="example-p">中间宽度自适应</p>
+            @@include('../table/_table.tpl')
+            @@include('../table/_table-info.tpl')
+            @@include('../tag/_tags.tpl')
+            @@include('../loading/_loading-cmcc.tpl')
           </div>
         </div>
         <div class="t-layout-right"> 

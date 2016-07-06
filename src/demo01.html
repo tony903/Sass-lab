@@ -5,7 +5,7 @@
   <meta name="renderer" content="webkit"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <link rel="stylesheet" type="text/css" href="assets/css/demo01.css">
-  <title>Sass-lab</title>
+  <title>一列，基本布局</title>
 </head>
 <body>
 <div class="t-wrapper">
@@ -13,35 +13,12 @@
     <div id="t-header">
       <!-- app切换器 -->
       
-        <div class="t-app-switcher">
-        <a href="javascript:void(0)" onclick="appswitch.className='show'">
-          <i class="iconfont icon-leimu"></i>
-        </a>
-        <ul id="appswitch">
-          <li class="current">
-            <a href="#nogo">
-              Sass实验室
-            </a>
-          </li>
-          <li>
-            <a href="#nogo">
-              中国移动积分基地
-            </a>
-          </li>
-          <li>
-            <a href="#nogo">
-              多商户入驻
-            </a>
-          </li>
-        </ul>
-      </div>
-      
       <!-- logo -->
       
         <h1 class="t-logo" href="#nogo">
         <a href="#nogo">
           <i class="iconfont icon-sasslab"></i>
-          <p>Sass实验室</p>
+          <p>Sass-lab</p>
         </a>
       </h1>
       
@@ -84,14 +61,14 @@
       
         <div class="t-head-user">
         <a href="javascript:void(0)" onclick="userinfo.className='show'">
-          <img src="assets/img/user-default.png" alt="">
+          <img src="assets/imgs/user-default.png" alt="">
           <span>tony903</span>
-          <i class="iconfont icon-iconfontjiantou"></i>
+          <i class="iconfont icon-iconfontjiantou-copy-copy"></i>
         </a>
         <ul id="userinfo">
           <li>
             <p>
-              <span>姓名：</span>张孝蛮
+              <span>姓名：</span>忽爱慕爱
             </p>
           </li>
           <li>
@@ -121,7 +98,7 @@
           <input type="submit">
           <!-- 点击图标搜索 -->
           <a href="#nogo">
-            <i class="iconfont icon-chaxun"></i>
+            <i class="iconfont icon-chaxun1"></i>
           </a>
         </form>
       </div>
@@ -130,27 +107,210 @@
   </div>
   <div class="t-wrap-container">
     <div id="t-container">
-      app
-        <!-- 两列，右侧自适应宽度 -->
+      
+        <!-- 一列，基本布局 -->
       <div class="t-layout">
-        <div class="t-layout-left"> 
-          <!-- 左侧内容 -->
-          <p class="example-p">左侧宽度固定</p>
-        </div>
-        <div class="t-layout-right">
-          <div class="t-layout-rightinner"> 
-            <!-- 右侧内容 -->
-            <p class="example-p">右侧宽度自适应</p>
-          </div>
-        </div>
+        <!-- 内容 -->
+        <!-- 表格 -->
+            <table class="t-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox">
+                  </th>
+                  <th>主要字段</th>
+                  <th>类型</th>
+                  <th>受理号码</th>
+                  <th>用户姓名</th>
+                  <th>用户级别</th>
+                  <th>用户品牌</th>
+                  <th>操作状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>神州行</td>
+                  <td>
+                    <div class="t-tag-todo">
+                      <span>未处理</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>4G套餐</td>
+                  <td>
+                    <div class="t-tag-done">
+                      <span>已处理</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>神州行</td>
+                  <td>
+                    <div class="t-tag">
+                      <span>默认的</span> 
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 暂无数据记录 -->
+            <div class="t-norecord">
+              <i class="iconfont icon-norecord"></i>
+              <p>暂无数据记录</p>
+            </div>
+        <!-- 表格信息 -->
+            <table class="t-table t-table-info">
+              <caption>基本参数</caption>
+              <tbody>
+                <tr>
+                  <td class="td-label">品牌</td>
+                  <td class="td-content">苹果</td>
+                  <td class="td-label">型号</td>
+                  <td class="td-content">iphoneSE</td>
+                </tr>
+                <tr>
+                  <td class="td-label">上市时间</td>
+                  <td class="td-content">2016年3月</td>
+                  <td class="td-label">输入方式</td>
+                  <td class="td-content">触控</td>
+                </tr>
+                <tr>
+                  <td class="td-label">智能机</td>
+                  <td class="td-content">是</td>
+                  <td class="td-label">操作系统</td>
+                  <td class="td-content">IOS</td>
+                </tr>
+                <tr>
+                  <td class="td-label">屏幕尺寸</td>
+                  <td class="td-content">4.0英寸</td>
+                  <td class="td-label">储存卡类型</td>
+                  <td class="td-content">不支持</td>
+                </tr>
+                <tr>
+                  <td class="td-label">机身内存</td>
+                  <td class="td-content">16GB ROM</td>
+                  <td class="td-label">运行内存</td>
+                  <td class="td-content">2GB RAM</td>
+                </tr>
+              </tbody>
+            </table>
+        <!-- 标签 -->
+            <div>
+              <span class="t-tag-todo">已处理</span>
+              <span class="t-tag-done">待处理</span>
+              <span class="t-tag">默认</span> 
+            </div>
+
+            <br/>
+
+            <!-- 可删除标签 -->
+            <div>
+              <span class="t-tag-del">
+                  华为<a href="###" class="iconfont icon-chahao"></a>
+              </span>
+              <span class="t-tag-del">
+                  联想<a href="###" class="iconfont icon-chahao"></a>
+              </span>
+              <span class="t-tag-del">
+                  苹果<a href="###" class="iconfont icon-chahao"></a>
+              </span>
+            </div>
+                      
+            <!-- 选择标签 -->
+            <div>
+              <a class="t-tag-category selected"><p>国行全网通</p></a>
+              <a class="t-tag-category"><p>国行移动4G</p></a>
+              <a class="t-tag-category"><p>国行联通4G</p></a>
+              <a class="t-tag-category"><p>国行电信4G</p></a>
+            </div>
+
+            <!-- 选择标签large -->
+            <div>
+              <a class="t-tag-category-lg selected"><p>国行全网通</p></a>
+              <a class="t-tag-category-lg"><p>国行移动4G</p></a>
+              <a class="t-tag-category-lg"><p>国行联通4G</p></a>
+              <a class="t-tag-category-lg"><p>国行电信4G</p></a>
+            </div>
+
+            <!-- 徽章 -->
+            <div>
+              <span class="t-badge">2</span>
+              <span class="t-badge">99+</span>
+              <span class="t-badge-red">3</span>
+              <span class="t-badge-red">99+</span>
+            </div>
+
+            <br/>
+
+            <!-- 星级 -->
+            <div class="t-stars">
+              <i class="iconfont icon-xingxing"></i>
+              <i class="iconfont icon-xingxing"></i>
+              <i class="iconfont icon-xingxing"></i>
+              <i class="iconfont icon-xingxing disabled"></i>
+              <i class="iconfont icon-xingxing disabled"></i>
+            </div>
+        <!-- loading -->
+            <div class="t-loading-cmcc">努力加载中...</div>
       </div>
+      
       
     </div>
   </div>
   <div class="t-wrap-footer">
     <div id="t-footer">
       
-        <p>Sass实验室 <a href="mailto:kevin903@163.com">@tonytian</a></p>
+        <p>木有版权 &copy; Sass实验室 <a href="mailto:kevin903@163.com">@tonytian</a></p>
       
     </div>
   </div>

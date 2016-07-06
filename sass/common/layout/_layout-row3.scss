@@ -1,25 +1,31 @@
 @charset "UTF-8";
 
-// 内部滚动条开关
-// -----------------------------------------------------
-$innerBoxScroll:        true !default; 
-
 // 参数设置
 // -----------------------------------------------------
-$whoAuto:               right !default; // 谁自适应？left,right
+$rightSideAuto:         true !default; // true右侧自适应; false左侧自适应
 $fixedWidth:            200px 240px !default; // 固定宽度值
 $gapWidth:              10px !default; // 间隔宽度值
+$innerPadding:          10px !default; // 内间距
 
-// 左侧自适应
-@if $whoAuto == left {
-  $sideA: left;
-  $sideB: right;
+// 默认右侧自适应宽度
+@if $widthAutoSide == 'right' {
+  $rightSideAuto: true;
+}@else {
+  $rightSideAuto: false;
 }
 
-// 右侧自适应
-@if $whoAuto == right {
+// 如果不是绝对定位，销毁内部容器滚动条
+@if not $wrapperAbsolute {
+  $innerBoxScroll: false; 
+}
+
+// 自适应模块
+@if $rightSideAuto {
   $sideA: right;
   $sideB: left;
+}@else {
+  $sideA: left;
+  $sideB: right;
 }
 
 // 公用
@@ -39,7 +45,7 @@ $gapWidth:              10px !default; // 间隔宽度值
 
   // 清除父级
   .t-wrap-container, .t-container, .t-layout {
-    @extend clearfix;
+    @extend %clearfix;
   }
   
   .t-layout {
@@ -66,6 +72,7 @@ $gapWidth:              10px !default; // 间隔宽度值
 
     .t-layout-#{$sideA}inner {
       margin-#{$sideB}: nth($fixedWidth,1) + nth($fixedWidth,2) + $gapWidth * 2;
+      padding: $innerPadding;
     }
 
   }
@@ -126,6 +133,7 @@ $gapWidth:              10px !default; // 间隔宽度值
       @extend %Yscroll;
       #{$sideB}: 0;
       #{$sideA}: 0;
+      padding: $innerPadding;
     }
 
   }

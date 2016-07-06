@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+// 包装器设置
+// -----------------------------------------------------
+// 自适应宽度
+$wrapperAutoWidth:      true !default; // false 固定宽度
+// 绝对定位
+$wrapperAbsolute:       true !default; // false 不定位
+// 头部
+$wrapHeader:            40px $color01; // 内部高度、背景色
+// 容器
+$wrapInnerWidth:        1200px !default; // 容器内部宽度
+$wrapContainerBg:       $white $white; // 容器外部、内部背景色
+$innerBoxScroll:        true !default; // 超出显示滚动条，false 不显示 
+// 底部
+$wrapperHasFooter:      false !default; // false 不含底部
+$wrapFooter:            30px $blackLight; // 底部高度及背景色
+
+
+// 头部样式输出开关
+// -----------------------------------------------------
+// app切换器
+$appSwitcherOutput:     true !default;
+
+// logo
+$headerLogoOutput:      true !default;
+$headerLogoColor:       $yellow !default;
+$headerImgLogo:         false !default; // 使用图片，默认使用iconfont
+$headerImgLogoWidth:    30px !default; // 宽度
+
+// 导航
+$headerNavOutput:       true !default;
+// 搜索
+$headerSearchOutput:    true !default;
+// 用户信息
+$headerUserOutput:      true !default;
+// 链接hover状态
+$linkHoverDarker:       false !default; // 背景色变浅，false背景色加深
+
+
+// 布局 layout
+// -----------------------------------------------------
+// 列
+$layoutRow:             2 !default; // 1, 2, 3
+// 自适应方向
+$widthAutoSide:         right !default; // left, right, middle
+
+
+// 组件样式输出开关
+// -----------------------------------------------------  
+// table
+$tableCaptionOutput:      true !default; // 标题
+$tableAppendOutput:       true !default; // 支持样式追加
+$trStatusOutput:          true !default; // 整行选中、警告、错误等状态
+$norecordOutput:          true !default; // 暂无数据
+$tableInfoOutput:         true !default; // 表格信息
+
+// tags
+$tagOutput:               true !default; // 默认标签
+$tagDeleteOutput:         true !default; // 可关闭标签
+$tagCategoryOutput:       true !default; // 可选择标签
+$tagCategoryLargeOutput:  true !default; // 大号可选择标签
+$starsOutput:             true !default; // 星级
+$badgeOutput:             true !default; // 徽章
+$loadingOutput:           true !default; // loading
+
+// list
+$listTitle:               40px $white !default; // 标题
+$listWarningInputOutput:  true !default // 警示文本框
+$listInputIconBgOutput:   true !default // 文本框右侧位图图标
+
+
+

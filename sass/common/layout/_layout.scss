@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+// 一列
+@if $layoutRow == 1 {
+  @import "layout-blank";
+}
+
+// 两列
+@if $layoutRow == 2 {
+  @import "layout-row2";
+}
+
+// 三列
+@if $layoutRow == 3 {
+  @if $widthAutoSide == 'middle' {
+    @import "layout-ma-row3";
+  }@else {
+    @import "layout-row3";
+  }
+}

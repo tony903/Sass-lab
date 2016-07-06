@@ -1,13 +1,15 @@
 @charset "UTF-8";
 
-// 内部滚动条开关
-// -----------------------------------------------------
-$innerBoxScroll:        true !default; 
-
 // 参数设置
 // -----------------------------------------------------
 $fixedWidth:            200px 240px; //左侧、右侧固定宽度
 $gapWidth:              10px; //间隔宽度
+$innerPadding:          10px !default; // 内间距
+
+// 如果不是绝对定位，销毁内部容器滚动条
+@if not $wrapperAbsolute {
+  $innerBoxScroll: false; 
+}
 
 // 公用
 %Yscroll {
@@ -26,7 +28,7 @@ $gapWidth:              10px; //间隔宽度
 
   // 清除父级
   .t-wrap-container, .t-container, .t-layout-ma-row3 {
-    @extend clearfix;
+    @extend %clearfix;
   }
   
   .t-layout-ma-row3 {
@@ -55,6 +57,7 @@ $gapWidth:              10px; //间隔宽度
     .t-layout-middleinner {
       margin-left: nth($fixedWidth,1) + $gapWidth;
       margin-right: nth($fixedWidth,2) + $gapWidth;
+      padding: $innerPadding;
     }
 
   }
@@ -115,6 +118,7 @@ $gapWidth:              10px; //间隔宽度
       @extend %Yscroll;
       left: 0;
       right: 0;
+      padding: $innerPadding;
     }
 
   }

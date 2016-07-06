@@ -1,33 +1,34 @@
 @charset "UTF-8";
 
-// 开关
-// -----------------------------------------------------
-$appSwitcher:           true !default; // app切换器
-$headerLogo:            true !default; // logo
-$headerNav:             true !default; // 导航
-$headerSearch:          true !default; // 搜索
-$headerUser:            true !default; // 用户信息
-
+/* header */
 #t-header {
   color: $white;
   line-height: nth($wrapHeader,1);
-  @extend clearfix;
+  @extend %clearfix;
 }
 
 %toplink {
   display: block;
   color: lighten(nth($wrapHeader,2), 60%);
   cursor: pointer;
-  &:hover {
-    background: lighten(nth($wrapHeader,2), 15%);
+
+  @if not $linkHoverDarker {
+    &:hover {
+      background: lighten(nth($wrapHeader,2), 20%);
+    }
+    }@else {
+    &:hover {
+      background: darken(nth($wrapHeader,2), 20%);
+    }
   }
+  
 }
 
 %toplayer {
   @extend %hidden;//默认隐藏
   position: absolute;
   top: nth($wrapHeader,1) + 2px;
-  z-index: 9900;
+  z-index: $zindexModal;
   list-style: none;
   @include float(left);
   @include box-shadow(1px 1px 3px #999);
@@ -43,18 +44,28 @@ $headerUser:            true !default; // 用户信息
 
 // logo
 // -----------------------------------------------------
-@if $headerLogo {
+@if $headerLogoOutput {
   .t-logo {
     color: $white;
     margin: 0 6px;
     @include float(left);
     line-height: nth($wrapHeader,1);
 
-    i {
-      font-size: 26px;
-      @include float(left);
-      padding-right: 4px;
-    }
+    // 默认使用适量图标
+    @if not $headerImgLogo {
+      i {
+        font-size: 26px;
+        @include float(left);
+        padding-right: 4px;
+      }
+      }@else {
+        img {
+          @include float(left);
+          height: $headerImgLogoWidth;
+          margin-top: ($wrapHeader － $headerImgLogoWidth) / 2;
+        }
+      }
+
     p {
       font-size: 18px;
       @include float(left);
@@ -63,7 +74,7 @@ $headerUser:            true !default; // 用户信息
 
     a {
       @extend %toplink;
-      color: $color02;
+      color: $headerLogoColor;
       padding: 0 6px;
     }
 
@@ -72,7 +83,7 @@ $headerUser:            true !default; // 用户信息
 
 // nav
 // -----------------------------------------------------
-@if $headerNav {
+@if $headerNavOutput {
   .t-head-nav {
     list-style: none;
     @include float(left);
@@ -97,13 +108,13 @@ $headerUser:            true !default; // 用户信息
 
 // search
 // -----------------------------------------------------
-@if $headerSearch {
+@if $headerSearchOutput {
   .t-head-search {
     @include float(right);
     width: 200px;
     height: 28px;
     background: darken(nth($wrapHeader,2), 15%);
-    margin-top: 6px;
+    margin-top: (nth($wrapHeader,1) - 28px) / 2;
     margin-right: 12px;
     border-radius: 3px;
 
@@ -153,7 +164,7 @@ $headerUser:            true !default; // 用户信息
 
 // userinfo
 // -----------------------------------------------------
-@if $headerUser {
+@if $headerUserOutput {
   .t-head-user {
     position: relative;
     @include float(right);
@@ -161,15 +172,16 @@ $headerUser:            true !default; // 用户信息
 
     & > a {
       @extend %toplink;
+      height: nth($wrapHeader,1);
       padding: 0 6px;
 
       img {
         @include float(left);
-        margin-top: 8px;
-        margin-right: 6px;
-        max-width: 24px;
-        max-height: 24px;
+        width: 24px;
+        height: 24px;
         border-radius: 12px;
+        margin-top: (nth($wrapHeader,1) - 24px) / 2;
+        margin-right: 6px;
       }
 
       span {
@@ -224,8 +236,9 @@ $headerUser:            true !default; // 用户信息
 
 // appSwitcher
 // -----------------------------------------------------
-@if $appSwitcher {
-
+@if $appSwitcherOutput {
+  
+  /* app-switcher */
   .t-app-switcher {
     position: relative;
     width: nth($wrapHeader,1);

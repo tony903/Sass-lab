@@ -1,13 +1,13 @@
 <div class="t-head-user">
         <a href="javascript:void(0)" onclick="userinfo.className='show'">
-          <img src="assets/img/user-default.png" alt="">
+          <img src="assets/imgs/user-default.png" alt="">
           <span>tony903</span>
-          <i class="iconfont icon-iconfontjiantou"></i>
+          <i class="iconfont icon-iconfontjiantou-copy-copy"></i>
         </a>
         <ul id="userinfo">
           <li>
             <p>
-              <span>姓名：</span>张孝蛮
+              <span>姓名：</span>忽爱慕爱
             </p>
           </li>
           <li>

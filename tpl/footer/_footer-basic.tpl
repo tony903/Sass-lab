@@ -1,1 +1,1 @@
-<p>Sass实验室 <a href="mailto:kevin903@163.com">@tonytian</a></p>
+<p>木有版权 &copy; Sass实验室 <a href="mailto:kevin903@163.com">@tonytian</a></p>
