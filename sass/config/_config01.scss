@@ -44,6 +44,21 @@ $tagCategoryLargeOutput:  true !default; // 大号可选择标签
 $starsOutput:             true !default; // 星级
 $badgeOutput:             true !default; // 徽章
 
+// popup
+$popupHasOverlay:         true !default; // 半透明遮罩
+$popupHasBoxshadow:       true !default; // 阴影
+$popupTitleStyle:         40px $grayLightest #E8E8E8; // 弹出层标题高度、背景色、底部边线颜色
+$popupBottomHeight:       50px; // 弹出层底部高度
+
+$popupLayerOutput:        true !default; // 弹出层
+$popupLayerSize:          600px 320px !default; // 弹出层宽度、高度
+$popupLayerGap:           10px; // 弹出层上下间距
+$popupLayerHaveBottom:    true !default; //底部操作区
+
+$popupAlertOutput:        true !default; // 弹出消息
+$popupAlertSize:          380px 200px !default; // 弹出消息宽度、高度
+
 // loading
 $loadingOutput:           true !default; // loading
 $loadingBorder:           false !default; // 边线
+

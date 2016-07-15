@@ -62,3 +62,7 @@
   </div>
 
 </div>
+
+@@if (outer) {
+  @@include('../../@@outer')
+}

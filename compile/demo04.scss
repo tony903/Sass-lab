@@ -12,6 +12,7 @@
 
 // Wrapper
 @import "../sass/common/frame/frame01";
+@import "../sass/common/common";
 
 // Common
 @import "../iconfont/iconfont.css"; //矢量图标
@@ -21,4 +22,6 @@
 @import "../sass/components/nav-left";
 @import "../sass/components/table";
 @import "../sass/components/tags";
+@import "../sass/components/btn";
 @import "../sass/components/loading";
+@import "../sass/components/popup";

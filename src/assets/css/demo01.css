@@ -136,7 +136,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-sidebar { width: 200px; position: fixed; z-index: 4; left: 0; top: 190px; bottom: 0; }
 
-.t-title { position: fixed; left: 200px; top: 0; right: 0; z-index: 10000; height: 50px; line-height: 50px; background: #fff; border-bottom: 1px solid #DDD; box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2); }
+.t-title { position: fixed; left: 200px; top: 0; right: 0; z-index: 1000; height: 50px; line-height: 50px; background: #fff; border-bottom: 1px solid #DDD; box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2); }
 
 .t-title > h2 { display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; font-size: 18px; padding-left: 15px; }
 
@@ -191,6 +191,14 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-panel .t-panel-content { padding: 10px; }
 
 .t-panel .t-panel-content img { max-width: 100%; }
+
+.show { display: block; visibility: visible; }
+
+.hide { display: none; visibility: hidden; }
+
+.fl { float: left; }
+
+.fr { float: right; }
 
 .t-sidebar-navs { padding-top: 10px; position: relative; height: 100%; background: #32323a; overflow: hidden; }
 
@@ -317,6 +325,37 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-badge-red { background: #cc3300; }
 
+/* ========== btn components ========== */
+.t-btn { display: inline-block; padding: 6px 14px; font-size: 12px; line-height: 1; border-radius: 3px; border: 1px solid #DDD; background: #fff; text-decoration: none; cursor: pointer; position: relative; white-space: nowrap; outline: none; color: #333; }
+
+.t-btn:hover { background: #F9F9F9; border-color: #ccc; color: #333; }
+
+.t-btn:active { background: #EEE; border-color: #ccc; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset; }
+
+.t-btn-blue { background: #339dd9; border-color: #2690cc; color: #fff; }
+
+.t-btn-blue:hover { background: #48a7dd; border-color: #339dd9; color: #fff; }
+
+.t-btn-blue:active { background: #2690cc; border-color: #2281b7; }
+
+.t-btn-green { background: #51B148; border-color: #499f41; color: #fff; }
+
+.t-btn-green:hover { background: #60bb58; border-color: #51B148; color: #fff; }
+
+.t-btn-green:active { background: #499f41; border-color: #408d39; }
+
+.t-btn-disabled { background: #F9F9F9; border-color: #E6E6E6; color: #AAA; cursor: not-allowed; }
+
+.t-btn-disabled:hover { background: #F9F9F9; border-color: #E6E6E6; color: #AAA; }
+
+.t-btn-disabled:active { box-shadow: none; }
+
+.t-btn-sm { padding: 4px 5px; }
+
+.t-btn-lg { font-size: 14px; border-radius: 5px; padding: 12px 30px; padding: 13px 30px 11px 30px\9; }
+
+.t-btn-link { padding: 0; border: none; text-decoration: none; cursor: pointer; position: relative; white-space: nowrap; outline: none; font-size: 12px; color: #347AC7; }
+
 /* ========== loading components ========== */
 .t-loading, .t-loading-cmcc, .t-loading-cmcc-lg { display: inline-block; line-height: 1.5; color: #666; }
 
@@ -325,3 +364,48 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-loading-cmcc { font-size: 12px; padding: 8px 20px 8px 35px; background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px; }
 
 .t-loading-cmcc-lg { font-size: 14px; padding: 14px 20px 14px 50px; background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px; }
+
+/* ========== popup components ========== */
+.t-popup, .t-popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+
+.t-popup { z-index: 1110; }
+
+.t-popup-overlay { z-index: 1100; background-color: #000; opacity: 0.5; filter: alpha(opacity=50); }
+
+.t-popup-container { position: absolute; top: 50%; left: 50%; z-index: 1105; background-color: #fff; border-radius: 5px; -webkit-box-shadow: 1px 1px 3px #666; -moz-box-shadow: 1px 1px 3px #666; box-shadow: 1px 1px 3px #666; }
+
+.t-popup-title { height: 40px; background: #f5f5f5; border-bottom: 1px solid #E8E8E8; padding: 0 10px 0 15px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+
+.t-popup-title h3, .t-popup-title a { height: 40px; line-height: 40px; }
+
+.t-popup-title h3 { float: left; display: inline; font-weight: normal; color: #333; font-size: 14px; padding: 0; margin: 0; }
+
+.t-popup-title a { float: right; display: inline; padding: 0 6px; font-size: 16px; font-family: 'sans-serif'; color: #999; text-align: center; text-decoration: none; }
+
+.t-popup-title a:hover { color: #333; }
+
+.t-popup-content { box-sizing: content-box; padding: 0 15px; }
+
+.t-popup-bottom { box-sizing: content-box; height: 50px; text-align: center; }
+
+.t-popup-bottom .t-btn { margin-top: 4px; margin-left: 5px; margin-right: 5px; padding-left: 30px; padding-right: 30px; outline: none; }
+
+.t-popup-layer .t-popup-container { width: 600px; height: 320px; margin-left: -300px; margin-top: -160px; }
+
+.t-popup-layer .t-popup-content { padding-top: 10px; padding-bottom: 10px; font-size: 12px; overflow-x: hidden; overflow-y: auto; }
+
+.t-popup-layer .t-popup-content { height: 210px; }
+
+.t-popup-alert .t-popup-title { display: none !important; visibility: hidden; }
+
+.t-popup-alert .t-popup-container { width: 380px; height: 200px; margin-left: -190px; margin-top: -100px; }
+
+.t-popup-alert .t-popup-content { height: 130px; margin-top: 20px; font-size: 12px; text-align: center; }
+
+.t-popup-alert .t-popup-content i { font-size: 60px; line-height: 1; color: #f5884f; }
+
+.t-popup-alert .t-popup-content p { padding-top: 10px; font-size: 12px; color: #333; line-height: 22px; }
+
+.t-popup-alert .t-popup-bottom { border-top: 1px solid #E8E8E8; background: #f5f5f5; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+
+.t-popup-alert .t-btn { margin-top: 10px; }
