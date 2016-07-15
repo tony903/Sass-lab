@@ -24,265 +24,27 @@
   
 }
 
-%toplayer {
-  @extend %hidden;//默认隐藏
-  position: absolute;
-  top: nth($wrapHeader,1) + 2px;
-  z-index: $zindexModal;
-  list-style: none;
-  @include float(left);
-  @include box-shadow(1px 1px 3px #999);
-  text-align: left;
-  border: 1px solid #DDD;
-  background: $white;
-  
-  &.show {
-    display: block !important;
-    visibility: visible;
-  }
-}
-
 // logo
-// -----------------------------------------------------
 @if $headerLogoOutput {
-  .t-logo {
-    color: $white;
-    margin: 0 6px;
-    @include float(left);
-    line-height: nth($wrapHeader,1);
-
-    // 默认使用适量图标
-    @if not $headerImgLogo {
-      i {
-        font-size: 26px;
-        @include float(left);
-        padding-right: 4px;
-      }
-      }@else {
-        img {
-          @include float(left);
-          height: $headerImgLogoWidth;
-          margin-top: ($wrapHeader － $headerImgLogoWidth) / 2;
-        }
-      }
-
-    p {
-      font-size: 18px;
-      @include float(left);
-      @extend %inline-block;
-    }
-
-    a {
-      @extend %toplink;
-      color: $headerLogoColor;
-      padding: 0 6px;
-    }
-
-  }
+  @import "header/header-logo";
 }
 
 // nav
-// -----------------------------------------------------
 @if $headerNavOutput {
-  .t-head-nav {
-    list-style: none;
-    @include float(left);
-    
-    & > li {
-      @extend %inline-block;
-      line-height: nth($wrapHeader,1);
-      i {
-        font-size: 12px;
-      }
-
-      a {
-        @extend %toplink;
-        padding: 0 10px;
-      }
-      
-    }
-
-  }
-
+  @import "header/header-nav";
 }
 
 // search
-// -----------------------------------------------------
 @if $headerSearchOutput {
-  .t-head-search {
-    @include float(right);
-    width: 200px;
-    height: 28px;
-    background: darken(nth($wrapHeader,2), 15%);
-    margin-top: (nth($wrapHeader,1) - 28px) / 2;
-    margin-right: 12px;
-    border-radius: 3px;
-
-    input[type="text"] {
-      @include float(left);
-      border: none;
-      width: 166px;
-      height: 28px;
-      line-height: 28px;
-      padding: 0 6px;
-      color: $white;
-      outline: none;
-      background: transparent;
-    }
-
-    input[type="submit"] {
-      @extend %hidden;
-    }
-
-    form {
-      position: relative;
-      top: 0;
-
-      a {
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: block;
-        height: 28px;
-        line-height: 28px;
-        width: 24px;
-        font-size: 14px;
-        text-align: center;
-        color: lighten(nth($wrapHeader,2), 30%);
-        &:hover {
-          color: lighten(nth($wrapHeader,2), 40%);
-        }
-        i {
-          font-size: 14px;
-        }
-      }
-
-    }
-
-  }
+  @import "header/header-search"; 
 }
 
-// userinfo
-// -----------------------------------------------------
+// user
 @if $headerUserOutput {
-  .t-head-user {
-    position: relative;
-    @include float(right);
-    margin-right: 6px;
-
-    & > a {
-      @extend %toplink;
-      height: nth($wrapHeader,1);
-      padding: 0 6px;
-
-      img {
-        @include float(left);
-        width: 24px;
-        height: 24px;
-        border-radius: 12px;
-        margin-top: (nth($wrapHeader,1) - 24px) / 2;
-        margin-right: 6px;
-      }
-
-      span {
-        @include float(left);
-        font-size: 14px;
-      }
-
-    }
-
-    & > ul {
-      @extend %toplayer;
-      width: 160px;
-      right: 0;
-
-      li {
-        width: 100%;
-        line-height: 20px;
-        text-indent: 6px;
-        margin-bottom: 1px;
-        border-bottom: 1px solid #E6E6E6;
-        color: $blackLight;
-
-        &:last-child {
-          border-bottom: none;
-        }
-
-        p {
-          padding: 4px 6px;
-          @include ellipsis(95%);
-
-          span {
-            color: $grayDark;
-          }
-        }
-
-        a {
-          display: block;
-          padding: 4px 6px;
-          background: $white;
-          color: lighten(nth($wrapHeader,2), 10%);
-          &:hover {
-            color: $white;
-            background: nth($wrapHeader,2);
-          }
-        }
-
-      }
-
-    }
-  }
+  @import "header/header-user";
 }
 
 // appSwitcher
-// -----------------------------------------------------
 @if $appSwitcherOutput {
-  
-  /* app-switcher */
-  .t-app-switcher {
-    position: relative;
-    width: nth($wrapHeader,1);
-    height: nth($wrapHeader,1);
-    @include float(left);
-    margin-left: 6px;
-    text-align: center;
-
-    & > a {
-      display: block;
-      width: nth($wrapHeader,1);
-      height: nth($wrapHeader,1);
-      @extend %toplink;
-    }
-
-    & > ul {
-      @extend %toplayer;
-      width: 180px;
-      left: 0;
-
-      li {
-        width: 100%;
-        line-height: 20px;
-        text-indent: 6px;
-        margin-bottom: 1px;
-        a {
-          display: block;
-          padding: 4px 6px;
-          color: $blackLight;
-          &:hover {
-            color: $white;
-            background: lighten(nth($wrapHeader,2), 10%);
-          }
-        }
-
-        &.current {
-          a {
-            color: $white;
-            background: lighten(nth($wrapHeader,2), 10%);
-          }
-        }
-
-      }
-    }
-  }
-
+  @import "header/app-switcher"; 
 }

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* ========== paging components ========== */
+.t-page {
+  // 分页位于左侧
+  @if $pageAlign == left {
+    text-align: left;
+    @if $pageHasBtns {
+      & > .page-btns { 
+        @include float(right);
+      }
+    }@else {
+      & > .page-btns { 
+        @include hidden;
+      }
+    }
+  }
+  // 分页位于右侧
+  @if $pageAlign == right {
+    text-align: right;
+    @if $pageHasBtns {
+      & > .page-btns { 
+        @include float;
+      }
+    }@else {
+      & > .page-btns { 
+        @include hidden;
+      }
+    }
+  }
+  // 分页居中
+  @if $pageAlign == center {
+    text-align: center;
+    @if $pageHasBtns {
+      & > .page-btns { 
+        @include hidden;
+      }
+    }
+  }
+
+  font-size: 12px;
+  position: relative;
+
+  & > ul {
+    margin: 0;
+    padding: 0;
+    @include inline-block;
+
+    li {
+      @include float;
+      margin: 0 5px;
+      list-style: none;
+
+      %pageBox {
+        @include float;
+        padding: 0 8px;
+        height: 24px;
+        line-height: 24px;
+        text-decoration: none;
+      }
+
+      &.active span {
+        @extend %pageBox;
+        background: $pageActiveColor;
+        color: #FFF;
+        border-radius: 3px;
+        border: 1px solid $pageActiveColor;
+      }
+
+      &.disabled span {
+        @extend %pageBox;
+        color: #AAA;
+      }
+
+      a {
+        @extend %pageBox;
+        border: 1px solid #DDD;
+        border-radius: 3px;
+        color: $grayDark;
+        background: $white;
+
+        &:hover {
+          text-decoration: none;
+          color: $white;
+          background-color: $pageActiveColor;
+          border: 1px solid $pageActiveColor;
+        }
+      }
+
+    }
+  }
+  @extend %clearfix;
+}

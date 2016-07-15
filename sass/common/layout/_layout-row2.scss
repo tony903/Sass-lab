@@ -3,9 +3,9 @@
 // 参数设置
 // -----------------------------------------------------
 $rightSideAuto:         true !default; // true右侧自适应; false左侧自适应
-$fixedWidth:            240px !default; // 固定宽度值
+$fixedWidth:            220px !default; // 固定宽度值
 $fixedBackground:       $grayLightest !default; // 固定区域背景
-$gapWidth:              0 !default; // 间隔宽度值
+$gapWidth:              10px !default; // 间隔宽度值
 $innerPadding:          10px !default; // 内间距
 
 // 默认右侧自适应宽度，2列无中间，按默认
@@ -106,7 +106,10 @@ $innerPadding:          10px !default; // 内间距
 
     .t-layout-#{$sideA} {
       @extend %boxAbsolute;
-      @extend %Yscroll;
+      // 固定区域滚动条控制
+      @if $fixedBoxScroll {
+        @extend %Yscroll;
+      }
       #{$sideA}: 0;
       width: $fixedWidth;
       background: $fixedBackground;

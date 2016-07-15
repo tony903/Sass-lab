@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+// 包装器
+.t-wrap {}
+
+// 左侧栏
+.t-sidebar {
+	width: map-get($sidebar, sidebarWidth);
+	position: fixed;
+	z-index: 4;
+	left: 0;
+	top: map-get($sidebar, boxHeight);
+	bottom: 0;
+}
+
+// 主体标题
+.t-title {
+	position: fixed;
+	left: map-get($sidebar, sidebarWidth);
+	top: 0;
+	right: 0;
+	z-index: 10000;
+	height: $rightTitleHeight;
+	line-height: $rightTitleHeight;
+	background: $rightTitleBg;
+
+	// 投影
+	@if $rightTitleShadow {
+		border-bottom: 1px solid #DDD;
+		box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+	}
+	
+	& > h2 {
+		@include inline-block;
+		font-size: 18px;
+		padding-left: 15px;
+	}
+
+	.t-title-right {
+		@include float(right);
+		height: $rightTitleHeight;
+	}
+
+	.t-title-user {
+		@include inline-block;
+		height: $rightTitleHeight;
+    padding: 0 6px;
+    color: $grayDark;
+
+    // 深色文字
+		@if $rightTitleTextStyle == dark {
+			color: $grayDark;
+			&:hover {
+				color: $blackLight;
+			}
+		}
+
+		// 浅色文字
+		@if $rightTitleTextStyle == light {
+			color: $grayLightest;
+			&:hover {
+				color: $white;
+			}
+			
+		}
+
+    img {
+      @include float;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      margin-top: ($rightTitleHeight - 24px)/2;
+      margin-right: 6px;
+    }
+
+    span {
+      @include float;
+      font-size: 14px;
+    }
+
+	}
+
+	.t-title-links {
+		@include inline-block;
+
+		& > li {
+			
+			height: $rightTitleHeight;
+			@include inline-block;
+
+			a {
+				display: block;
+				padding: 0 16px;
+				position: relative;
+				i {
+					font-size: 22px;
+				}
+
+				span {
+					position: absolute;
+					line-height: 1;
+					right: 10px;
+					top: 8px;
+					border-radius: 30px;
+					&.t-bg-orange {
+					  background: lighten($green, 5%);
+					}
+
+					&.t-bg-green {
+					  background: lighten($orange, 5%);
+					}
+				}
+				
+			}
+
+			// 深色文字
+			@if $rightTitleTextStyle == dark {
+				border-right: 1px solid #DDD;
+				a {
+					color: $grayDark;
+					&:hover {
+						color: $blackLight;
+					}
+				}
+			}
+
+			// 浅色文字
+			@if $rightTitleTextStyle == light {
+				a {
+					color: $grayLightest;
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+// 右侧区域
+.t-container {
+	position: fixed;
+	left: map-get($sidebar, sidebarWidth);
+	top: $rightTitleHeight + 1px;
+	right: 0;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #F1F1F1;
+
+	// 主体内部
+	.t-container-inner {
+		padding: 15px;
+	}
+}
+
+// 左侧顶部
+.t-sidebar-top {
+	position: fixed;
+	top: 0;
+	z-index: 98;
+	height: map-get($sidebar, boxHeight);
+	width: map-get($sidebar, sidebarWidth);
+	background: map-get($sidebar, textBgColor);
+	text-align: center;
+
+	.t-panel-logo {
+		height: map-get($sidebar, logoHeight);
+		background: map-get($sidebar, boxBgColor);
+		img, embed, svg, image {
+			width: nth($leftLogoSize, 1);
+			height: nth($leftLogoSize, 2);
+			margin-top: nth($leftLogoSize, 3);
+		}
+	}
+
+	.t-panel-user {
+		height: map-get($sidebar, textHeight);
+		img {
+			width: 76px;
+			border: 3px solid $white;
+			border-radius: 100%;
+			margin-top: -40px;
+		}
+
+		h2 {
+			font-size: 16px;
+			line-height: 22px;
+			margin-top: 4px;
+			color: $white;
+			font-family: $fontYaHei;
+		}
+
+		p {
+			font-size: 12px;
+			font-style: italic;
+			color: $gray;
+		}
+	}
+
+}
+
+// 右侧面板
+.t-panel {
+	background: $white;
+	border: 1px solid #DDD;
+	margin-bottom: 15px;
+	
+	& > h3 {
+		background: #F9F9F9;
+		height: 36px;
+		line-height: 36px;
+		font-size: 14px;
+		color: $blackLight;
+		text-indent: 10px;
+		border-bottom: 1px solid #DDD;
+	}
+
+	.t-panel-content {
+		padding: 10px;
+
+		img {
+			max-width: 100%;
+		}
+	}
+}

@@ -3,10 +3,9 @@
 
               <div class="t-list-title">
                 <h2>服务请求查询</h2>
-                <!-- 右侧操作区域 -->
-                <div>
-                  <a href="" class="t-btn t-btn-blue">按钮</a>
-                </div>
+                <!--div>
+                  <a href="" class="t-btn t-btn-blue">预留按钮</a>
+                </div-->
               </div>
               
               <div class="t-list-search t-columns-4">
@@ -51,7 +50,11 @@
                       下拉列表
                     </label>
                     <div>
-                      <input class="bg-select" id="fm05" type="text">
+                      <select name="" id="fm05">
+                        <option value="">选项一</option>
+                        <option value="">选项二</option>
+                        <option value="">选项三</option>
+                      </select>
                     </div>
                   </li>
                   <li>
@@ -137,7 +140,7 @@
                   <i class="iconfont icon-shuaxin"></i>
                 </a>
                 <div>
-                  <a class="t-btn t-btn-blue">新增</a>
+                  <a class="t-btn t-btn-blue" href="javascript:void(0)" onclick="popupLayer.className='t-popup t-popup-layer show'">新增</a>
                   <a class="t-btn t-btn-blue">修改</a>
                   <a class="t-btn t-btn-blue">按钮</a>
                 </div>

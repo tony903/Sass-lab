@@ -1,78 +1,69 @@
 @charset "utf-8";
 
-// 开关
-$popupBorderRadius:  			true !default; //圆角
-$popupHaveOverlay:	  		true !default; //半透明覆盖层
+//弹出基本class
+$popupBaseClass:          t-popup !default; // 基本命名 
 
-// 参数设置
-$popupLayerTitle:					40px $grayLightest #E8E8E8; //弹出层标题高度、背景色、底部边线颜色
-$popupLayerBottomHeight:	50px; //弹出层底部高度
-
+/* ========== popup components ========== */
 %popupBox {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 }
 
-/* 弹出 */
-.t-popup {
+.#{$popupBaseClass} {
 	@extend %popupBox;
 	z-index: $zindexModal + 10;
 }
 
-/* 半透明覆盖层 */
-.t-popup-overlay {
-	@if $popupHaveOverlay {
+// 半透明遮罩层
+@if $popupHasOverlay {
+	.#{$popupBaseClass}-overlay {
 		@extend %popupBox;
 		z-index: $zindexModal;
 		background-color: $black;
-		@include opacity();
+		@include opacity();	
 	}
-	@if not $popupHaveOverlay {
+}@else {
+	.#{$popupBaseClass}-overlay {
 		@include hidden;
 	}
 }
 
-/* 包装容器 */
-.t-popup-container {
+// 包装容器
+.#{$popupBaseClass}-container {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	z-index: $zindexModal + 5;
 	background-color: $white;
-	-webkit-box-shadow: 1px 1px 3px $grayDark;  
-	-moz-box-shadow: 1px 1px 3px $grayDark;  
-	box-shadow: 1px 1px 3px $grayDark;
-
-	@if $popupBorderRadius {
-		border-radius: $baseRadius;
+	border-radius: $baseRadius;
+	// 阴影
+	@if $popupHasBoxshadow {
+		-webkit-box-shadow: 1px 1px 3px $grayDark;  
+		-moz-box-shadow: 1px 1px 3px $grayDark;  
+		box-shadow: 1px 1px 3px $grayDark;
 	}
-
-}
-
-.t-popup-content,
-.t-popup-bottom {
-	box-sizing: content-box;
-	padding: 0 15px;
 }
 
 // 标题
-.t-popup-title {
-	height: nth($popupLayerTitle,1);
-	background: nth($popupLayerTitle,2);
-	border-bottom: 1px solid nth($popupLayerTitle,3);
+.#{$popupBaseClass}-title { 
+	height: nth($popupTitleStyle,1);
+	background: #f5f5f5;
+	border-bottom: 1px solid #E8E8E8;
 	padding: 0 10px 0 15px;
+	border-top-left-radius: $baseRadius;
+	border-top-right-radius: $baseRadius;
 
-	@if $popupBorderRadius {
-		border-top-left-radius: $baseRadius;
-		border-top-right-radius: $baseRadius;
+	%titleBox {
+    height: nth($popupTitleStyle,1);
+		line-height: nth($popupTitleStyle,1);
 	}
 
 	h3 {
-		@include float;
-		line-height: nth($popupLayerTitle,1);
+		@extend %titleBox;
+    @include float;
 		font-weight: normal;
 		color: $blackLight;
 		font-size: 14px;
@@ -81,12 +72,11 @@ $popupLayerBottomHeight:	50px; //弹出层底部高度
 	}
 
 	a {
-		@include float(right);
-		display: block;
-		height: nth($popupLayerTitle,1);
-		line-height: nth($popupLayerTitle,1);
+		@extend %titleBox;
+    @include float(right);
 		padding: 0 6px;
-		font-weight: bold;
+		font-size: 16px;
+    font-family: 'sans-serif';
 		color: $gray;
 		text-align: center;
 		text-decoration: none;
@@ -95,18 +85,113 @@ $popupLayerBottomHeight:	50px; //弹出层底部高度
 			color: $blackLight;
 		}
 	}
-	
+}
+
+// 内容区域
+.#{$popupBaseClass}-content { 
+	box-sizing: content-box;
+	padding: 0 15px;
 }
 
 // 底部操作区
-.t-popup-bottom {
-	height: $popupLayerBottomHeight;
+.#{$popupBaseClass}-bottom {
+	box-sizing: content-box;
+	height: $popupBottomHeight;
 	text-align: center;
 	.t-btn{
 		margin-top: 4px;
 		margin-left: 5px;
 		margin-right: 5px;
-		padding: 0 30px;
+		padding-left: 30px;
+		padding-right: 30px;
 		outline: none;
 	}
+}
+
+// 弹出层
+@if $popupLayerOutput {
+    .#{$popupBaseClass}-layer {
+
+    .#{$popupBaseClass}-container {
+      width: nth($popupLayerSize,1);
+      height: nth($popupLayerSize,2);
+      margin-left: -(nth($popupLayerSize,1) / 2);
+      margin-top: -(nth($popupLayerSize,2) / 2);
+    }
+
+    %popupBottomBox {
+      padding-top: $popupLayerGap;
+      padding-bottom: $popupLayerGap;
+      font-size: 12px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    // 有底部操作区
+    @if $popupLayerHaveBottom {
+      .#{$popupBaseClass}-content {
+        height: nth($popupLayerSize,2) - nth($popupTitleStyle,1) - ($popupLayerGap * 2) - $popupBottomHeight;
+        @extend %popupBottomBox;
+      }
+    }@else {
+      .#{$popupBaseClass}-content {
+        height: nth($popupLayerSize,2) - nth($popupTitleStyle,1) - ($popupLayerGap * 2);
+        @extend %popupBottomBox;
+      }
+      .#{$popupBaseClass}-bottom {
+        @include hidden;
+      }
+    }
+
+  }
+}
+
+// 弹出消息
+@if $popupAlertOutput {
+  .#{$popupBaseClass}-alert {
+    // 隐藏标题
+    .#{$popupBaseClass}-title {
+      @include hidden;
+    }
+
+    .#{$popupBaseClass}-container {
+      width: nth($popupAlertSize,1);
+      height: nth($popupAlertSize,2);
+      margin-left: -(nth($popupAlertSize,1) / 2);
+      margin-top: -(nth($popupAlertSize,2) / 2);
+    }
+
+    .#{$popupBaseClass}-content {
+      height: nth($popupAlertSize,2) - $popupBottomHeight - 20px;
+      margin-top: 20px;
+      font-size: 12px;
+      text-align: center;
+
+      i {
+        font-size: 60px;
+        line-height: 1;
+        color: lighten($orange, 5%);
+      }
+
+      p {
+        padding-top: 10px;
+        font-size: 12px;
+        color: $blackLight;
+        line-height: 22px;
+      }
+
+    }
+
+    .t-popup-bottom {
+      border-top: 1px solid #E8E8E8;
+      background: #f5f5f5;
+      border-bottom-left-radius: $baseRadius;
+      border-bottom-right-radius: $baseRadius;
+    }
+
+    .t-btn {
+      margin-top: 10px;
+    }
+
+  }
 }

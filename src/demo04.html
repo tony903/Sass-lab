@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/demo04.css">
+  <title>示例</title>
+</head>
+<body>
+<div class="t-wrap">
+  
+  <div class="t-sidebar">
+
+    <div class="t-sidebar-top">
+      <div class="t-panel-logo">
+        <svg>
+          <image xlink:href="assets/imgs/logo-sasslab-white.svg" src="assets/imgs/logo-sasslab-white.png" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- scrollbar-box -->
+    <div class="t-sidebar-navs ps-container" id="scrollbar-box" >
+        <div class="t-nav">
+          <h3>受理请求</h3>
+          <ul>
+            <!-- 当前栏目 active -->
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-android"></i>
+                受理请求
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-apple"></i>
+                填单
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-github"></i>
+                服务请求查询
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-weibo"></i>
+                未完服务请求查询
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="t-nav">
+          <h3>一级栏目</h3>
+          <ul>
+            <!-- 当前栏目 active -->
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-chrome"></i>
+                二级栏目
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-internetexplorer"></i>
+                公开图标库
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-firefox"></i>
+                图标管理
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-jisutuikuan"></i>
+                测试栏目
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="t-nav">
+          <h3>工单查询</h3>
+          <ul>
+            <!-- 当前栏目 active -->
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-yidong"></i>
+                工单详情
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-oval56copyfill1"></i>
+                待归档工单
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-dianxin"></i>
+                工单综合查询
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-baidu"></i>
+                异动查询
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-qq"></i>
+                待办区
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-chrome"></i>
+                休眠区
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-wechat"></i>
+                工单池
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
+                <i class="iconfont icon-weibo"></i>
+                工单统计
+                <span>
+                  <i class="iconfont icon-icon-arrow-slim-right-copy"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <script type="text/javascript" src="assets/lib/jquery/jquery.js"></script>
+      <script type="text/javascript" src="assets/lib/perfect-scrollbar/jquery.mousewheel.js"></script>
+      <script type="text/javascript" src="assets/lib/perfect-scrollbar/perfect-scrollbar.js"></script>
+      <script type="text/javascript">
+        $(function ($) {
+          $('#scrollbar-box').perfectScrollbar();
+        });
+      </script>
+    
+  </div>
+  
+  <div class="t-title">
+    
+    <div class="t-title-right">
+      <ul class="t-title-links">
+        <li>
+          <a href="#nogo">
+            <i class="iconfont icon-unif040"></i>
+            <span class="t-badge t-bg-orange">5</span>
+          </a>
+        </li>
+        <li>
+          <a href="#nogo">
+            <i class="iconfont icon-tongzhi"></i>
+            <span class="t-badge t-bg-green">2</span>
+          </a>
+        </li>
+      </ul>
+      <a class="t-title-user" href="#nogo">
+        <img src="assets/temp/user_pic01.jpg" alt="">
+        <span>tony903</span>
+        <i class="iconfont icon-iconfontjiantou-copy-copy"></i>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="t-container">
+    <div class="t-container-inner">
+
+      <div class="t-panel">
+        <h3>我是标题</h3>
+        <div class="t-panel-content">
+          <!-- 表格 -->
+            <table class="t-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox">
+                  </th>
+                  <th>主要字段</th>
+                  <th>类型</th>
+                  <th>受理号码</th>
+                  <th>用户姓名</th>
+                  <th>用户级别</th>
+                  <th>用户品牌</th>
+                  <th>操作状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>神州行</td>
+                  <td>
+                    <div class="t-tag-todo">
+                      <span>未处理</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>4G套餐</td>
+                  <td>
+                    <div class="t-tag-done">
+                      <span>已处理</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>神州行</td>
+                  <td>
+                    <div class="t-tag">
+                      <span>默认的</span> 
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+      <div class="t-panel">
+        <h3>面板</h3>
+        <div class="t-panel-content">
+          <!-- 表格信息 -->
+            <table class="t-table t-table-info">
+              <caption>基本参数</caption>
+              <tbody>
+                <tr>
+                  <td class="td-label">活动名称</td>
+                  <td class="td-content">迎春优惠大行动</td>
+                  <td class="td-label">代金券名称</td>
+                  <td class="td-content">河南移动一季度代金券</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发行总额</td>
+                  <td class="td-content">1000000元</td>
+                  <td class="td-label">出资方</td>
+                  <td class="td-content">中国银行郑州分行花园路支行</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发行方</td>
+                  <td class="td-content">河南移动郑州分公司互联网运营中心</td>
+                  <td class="td-label">该发行方的发行金额</td>
+                  <td class="td-content">100元;200元;500元;1000元</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发放起始日期</td>
+                  <td class="td-content">2015/03/01</td>
+                  <td class="td-label">发放截止日期</td>
+                  <td class="td-content">2015/03/31</td>
+                </tr>
+                <tr>
+                  <td class="td-label">单张代金券有效期</td>
+                  <td class="td-content">3天</td>
+                  <td class="td-label">整体使用截止日期</td>
+                  <td class="td-content">2015/05/31</td>
+                </tr>
+                <tr>
+                  <td class="td-label">领用后几天生效</td>
+                  <td class="td-content">0天</td>
+                  <td class="td-label">每日发放量限制</td>
+                  <td class="td-content">1000张</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发放总量限制</td>
+                  <td class="td-content">30000张</td>
+                  <td class="td-label">用户活动期限领次数</td>
+                  <td class="td-content">5次</td>
+                </tr>
+                <tr>
+                  <td class="td-label">用户参加活动周期</td>
+                  <td class="td-content">一周</td>
+                  <td class="td-label">周期内限领次数</td>
+                  <td class="td-content">3次</td>
+                </tr>
+                <tr>
+                  <td class="td-label">触发条件</td>
+                  <td class="td-content" colspan="3">手工批量代金券发放 ｜ 开户 ｜ 充值 ｜ 消费</td>
+                </tr>
+                <tr>
+                  <td class="td-label">资金属性</td>
+                  <td class="td-content" colspan="3">充值卡</td>
+                </tr>
+                <tr>
+                  <td class="td-label">渠道参数</td>
+                  <td class="td-content" colspan="3">网站 ｜ 短信 ｜ IVR ｜ WAP ｜ 营业厅 ｜ 客户端</td>
+                </tr>
+                <tr>
+                  <td class="td-label">单张代金券发放金额</td>
+                  <td class="td-content" colspan="3">100元</td>
+                </tr>
+                <tr>
+                  <td class="td-label">单笔交易金额区间</td>
+                  <td class="td-content" colspan="3">
+                    订单消费满100元可以使用50元代金券<br />
+                    订单消费满200元可以使用100元代金券<br />
+                    订单消费满500元可以使用300元代金券<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-label">到账短信内容</td>
+                  <td class="td-content" colspan="3">尊敬的用户，您已通过参与迎春优惠大行动活动获得200元代金券，请于2015年5月31日前使用。（河南移动）</td>
+                </tr>
+                <tr>
+                  <td class="td-label">到期短信内容</td>
+                  <td class="td-content" colspan="3">尊敬的用户，您已的代金券将于2015年5月31日到期，请尽快使用。（河南移动）</td>
+                </tr>
+                <tr>
+                  <td class="td-label">出资商户全称</td>
+                  <td class="td-content" colspan="3">中国银行郑州分行花园路支行</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

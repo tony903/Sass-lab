@@ -1,24 +1,24 @@
 <div class="t-wrapper">
   <div class="t-wrap-header">
     <div id="t-header">
-      <!-- app切换器 -->
       @@if (appSwitcher) {
+        <!-- app切换器 -->
         @@include('../header/@@appSwitcher')
       }
-      <!-- logo -->
       @@if (headerLogo) {
+        <!-- logo -->
         @@include('../header/@@headerLogo')
       }
-      <!-- nav -->
       @@if (headerNav) {
+        <!-- nav -->
         @@include('../header/@@headerNav')
       }
-      <!-- user -->
       @@if (headerUser) {
+        <!-- user -->
         @@include('../header/@@headerUser')
       }
-      <!-- search -->
       @@if (headerSearch) {
+        <!-- search -->
         @@include('../header/@@headerSearch')
       }
     </div>

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+// loading
+@if $loadingOutput {
+  /* ========== loading components ========== */
+  %loadingBox {
+    display: inline-block;
+    line-height: 1.5;
+    color: $grayDark;
+    @if $loadingBorder {
+      border: 1px solid $grayLight;
+      border-radius: 5px;
+      -webkit-box-shadow: 1px 1px 3px $grayLight;
+      -moz-box-shadow: 1px 1px 3px $grayLight;
+      box-shadow:1px 1px 3px $grayLight;
+    }
+  }
+
+  .t-loading {
+    @extend %loadingBox;
+    font-size: 12px;
+    padding: 8px 20px 8px 40px;
+    background: #fff url(../imgs/loading.gif) no-repeat 10px 4px;
+  }
+
+  .t-loading-cmcc {
+    @extend %loadingBox;
+    font-size: 12px;
+    padding: 8px 20px 8px 35px;
+    background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px;
+  }
+
+  .t-loading-cmcc-lg {
+    @extend %loadingBox;
+    font-size: 14px;
+    padding: 14px 20px 14px 50px; 
+    background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px;
+  }
+
+}

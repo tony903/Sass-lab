@@ -7,7 +7,7 @@
         <ul id="userinfo">
           <li>
             <p>
-              <span>姓名：</span>忽爱慕爱
+              <span>姓名：</span>张三丰
             </p>
           </li>
           <li>

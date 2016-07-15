@@ -17,13 +17,16 @@
 @import "../sass/common/common";
 
 // Layout
-@import "../sass/common/layout/layout";
+@import "../sass/common/layout";
 
 // Common
 @import "../iconfont/iconfont.css"; //矢量图标
 
 // Components
 @import "../sass/components/table";
-@import "../sass/components/tags";
 @import "../sass/components/list";
-
+@import "../sass/components/btn";
+@import "../sass/components/paging";
+@import "../sass/components/tags";
+@import "../sass/components/tab";
+@import "../sass/components/popup";

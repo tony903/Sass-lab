@@ -15,18 +15,18 @@
 @if $tagOutput {
   .t-tag {
     @extend %tagBox;
-    background: #E3E3E3;
+    background: lighten($grayDark, 50%);
     color: $grayDark;
   }
 
   .t-tag-todo {
     @extend %tagBox;
-    background: #82be38;
+    background: lighten($green, 5%);
   }
 
   .t-tag-done {
     @extend %tagBox;
-    background: #ffab00;
+    background: lighten($orange, 5%);
   }
 }
 
@@ -123,10 +123,10 @@
     font-size: 14px;
     @extend %clearfix;
     i {
-      @include float(left);
-      color: $orange;
+      @include float;
+      color: lighten($orange, 5%);
       &.disabled { 
-        color: #CCC;
+        color: $grayLight;
       }
     }
   }
@@ -152,41 +152,4 @@
     @extend %badgeBox;
     background: $red;
   }
-}
-
-// loading
-@if $loadingOutput {
-  /* ========== loading components ========== */
-  %loadingBox {
-    display: inline-block;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    -webkit-box-shadow: 1px 1px 3px #ccc;
-    -moz-box-shadow: 1px 1px 3px #ccc;
-    box-shadow:1px 1px 3px #ccc;
-    color: $grayDark;
-  }
-
-  .t-loading {
-    @extend %loadingBox;
-    font-size: 12px;
-    padding: 8px 20px 8px 40px;
-    background: #fff url(../imgs/loading.gif) no-repeat 10px 4px;
-  }
-
-  .t-loading-cmcc {
-    @extend %loadingBox;
-    font-size: 12px;
-    padding: 8px 20px 8px 35px;
-    background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px;
-  }
-
-  .t-loading-cmcc-lg {
-    @extend %loadingBox;
-    font-size: 14px;
-    padding: 14px 20px 14px 50px; 
-    background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px;
-  }
-
 }

@@ -14,40 +14,44 @@
   overflow-y: auto;
 }
 
+.t-wrapper {
+  width: 100%;
+}
+
+.t-wrap-header {
+  height: nth($wrapHeader,1);
+  background-color: nth($wrapHeader,2);
+  // 如果绝对定位
+  @if $wrapperAbsolute {
+    @extend %layoutAbsolute; 
+    top: 0;
+  }
+  // 如果输出图片背景
+  @if $wrapHeaderImgBgOutput {
+    background: $wrapHeaderImgBgUrl;
+    background-size: $wrapHeaderImgBgSize; 
+  }
+}
+
 // 自适应宽度
 // -----------------------------------------------------
 @if $wrapperAutoWidth {
   
-  /* wrapper */
-  .t-wrapper {
-    width: 100%;
-  }
-
-  .t-wrap-header {
-    // 如果绝对定位
-    @if $wrapperAbsolute {
-      @extend %layoutAbsolute; 
-      top: 0;
-    }
-    height: nth($wrapHeader,1);
-    background-color: nth($wrapHeader,2);
-  }
-
   .t-wrap-container {
     // 如果绝对定位
-    @if $wrapperAbsolute and $wrapperHasFooter {
+    @if $wrapperAbsolute and $wrapHasFooter {
       @extend %containerAbsolute;
       bottom: nth($wrapFooter,1);
     }
-    @if $wrapperAbsolute and not $wrapperHasFooter {
+    @if $wrapperAbsolute and not $wrapHasFooter {
       @extend %containerAbsolute;
       bottom: 0;
     }
     background-color: nth($wrapContainerBg,1);
   }
-  
+
   // 含底部
-  @if $wrapperHasFooter {
+  @if $wrapHasFooter {
     .t-wrap-footer {
       // 如果绝对定位
       @if $wrapperAbsolute {
@@ -57,10 +61,7 @@
       height: nth($wrapFooter,1);
       background-color: nth($wrapFooter,2);
     }
-  }
-  
-  // 不含底部
-  @if not $wrapperHasFooter {
+  }@else {
     .t-wrap-footer {
       @include hidden;
     }
@@ -71,29 +72,14 @@
 // 固定宽度
 // -----------------------------------------------------
 @if not $wrapperAutoWidth {
-  
-  /* wrapper */
-  .t-wrapper {
-    width: 100%;
-  }
-
-  .t-wrap-header {
-    // 如果绝对定位
-    @if $wrapperAbsolute {
-      @extend %layoutAbsolute; 
-      top: 0;
-    }
-    height: nth($wrapHeader,1);
-    background-color: nth($wrapHeader,2);
-  }
 
   .t-wrap-container {
     // 如果绝对定位
-    @if $wrapperAbsolute and $wrapperHasFooter {
+    @if $wrapperAbsolute and $wrapHasFooter {
       @extend %containerAbsolute;
       bottom: nth($wrapFooter,1);
     }
-    @if $wrapperAbsolute and not $wrapperHasFooter {
+    @if $wrapperAbsolute and not $wrapHasFooter {
       @extend %containerAbsolute;
       bottom: 0;
     }
@@ -101,7 +87,7 @@
   }
 
   // 含底部
-  @if $wrapperHasFooter {
+  @if $wrapHasFooter {
     .t-wrap-footer {
       // 如果绝对定位
       @if $wrapperAbsolute {
@@ -111,11 +97,7 @@
       height: nth($wrapFooter,1);
       background-color: nth($wrapFooter,2);
     }
-
-  }
-
-  // 不含底部
-  @if not $wrapperHasFooter {
+  }@else {
     .t-wrap-footer {
       @include hidden;
     }

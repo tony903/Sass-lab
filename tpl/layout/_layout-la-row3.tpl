@@ -10,10 +10,7 @@
         </div>
         <div class="t-layout-left">
           <div class="t-layout-leftinner"> 
-            @@include('../table/_table.tpl')
-            @@include('../table/_table-info.tpl')
-            @@include('../tag/_tags.tpl')
-            @@include('../loading/_loading-cmcc.tpl')
+           左侧自适应
           </div>
         </div>
       </div>

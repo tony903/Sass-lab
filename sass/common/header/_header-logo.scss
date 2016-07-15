@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+// logo
+.t-logo {
+  color: $white;
+  margin: 0 6px;
+  @include float;
+  line-height: nth($wrapHeader,1);
+
+  // 默认使用适量图标
+  @if not $headerImgLogo {
+    i {
+      font-size: 26px;
+      @include float;
+      padding-right: 4px;
+    }
+    }@else {
+      img {
+        @include float;
+        height: $headerImgLogoWidth;
+        margin-top: ($wrapHeader － $headerImgLogoWidth) / 2;
+      }
+    }
+
+  p {
+    font-size: 18px;
+    @include float;
+    @extend %inline-block;
+  }
+
+  a {
+    @extend %toplink;
+    color: $headerLogoColor;
+    padding: 0 6px;
+  }
+
+}

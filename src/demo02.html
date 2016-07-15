@@ -5,39 +5,15 @@
   <meta name="renderer" content="webkit"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <link rel="stylesheet" type="text/css" href="assets/css/demo02.css">
-  <title>左侧定宽，右侧自适应</title>
+  <title>定宽</title>
 </head>
 <body>
 <div class="t-wrapper">
   <div class="t-wrap-header">
     <div id="t-header">
-      <!-- app切换器 -->
       
-        <div class="t-app-switcher">
-        <a href="javascript:void(0)" onclick="appswitch.className='show'">
-          <i class="iconfont icon-leimu"></i>
-        </a>
-        <ul id="appswitch">
-          <li class="current">
-            <a href="#nogo">
-              Sass实验室
-            </a>
-          </li>
-          <li>
-            <a href="#nogo">
-              中国移动积分基地
-            </a>
-          </li>
-          <li>
-            <a href="#nogo">
-              多商户入驻
-            </a>
-          </li>
-        </ul>
-      </div>
       
-      <!-- logo -->
-      
+        <!-- logo -->
         <h1 class="t-logo" href="#nogo">
         <a href="#nogo">
           <i class="iconfont icon-sasslab"></i>
@@ -45,43 +21,43 @@
         </a>
       </h1>
       
-      <!-- nav -->
       
+        <!-- nav -->
         <ul class="t-head-nav">
         <li>
-            <a href="#nogo">
+            <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>首页</span>
             </a>
         </li>
         <li>
-            <a href="#nogo">
+            <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>仪表板</span>
             </a>
         </li>
         <li>
-            <a href="#nogo">
+            <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>测试</span>
             </a>
         </li>
         <li>
-            <a href="#nogo">
+            <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>布局</span>
             </a>
         </li>
         <li>
-            <a href="#nogo">
+            <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>项目</span>
             </a>
         </li>
         <li>
-            <a href="#nogo">
+            <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>组件</span>
             </a>
         </li>
       </ul>
       
-      <!-- user -->
       
+        <!-- user -->
         <div class="t-head-user">
         <a href="javascript:void(0)" onclick="userinfo.className='show'">
           <img src="assets/imgs/user-default.png" alt="">
@@ -91,7 +67,7 @@
         <ul id="userinfo">
           <li>
             <p>
-              <span>姓名：</span>忽爱慕爱
+              <span>姓名：</span>张三丰
             </p>
           </li>
           <li>
@@ -112,8 +88,8 @@
         </ul>
       </div>
       
-      <!-- search -->
       
+        <!-- search -->
         <div class="t-head-search">
         <form action="">
           <input type="text" placeholder="搜索">
@@ -131,22 +107,220 @@
   <div class="t-wrap-container">
     <div id="t-container">
       
-        <!-- 两列，右侧自适应宽度 -->
+        <!-- 一列，基本布局 -->
       <div class="t-layout">
-        <div class="t-layout-left"> 
-          
-        </div>
-        <div class="t-layout-right">
-          <div class="t-layout-rightinner"> 
-            <!-- 表格信息 -->
+        <!-- 内容 -->
+        <!-- 选项卡 -->
+            <div class="t-tabs">
+              <ul class="t-tabs-items">
+                <!-- 当前页签 active -->
+                <li class="active">
+                  <a href="#nogo">我是选项卡</a>
+                </li>
+                <li>
+                  <a href="#nogo">我也是</a>
+                </li>
+                <li>
+                  <a href="#nogo">我们大家都是</a>
+                </li>
+                <li>
+                  <a href="#nogo">呵呵</a>
+                </li>
+              </ul>
+              <ul class="t-tabs-wrap">
+                <!-- 当前内容 selected -->
+                <li class="selected">
+                  <!-- 表格 -->
+            <table class="t-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox">
+                  </th>
+                  <th>主要字段</th>
+                  <th>类型</th>
+                  <th>受理号码</th>
+                  <th>用户姓名</th>
+                  <th>用户级别</th>
+                  <th>用户品牌</th>
+                  <th>操作状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>神州行</td>
+                  <td>
+                    <div class="t-tag-todo">
+                      <span>未处理</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>4G套餐</td>
+                  <td>
+                    <div class="t-tag-done">
+                      <span>已处理</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                  <td>100231233</td>
+                  <td>服务类 &gt; 业务查询 &gt; 消费信息查询</td>
+                  <td>13723890766</td>
+                  <td>苏三小</td>
+                  <td>
+                    <div class="t-stars">
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                      <i class="iconfont icon-xingxing disabled"></i>
+                    </div>
+                  </td>
+                  <td>神州行</td>
+                  <td>
+                    <div class="t-tag">
+                      <span>默认的</span> 
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+                  <!-- 表格信息 -->
+            <table class="t-table t-table-info">
+              <caption>基本参数</caption>
+              <tbody>
+                <tr>
+                  <td class="td-label">活动名称</td>
+                  <td class="td-content">迎春优惠大行动</td>
+                  <td class="td-label">代金券名称</td>
+                  <td class="td-content">河南移动一季度代金券</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发行总额</td>
+                  <td class="td-content">1000000元</td>
+                  <td class="td-label">出资方</td>
+                  <td class="td-content">中国银行郑州分行花园路支行</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发行方</td>
+                  <td class="td-content">河南移动郑州分公司互联网运营中心</td>
+                  <td class="td-label">该发行方的发行金额</td>
+                  <td class="td-content">100元;200元;500元;1000元</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发放起始日期</td>
+                  <td class="td-content">2015/03/01</td>
+                  <td class="td-label">发放截止日期</td>
+                  <td class="td-content">2015/03/31</td>
+                </tr>
+                <tr>
+                  <td class="td-label">单张代金券有效期</td>
+                  <td class="td-content">3天</td>
+                  <td class="td-label">整体使用截止日期</td>
+                  <td class="td-content">2015/05/31</td>
+                </tr>
+                <tr>
+                  <td class="td-label">领用后几天生效</td>
+                  <td class="td-content">0天</td>
+                  <td class="td-label">每日发放量限制</td>
+                  <td class="td-content">1000张</td>
+                </tr>
+                <tr>
+                  <td class="td-label">发放总量限制</td>
+                  <td class="td-content">30000张</td>
+                  <td class="td-label">用户活动期限领次数</td>
+                  <td class="td-content">5次</td>
+                </tr>
+                <tr>
+                  <td class="td-label">用户参加活动周期</td>
+                  <td class="td-content">一周</td>
+                  <td class="td-label">周期内限领次数</td>
+                  <td class="td-content">3次</td>
+                </tr>
+                <tr>
+                  <td class="td-label">触发条件</td>
+                  <td class="td-content" colspan="3">手工批量代金券发放 ｜ 开户 ｜ 充值 ｜ 消费</td>
+                </tr>
+                <tr>
+                  <td class="td-label">资金属性</td>
+                  <td class="td-content" colspan="3">充值卡</td>
+                </tr>
+                <tr>
+                  <td class="td-label">渠道参数</td>
+                  <td class="td-content" colspan="3">网站 ｜ 短信 ｜ IVR ｜ WAP ｜ 营业厅 ｜ 客户端</td>
+                </tr>
+                <tr>
+                  <td class="td-label">单张代金券发放金额</td>
+                  <td class="td-content" colspan="3">100元</td>
+                </tr>
+                <tr>
+                  <td class="td-label">单笔交易金额区间</td>
+                  <td class="td-content" colspan="3">
+                    订单消费满100元可以使用50元代金券<br />
+                    订单消费满200元可以使用100元代金券<br />
+                    订单消费满500元可以使用300元代金券<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-label">到账短信内容</td>
+                  <td class="td-content" colspan="3">尊敬的用户，您已通过参与迎春优惠大行动活动获得200元代金券，请于2015年5月31日前使用。（河南移动）</td>
+                </tr>
+                <tr>
+                  <td class="td-label">到期短信内容</td>
+                  <td class="td-content" colspan="3">尊敬的用户，您已的代金券将于2015年5月31日到期，请尽快使用。（河南移动）</td>
+                </tr>
+                <tr>
+                  <td class="td-label">出资商户全称</td>
+                  <td class="td-content" colspan="3">中国银行郑州分行花园路支行</td>
+                </tr>
+              </tbody>
+            </table>
+                </li>
+                <li>
+                  <!-- 表格信息 -->
             <div class="t-list">
 
               <div class="t-list-title">
                 <h2>服务请求查询</h2>
-                <!-- 右侧操作区域 -->
-                <div>
-                  <a href="" class="t-btn t-btn-blue">按钮</a>
-                </div>
+                <!--div>
+                  <a href="" class="t-btn t-btn-blue">预留按钮</a>
+                </div-->
               </div>
               
               <div class="t-list-search t-columns-4">
@@ -191,7 +365,11 @@
                       下拉列表
                     </label>
                     <div>
-                      <input class="bg-select" id="fm05" type="text">
+                      <select name="" id="fm05">
+                        <option value="">选项一</option>
+                        <option value="">选项二</option>
+                        <option value="">选项三</option>
+                      </select>
                     </div>
                   </li>
                   <li>
@@ -277,7 +455,7 @@
                   <i class="iconfont icon-shuaxin"></i>
                 </a>
                 <div>
-                  <a class="t-btn t-btn-blue">新增</a>
+                  <a class="t-btn t-btn-blue" href="javascript:void(0)" onclick="popupLayer.className='t-popup t-popup-layer show'">新增</a>
                   <a class="t-btn t-btn-blue">修改</a>
                   <a class="t-btn t-btn-blue">按钮</a>
                 </div>
@@ -416,9 +594,64 @@
                 })
               });
             </script>
-          </div>
-        </div>
+                </li>
+                <li>
+                  <!-- 表格信息 -->
+            <table class="t-table t-table-info">
+              <caption>基本参数</caption>
+              <tbody>
+                <tr>
+                  <td class="td-label">品牌</td>
+                  <td class="td-content">苹果</td>
+                  <td class="td-label">型号</td>
+                  <td class="td-content">iphoneSE</td>
+                </tr>
+                <tr>
+                  <td class="td-label">上市时间</td>
+                  <td class="td-content">2016年3月</td>
+                  <td class="td-label">输入方式</td>
+                  <td class="td-content">触控</td>
+                </tr>
+                <tr>
+                  <td class="td-label">智能机</td>
+                  <td class="td-content">是</td>
+                  <td class="td-label">操作系统</td>
+                  <td class="td-content">IOS</td>
+                </tr>
+                <tr>
+                  <td class="td-label">屏幕尺寸</td>
+                  <td class="td-content">4.0英寸</td>
+                  <td class="td-label">储存卡类型</td>
+                  <td class="td-content">不支持</td>
+                </tr>
+                <tr>
+                  <td class="td-label">机身内存</td>
+                  <td class="td-content">16GB ROM</td>
+                  <td class="td-label">运行内存</td>
+                  <td class="td-content">2GB RAM</td>
+                </tr>
+              </tbody>
+            </table>
+                </li>
+                <li>
+                  <img src="assets/imgs/sb_loading.gif" width="220" align="center" alt="">
+                </li>
+              </ul>
+            </div>
+
+            <script type="text/javascript" src="assets/lib/jquery/jquery.js"></script>
+            <!-- tab切换，本段JS纯属实验，项目实施时请高手们替换掉 -->
+            <script type="text/javascript">
+              $(function(){
+                $('.t-tabs-items li').click(function(){
+                  var $t = $(this).index();
+                  $(this).addClass('active').siblings().removeClass('active');
+                  $('.t-tabs-wrap > li').eq($t).addClass('selected').siblings().removeClass('selected');
+                })
+              });
+            </script>
       </div>
+      
       
     </div>
   </div>
@@ -430,6 +663,44 @@
     </div>
   </div>
 </div>
+
+  <!-- 弹出对话框 -->
+<div class="t-popup t-popup-alert hide" id="popupAlert">
+  <div class="t-popup-overlay">
+    <!-- 半透明覆盖层 -->
+  </div>
+  <div class="t-popup-container">
+    <div class="t-popup-content">
+      <!-- 提示信息 -->
+      <i class="iconfont icon-tanhao"></i>
+      <p>该页面仅为示例，无法到达你点击的地方</p>  
+    </div>
+    <div class="t-popup-bottom">
+      <a href="javascript:void(0)" class="t-btn t-btn-blue" onclick="popupAlert.className='hide'">确定</a>
+      <a href="javascript:void(0)" class="t-btn" onclick="popupAlert.className='hide'">取消</a>
+    </div>
+  </div> 
+</div>
+<!-- 弹出层 -->
+<div class="t-popup t-popup-layer hide" id="popupLayer">
+  <div class="t-popup-overlay">
+    <!-- 半透明覆盖层 -->
+  </div>
+  <div class="t-popup-container">
+    <div class="t-popup-title">
+      <h3>弹出层标题</h3>
+      <a href="javascript:void(0)" onclick="popupLayer.className='hide'" title="关闭">×</a>
+    </div>
+    <div class="t-popup-content">
+      <!-- 这里是弹出层内容 -->
+      内容111
+    </div>
+    <div class="t-popup-bottom">
+      <a href="javascript:void(0)" class="t-btn t-btn-blue" onclick="popupLayer.className='hide'">确定</a>
+      <a href="javascript:void(0)" class="t-btn" onclick="popupLayer.className='hide'">取消</a>
+    </div>
+  </div> 
+</div> 
 
 </body>
 </html>

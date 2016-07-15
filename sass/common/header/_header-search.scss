@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// search
+.t-head-search {
+  @include float(right);
+  width: 200px;
+  height: 28px;
+  background: darken(nth($wrapHeader,2), 15%);
+  margin-top: (nth($wrapHeader,1) - 28px) / 2;
+  margin-right: 12px;
+  border-radius: 3px;
+
+  input[type="text"] {
+    @include float;
+    border: none;
+    width: 166px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 6px;
+    color: $white;
+    outline: none;
+    background: transparent;
+  }
+
+  input[type="submit"] {
+    @extend %hidden;
+  }
+
+  form {
+    position: relative;
+    top: 0;
+
+    a {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      height: 28px;
+      line-height: 28px;
+      width: 24px;
+      font-size: 14px;
+      text-align: center;
+      color: lighten(nth($wrapHeader,2), 30%);
+      &:hover {
+        color: lighten(nth($wrapHeader,2), 40%);
+      }
+      i {
+        font-size: 14px;
+      }
+    }
+
+  }
+
+}

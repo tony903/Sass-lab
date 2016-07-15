@@ -6,10 +6,7 @@
         </div>
         <div class="t-layout-middle">
           <div class="t-layout-middleinner"> 
-            @@include('../table/_table.tpl')
-            @@include('../table/_table-info.tpl')
-            @@include('../tag/_tags.tpl')
-            @@include('../loading/_loading-cmcc.tpl')
+            中间自适应
           </div>
         </div>
         <div class="t-layout-right"> 

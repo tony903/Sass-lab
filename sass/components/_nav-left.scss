@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+// 主题
+
+@if $leftNavStyle == dark01 {
+  $leftNavBg:               #32323a; // 背景色
+  $leftNavBorderColor:      #212126; // 列表底部边线颜色
+  $leftNavTitleColor:       #CCC; // 大标题颜色
+  $leftMenuTextColor:       #a8b2ba $grayLightest #212126; // 文字颜色、文字hover状态颜色、背景色
+  $leftMenuActiveColor:     $white #1fb5ad; // 当前状态文字颜色、背景色 
+  $leftNemuSpanColor:       #a8b2ba $white $black;// 右侧数字颜色、当前数字颜色、背景色
+}
+
+@if $leftNavStyle == dark02 {
+  $leftNavBg:               #383e4b; // 背景色
+  $leftNavBorderColor:      #2e333f; // 列表底部边线颜色
+  $leftNavTitleColor:       #CCC; // 大标题颜色
+  $leftMenuTextColor:       #828a9d #a4afc9 #2d323d; // 文字颜色、文字hover状态颜色、背景色
+  $leftMenuActiveColor:     $white #232730; // 当前状态文字颜色、背景色 
+  $leftNemuSpanColor:       #a8b2ba $white $black;// 右侧数字颜色、当前数字颜色、背景色
+}
+
+@if $leftNavStyle == light01 {
+  $leftNavBg:               #F3F3F3; // 背景色
+  $leftNavBorderColor:      #E3E3E3; // 列表底部边线颜色
+  $leftNavTitleColor:       $blackLight; // 大标题颜色
+  $leftMenuTextColor:       $grayDark $blackLight #E3E3E3; // 文字颜色、文字hover状态颜色、背景色
+  $leftMenuActiveColor:     $blackLight $white; // 当前状态文字颜色、背景色
+  $leftNemuSpanColor:       $gray $white #DDD;// 右侧数字颜色、背景色 
+}
+
+// 左侧导航
+.t-sidebar-navs {
+  padding-top: 10px;
+  position: relative;
+  height: 100%;
+  background: $leftNavBg;
+  overflow: hidden;
+}
+
+/* t-nav */
+.t-nav {
+  
+  // 含一级菜单标题
+  @if $leftNavHasBigTitle {
+    padding-bottom: 12px;
+    h3 {
+      font-size: 14px;
+      font-weight: bold;
+      color: $leftNavTitleColor;
+      padding-top: 8px;
+      padding-bottom: 4px;
+      padding-right: 15px;
+      margin-left: 18px;
+    }
+  }@else {
+    h3 {
+      @include hidden;
+    }
+  }
+  
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  & > ul {
+    li {
+      position: relative;
+      border-bottom: 1px solid $leftNavBorderColor;
+      &.active {
+        a {
+          color: nth($leftMenuActiveColor, 1);
+          background: nth($leftMenuActiveColor, 2);
+          border-left-color: nth($leftNavMenuBorder, 3);
+          span {
+            color: nth($leftNemuSpanColor, 2);
+            @if $leftNavRight == number {
+              background: darken(nth($leftNemuSpanColor, 3), 10%);
+            }
+          }
+          
+        }
+      }
+    }
+
+    a {
+      color: nth($leftMenuTextColor, 1);
+      display: block;
+      height: 35px;
+      line-height: 35px;
+      padding-left: 17px;
+      padding-right: 45px;
+      border-left-width: 3px;
+      border-left-style: solid;
+      border-left-color:nth($leftNavMenuBorder, 1);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      
+      // 显示箭头
+      @if $leftNavRight == arrow {
+        span {
+          height: 17px;
+          line-height: 17px;
+          font-size: 12px;
+          min-width: 22px;
+          color: nth($leftNemuSpanColor, 1);
+          background: transparent;
+          padding: 0 3px;
+          text-align: right;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          margin-top: -8px
+        }
+      }
+
+      // 显示数字
+      @if $leftNavRight == number {
+        span {
+          height: 17px;
+          line-height: 17px;
+          font-size: 12px;
+          min-width: 22px;
+          color: nth($leftNemuSpanColor, 1);
+          background: nth($leftNemuSpanColor, 3);
+          border-radius: 40px;
+          padding: 0 3px;
+          text-align: center;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          margin-top: -8px
+        }
+      }
+      
+
+      &:hover {
+        color: nth($leftMenuTextColor, 2);
+        background: nth($leftMenuTextColor, 3);
+        border-left-color:nth($leftNavMenuBorder, 2);
+      }
+    }
+
+  }
+
+}

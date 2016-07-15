@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+// 包装器设置, 采用frame01.scss
+// -----------------------------------------------------
+// 左侧
+$sidebar: (
+  sidebarWidth:           220px, // 左侧宽度
+  boxHeight:              40px, // 左侧标题区域高度
+  boxBgColor:             #1c84b6, // 左侧标题区域背景颜色
+  logoHeight:             40px, // logo区域高度
+  textBgColor:            #5c4774, // 文字区域背景颜色
+);
+
+// 左侧logo
+$leftLogoSize:            116px 29px 6px !default; // logo宽度、高度、距离顶部px        
+
+// 右侧顶部
+$rightTitleHeight:        40px !default; // 顶部标题高度
+$rightTitleBg:            #36a9e1 !default; // 背景
+$rightTitleShadow:        false !default; // 投影
+$rightTitleTextStyle:     light !default; // 文字风格, dark, light
+
+// 组件样式
+// -----------------------------------------------------
+
+// nav-left
+$leftNavStyle:            dark02 !default; // 风格, dark01, dark02, light01
+$leftNavRight:            arrow !default; // 导航菜单右侧提示信息, arrow 箭头; number 数字
+$leftNavHasBigTitle:      true !default; // 含一级菜单标题
+$leftNavMenuBorder:       transparent transparent transparent !default; // 左侧菜单左边线颜色, 默认; 鼠标上移; 当前
+
+// table
+$tableCaptionOutput:      true !default; // 标题
+$tableAppendOutput:       true !default; // 支持样式追加
+$trStatusOutput:          true !default; // 整行选中、警告、错误等状态
+$norecordOutput:          true !default; // 暂无数据
+$tableInfoOutput:         true !default; // 表格信息
+
+// tags
+$tagOutput:               true !default; // 默认标签
+$tagDeleteOutput:         true !default; // 可关闭标签
+$tagCategoryOutput:       true !default; // 可选择标签
+$tagCategoryLargeOutput:  true !default; // 大号可选择标签
+$starsOutput:             true !default; // 星级
+$badgeOutput:             true !default; // 徽章
+
+// loading
+$loadingOutput:           true !default; // loading
+$loadingBorder:           false !default; // 边线

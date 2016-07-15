@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+// nav
+.t-head-nav {
+  list-style: none;
+  @include float;
+  
+  & > li {
+    @extend %inline-block;
+    line-height: nth($wrapHeader,1);
+    i {
+      font-size: 12px;
+    }
+
+    a {
+      @extend %toplink;
+      padding: 0 10px;
+    }
+    
+  }
+
+}

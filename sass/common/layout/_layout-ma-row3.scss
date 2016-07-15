@@ -38,7 +38,7 @@ $innerPadding:          10px !default; // 内间距
     }
 
     .t-layout-left {
-      @include float(left);
+      @include float;
       width: nth($fixedWidth,1);
       margin-right: - nth($fixedWidth,1);
     }
@@ -50,7 +50,7 @@ $innerPadding:          10px !default; // 内间距
     }
 
     .t-layout-middle {
-      @include float(left);
+      @include float;
       width: 100%;
     }
 

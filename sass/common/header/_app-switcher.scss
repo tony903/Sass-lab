@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+%toplayer {
+  @extend %hidden;//默认隐藏
+  position: absolute;
+  top: nth($wrapHeader,1) + 2px;
+  z-index: $zindexModal;
+  list-style: none;
+  @include float;
+  @include box-shadow(1px 1px 3px #999);
+  text-align: left;
+  border: 1px solid #DDD;
+  background: $white;
+  
+  &.show {
+    display: block !important;
+    visibility: visible;
+  }
+}
+
+// app-switcher
+.t-app-switcher {
+  position: relative;
+  width: nth($wrapHeader,1);
+  height: nth($wrapHeader,1);
+  @include float;
+  margin-left: 6px;
+  text-align: center;
+
+  & > a {
+    display: block;
+    width: nth($wrapHeader,1);
+    height: nth($wrapHeader,1);
+    @extend %toplink;
+  }
+
+  & > ul {
+    @extend %toplayer;
+    width: 180px;
+    left: 0;
+
+    li {
+      width: 100%;
+      line-height: 20px;
+      text-indent: 6px;
+      margin-bottom: 1px;
+      a {
+        display: block;
+        padding: 4px 6px;
+        color: $blackLight;
+        &:hover {
+          color: $white;
+          background: lighten(nth($wrapHeader,2), 10%);
+        }
+      }
+
+      &.current {
+        a {
+          color: $white;
+          background: lighten(nth($wrapHeader,2), 10%);
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* t-tabs */
+.t-tabs {
+  .t-tabs-items { 
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #DDD;
+    font-size: nth($tabSize,3);
+    text-align: center;
+    @extend %clearfix;
+    & > li { 
+      list-style: none;
+      a {
+        display: block;
+        padding: 0 nth($tabSize,2);
+        height: nth($tabSize,1);
+        line-height: nth($tabSize,1);
+        border: 1px solid transparent;
+        color: $grayDark;
+        text-decoration: none;
+        outline: none;
+        transition: background-color .4s ease-out,color .4s ease-out;
+        &:hover, &:active {
+          background: $white;
+          color: $blackLight;
+        }
+      }
+      &.active {
+        a {
+          background: $white;
+          color: $blackLight;
+          font-weight: 700;
+
+        }
+      }
+    }
+    
+    // 居中
+    @if $tabAlignCenter {
+      li {
+        @include inline-block;
+      }
+    }@else {
+      li {
+        @include float;
+      }
+    }
+
+    //圆角
+    @if $tabBorderRadius {
+      li {
+        margin-right: 4px;
+        a {
+          border-radius: 4px 4px 0 0;
+        }
+      }
+    }@else {
+      li {
+        margin-right: -1px;
+      }
+    }
+
+    // basic
+    @if $tabStyle == basic {
+      li {
+        margin-bottom: -1px;
+        border-bottom: 1px solid #DDD;
+        a {
+          border-color: #DDD;
+          border-bottom: none;
+          background: #EEE;
+        }
+        &.active {
+          border-bottom: 1px solid $white;
+        }
+      }
+    }
+    
+    // line
+    @if $tabStyle == line {
+      li {
+        &.active {
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+    
+  }
+
+  .t-tabs-wrap { 
+    margin: 0;
+    padding: $tabContainerPadding;
+    font-size: 12px;
+    & > li { 
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
+  }
+
+}

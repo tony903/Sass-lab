@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+// 包装器设置
+// -----------------------------------------------------
+// 自适应宽度
+$wrapperAutoWidth:        true !default; // false 固定宽度
+// 绝对定位
+$wrapperAbsolute:         true !default; // false 不定位
+// 头部
+$wrapHeader:              40px $color01; // 内部高度、背景色         
+// 容器
+$wrapInnerWidth:          1200px !default; // 容器内部宽度
+$wrapContainerBg:         $white $white; // 容器外部、内部背景色
+$innerBoxScroll:          true !default; // 超出显示滚动条，false 不显示
+$fixedBoxScroll:          false !default; // 固定区域滚动条，false 不显示
+
+// 底部
+$wrapHasFooter:           false !default; // false 不含底部
+$wrapFooter:              30px $blackLight; // 底部高度及背景色
+
+
+// 头部样式输出开关
+// -----------------------------------------------------
+
+// header背景图片
+$wrapHeaderImgBgOutput:   false !default; // 输出头部背景图片
+$wrapHeaderImgBgUrl:      #010f34 url(../imgs/header-bg01.jpg) no-repeat center top; // 路径、平铺方式
+$wrapHeaderImgBgSize:     cover !default; // 大小
+
+// app切换器
+$appSwitcherOutput:       true !default;
+
+// logo
+$headerLogoOutput:        true !default;
+$headerLogoColor:         $yellow !default;
+$headerImgLogo:           false !default; // 使用图片，默认使用iconfont
+$headerImgLogoWidth:      30px !default; // 宽度
+
+// 导航
+$headerNavOutput:         true !default;
+// 搜索
+$headerSearchOutput:      true !default;
+// 用户信息
+$headerUserOutput:        true !default;
+// 链接hover状态
+$linkHoverDarker:         false !default; // 背景色变浅，false背景色加深
+
+
+// 布局 layout
+// -----------------------------------------------------
+// 列
+$layoutRow:               2 !default; // 1, 2, 3
+// 自适应方向
+$widthAutoSide:           right !default; // left, right, middle
+
+
+// 组件样式
+// -----------------------------------------------------
+
+// nav-left
+$leftNavStyle:            light01 !default; // 风格, 
+$leftNavRight:            number !default; // 导航菜单右侧提示信息, arrow 箭头; number 数字
+$leftNavHasBigTitle:      true !default; // 含一级菜单标题
+$leftNavMenuBorder:       transparent #AAA $orange !default; // 左侧菜单左边线颜色, 默认; 鼠标上移; 当前
+
+// table
+$tableCaptionOutput:      true !default; // 标题
+$tableAppendOutput:       true !default; // 支持样式追加
+$trStatusOutput:          true !default; // 整行选中、警告、错误等状态
+$norecordOutput:          true !default; // 暂无数据
+$tableInfoOutput:         true !default; // 表格信息
+
+// tags
+$tagOutput:               true !default; // 默认标签
+$tagDeleteOutput:         true !default; // 可关闭标签
+$tagCategoryOutput:       true !default; // 可选择标签
+$tagCategoryLargeOutput:  true !default; // 大号可选择标签
+$starsOutput:             true !default; // 星级
+$badgeOutput:             true !default; // 徽章
+
+// tab
+$tabStyle:                basic !default; // 样式, basic, line
+$tabAlignCenter:          false !default; // 居中
+$tabBorderRadius:         true !default; // 圆角
+$tabSize:                 30px 20px 12px !default; // 高度、左右间距、文字大小
+$tabContainerPadding:     10px 0 !default; // 内容区域内边距
+
+// list
+$listTitleOutput:         true !default; // 标题
+$listTitleStyle:          40px $white #bdddf2 !default; // 标题高度、背景色、边线颜色
+$listInputBoxShadow:      false !default; // 文本框内阴影
+$listWarningInputOutput:  true !default; // 警示文本框
+$listInputIconBgOutput:   true !default; // 文本框右侧位图图标
+
+// popup
+$popupHasOverlay:         true !default; // 半透明遮罩
+$popupHasBoxshadow:       true !default; // 阴影
+$popupTitleStyle:         40px $grayLightest #E8E8E8; // 弹出层标题高度、背景色、底部边线颜色
+$popupBottomHeight:       50px; // 弹出层底部高度
+
+$popupLayerOutput:        true !default; // 弹出层
+$popupLayerSize:          600px 320px !default; // 弹出层宽度、高度
+$popupLayerGap:           10px; // 弹出层上下间距
+$popupLayerHaveBottom:    true !default; //底部操作区
+
+$popupAlertOutput:        true !default; // 弹出消息
+$popupAlertSize:          380px 200px !default; // 弹出消息宽度、高度
+
+// paging
+$pageAlign:               right !default; // 方向， left, right, center
+$pageActiveColor:         $blue !default; // 当前页码背景颜色
+$pageHasBtns:             true !default; // 包含操作按钮
