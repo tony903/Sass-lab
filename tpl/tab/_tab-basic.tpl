@@ -3,16 +3,16 @@
               <ul class="t-tabs-items">
                 <!-- 当前页签 active -->
                 <li class="active">
-                  <a href="#nogo">我是选项卡</a>
+                  <a href="javascript:void(0)">我是选项卡</a>
                 </li>
                 <li>
-                  <a href="#nogo">我也是</a>
+                  <a href="javascript:void(0)">我也是</a>
                 </li>
                 <li>
-                  <a href="#nogo">我们大家都是</a>
+                  <a href="javascript:void(0)">我们大家都是</a>
                 </li>
                 <li>
-                  <a href="#nogo">呵呵</a>
+                  <a href="javascript:void(0)">呵呵</a>
                 </li>
               </ul>
               <ul class="t-tabs-wrap">
@@ -26,6 +26,7 @@
                 </li>
                 <li>
                   @@include('../table/_table-info.tpl')
+                  @@include('../loading/_loading-dot-css3.tpl')
                 </li>
                 <li>
                   <img src="assets/imgs/sb_loading.gif" width="220" align="center" alt="">

@@ -9,11 +9,11 @@
 </head>
 <body>
 <div class="t-wrapper">
-  <div class="t-wrap-header">
+  <div class="t-wrap-header" id="menu">
     <div id="t-header">
       
         <!-- app切换器 -->
-        <div class="t-app-switcher">
+<div class="t-app-switcher">
         <a href="javascript:void(0)" onclick="appswitch.className='show'">
           <i class="iconfont icon-leimu"></i>
         </a>
@@ -35,19 +35,15 @@
           </li>
         </ul>
       </div>
-      
-      
-        <!-- logo -->
-        <h1 class="t-logo" href="#nogo">
+<!-- logo -->
+<h1 class="t-logo" href="#nogo">
         <a href="#nogo">
-          <i class="iconfont icon-logo"></i>
-          <p>Asiainfo System</p>
+          <i class="iconfont icon-sasslab"></i>
+          <p>Sass-lab</p>
         </a>
       </h1>
-      
-      
-        <!-- nav -->
-        <ul class="t-head-nav">
+<!-- nav -->
+<ul class="t-head-nav">
         <li>
             <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>首页</span>
@@ -79,10 +75,8 @@
             </a>
         </li>
       </ul>
-      
-      
-        <!-- user -->
-        <div class="t-head-user">
+<!-- user -->
+<div class="t-head-user">
         <a href="javascript:void(0)" onclick="userinfo.className='show'">
           <img src="assets/imgs/user-default.png" alt="">
           <span>tony903</span>
@@ -111,10 +105,8 @@
           </li>
         </ul>
       </div>
-      
-      
-        <!-- search -->
-        <div class="t-head-search">
+<!-- search -->
+<div class="t-head-search">
         <form action="">
           <input type="text" placeholder="搜索">
           <!-- 回车搜索 -->
@@ -286,16 +278,16 @@
               <ul class="t-tabs-items">
                 <!-- 当前页签 active -->
                 <li class="active">
-                  <a href="#nogo">我是选项卡</a>
+                  <a href="javascript:void(0)">我是选项卡</a>
                 </li>
                 <li>
-                  <a href="#nogo">我也是</a>
+                  <a href="javascript:void(0)">我也是</a>
                 </li>
                 <li>
-                  <a href="#nogo">我们大家都是</a>
+                  <a href="javascript:void(0)">我们大家都是</a>
                 </li>
                 <li>
-                  <a href="#nogo">呵呵</a>
+                  <a href="javascript:void(0)">呵呵</a>
                 </li>
               </ul>
               <ul class="t-tabs-wrap">
@@ -803,6 +795,8 @@
                 </tr>
               </tbody>
             </table>
+                  <!-- loading -->
+            <div class="t-loading-dot-css3">加载中<span></span></div>
                 </li>
                 <li>
                   <img src="assets/imgs/sb_loading.gif" width="220" align="center" alt="">
@@ -873,6 +867,7 @@
     </div>
   </div> 
 </div> 
+
 
 </body>
 </html>

@@ -5,7 +5,7 @@
 // 自适应宽度
 $wrapperAutoWidth:        false !default; // false 固定宽度
 // 绝对定位
-$wrapperAbsolute:         true !default; // false 不定位
+$wrapperAbsolute:         false !default; // false 不定位
 // 头部
 $wrapHeader:              50px $blue; // 内部高度、背景色
 // 容器
@@ -26,6 +26,9 @@ $wrapFooter:              30px $blackLight; // 底部高度及背景色
 $wrapHeaderImgBgOutput:   true !default; // 输出头部背景图片
 $wrapHeaderImgBgUrl:      #010f34 url(../imgs/header-bg01.jpg) no-repeat center top; // 路径、平铺方式
 $wrapHeaderImgBgSize:     cover !default; // 大小
+
+// header动态显隐
+$wrapHeaderDynamic:       true !default; // 仅在流布局使用
 
 // app切换器
 $appSwitcherOutput:       true !default;
@@ -103,3 +106,7 @@ $popupAlertSize:          380px 200px !default; // 弹出消息宽度、高度
 $pageAlign:               right !default; // 方向， left, right, center
 $pageActiveColor:         $blue !default; // 当前页码背景颜色
 $pageHasBtns:             true !default; // 包含操作按钮
+
+// loading
+$loadingOutput:           true !default; // loading
+$loadingBorder:           false !default; // 边线

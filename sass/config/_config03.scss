@@ -27,6 +27,9 @@ $wrapHeaderImgBgOutput:   false !default; // 输出头部背景图片
 $wrapHeaderImgBgUrl:      #010f34 url(../imgs/header-bg01.jpg) no-repeat center top; // 路径、平铺方式
 $wrapHeaderImgBgSize:     cover !default; // 大小
 
+// header动态显隐
+$wrapHeaderDynamic:       false !default; // 仅在流布局使用
+
 // app切换器
 $appSwitcherOutput:       true !default;
 
