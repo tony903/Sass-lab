@@ -12,7 +12,7 @@
   color: lighten(nth($wrapHeader,2), 60%);
   cursor: pointer;
 
-  @if not $linkHoverDarker {
+  @if not $headerHoverDarker {
     &:hover {
       background: lighten(nth($wrapHeader,2), 20%);
     }

@@ -35,7 +35,7 @@ $btnBaseClass:           t-btn !default; // 基本命名
 }
 
 // 多颜色按钮
-@mixin btn-color-multi($btnName, $BgColor, $textColor){
+@mixin btn-colorful($btnName, $BgColor, $textColor){
   .#{$btnBaseClass}-#{$btnName} { 
     background: $BgColor;
     border-color: darken($BgColor, 5%);
@@ -56,10 +56,10 @@ $btnBaseClass:           t-btn !default; // 基本命名
 }
 
 // 蓝色按钮
-@include btn-color-multi(blue, $blue, $white);
+@include btn-colorful(blue, $blue, $white);
 
 // 绿色按钮
-@include btn-color-multi(green, $green, $white);
+@include btn-colorful(green, $green, $white);
 
 // 禁用按钮
 .#{$btnBaseClass}-disabled {

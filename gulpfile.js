@@ -1,5 +1,5 @@
 var gulp    = require('gulp'),
-    // clean   =  require('gulp-clean'),
+    clean   =  require('gulp-clean'),
     connect = require('gulp-connect'),
     gulpSequence = require('gulp-sequence'),
     fileinclude = require('gulp-file-include'),
@@ -9,14 +9,13 @@ var gulp    = require('gulp'),
     cors = require('cors');
 
 // 清除
-// gulp.task('clean', function () {
-//     return gulp.src('src/')
-//         .pipe(clean({force: true}))
-//         .pipe(clean());
-// });
+gulp.task('clean', function () {
+    return gulp.src(['src/*.html','src/assets/css'])
+        .pipe(clean({force: true}))
+        .pipe(clean());
+});
 
-// gulp.task('copy',['clean'],function(){
-gulp.task('copy',function(){
+gulp.task('copy',['clean'],function(){
     return gulp.src('compile/**/*')
         .pipe( gulp.dest('src/'));
 });
@@ -72,5 +71,4 @@ gulp.task('watch', function() {
 });
 
 //开发调试
-// gulp.task('default', gulpSequence('clean','include','sass','connect','watch'));
-gulp.task('default', gulpSequence('include','sass','connect','watch'));
+gulp.task('default', gulpSequence('clean','include','sass','connect','watch'));
