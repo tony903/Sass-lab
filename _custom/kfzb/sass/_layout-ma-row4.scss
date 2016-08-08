@@ -1,0 +1,15 @@
+.t-layout-ma-row4 .t-layout-left, .t-layout-ma-row4 .t-layout-right1, .t-layout-ma-row4 .t-layout-right2, .t-layout-ma-row4 .t-layout-middleinner { overflow-x: hidden; overflow-y: auto; }
+
+.t-layout-ma-row4, .t-layout-ma-row4 .t-layout-left, .t-layout-ma-row4 .t-layout-right1, .t-layout-ma-row4 .t-layout-right2, .t-layout-ma-row4 .t-layout-middle, .t-layout-ma-row4 .t-layout-middleinner { position: absolute; top: 0; bottom: 0; }
+
+.t-layout-ma-row4 { width: 100%; background: #EEE;}
+
+.t-layout-ma-row4 .t-layout-left { left: 0; width: 300px; background: #fff; }
+
+.t-layout-ma-row4 .t-layout-right1 { right: 350px; width: 130px; background: #fff; }
+
+.t-layout-ma-row4 .t-layout-right2 { right: 0; width: 340px; background: #fff; }
+
+.t-layout-ma-row4 .t-layout-middle { left: 310px; right: 490px; width: auto; }
+
+.t-layout-ma-row4 .t-layout-middleinner { left: 0; right: 0; padding:10px 0; background: #fff; }

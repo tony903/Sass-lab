@@ -141,13 +141,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-wrapper { width: 100%; }
 
-.t-wrap-header { height: 50px; background-color: #339dd9; background: #010f34 url(../imgs/header-bg01.jpg) no-repeat center top; background-size: cover; }
+.t-wrap-header { height: 40px; background-color: #339dd9; background: #010f34 url(../imgs/header-bg01.jpg) no-repeat center top; background-size: cover; }
+
+#t-container { background-color: #fff; }
 
 .t-wrap-header { width: 100%; position: fixed; top: 0; transition: top 0.3s; -moz-transition: top 0.3s; -webkit-transition: top 0.3s; }
 
-.nav-up { top: -50px; }
+.nav-up { top: -40px; }
 
-.t-wrap-container { padding-top: 50px; }
+.t-wrap-container { padding-top: 40px; }
 
 .t-wrap-container { background-color: #fff; }
 
@@ -155,16 +157,16 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 #t-header, #t-container, #t-footer { width: 1020px; margin-left: auto; margin-right: auto; }
 
-#t-container { background-color: #fff; }
-
 /* header */
-#t-header { color: #fff; line-height: 50px; }
+#t-header { color: #fff; background-color: #339dd9; line-height: 40px; }
 
 .t-logo a, .t-head-nav > li a, .t-head-user > a, .t-app-switcher > a { display: block; color: white; cursor: pointer; }
 
 .t-logo a:hover, .t-head-nav > li a:hover, .t-head-user > a:hover, .t-app-switcher > a:hover { background: #1a638c; }
 
-.t-logo { color: #fff; margin: 0 6px; float: left; display: inline; line-height: 50px; }
+#t-header { background: transparent; }
+
+.t-logo { color: #fff; margin: 0 6px; float: left; display: inline; line-height: 40px; }
 
 .t-logo i { font-size: 26px; float: left; display: inline; padding-right: 4px; }
 
@@ -174,13 +176,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-head-nav { list-style: none; float: left; display: inline; }
 
-.t-head-nav > li { line-height: 50px; }
+.t-head-nav > li { line-height: 40px; }
 
 .t-head-nav > li i { font-size: 12px; }
 
 .t-head-nav > li a { padding: 0 10px; }
 
-.t-head-search { float: right; display: inline; width: 200px; height: 28px; background: #1e72a1; margin-top: 11px; margin-right: 12px; border-radius: 3px; }
+.t-head-search { float: right; display: inline; width: 200px; height: 28px; background: #1e72a1; margin-top: 6px; margin-right: 12px; border-radius: 3px; }
 
 .t-head-search input[type="text"] { float: left; display: inline; border: none; width: 166px; height: 28px; line-height: 28px; padding: 0 6px; color: #fff; outline: none; background: transparent; }
 
@@ -192,11 +194,17 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-head-search form a i { font-size: 14px; }
 
+.t-head-search.t-rounded-corners { border-radius: 28px; }
+
+.t-head-search.t-rounded-corners input[type="text"] { padding: 0 12px; }
+
+.t-head-search.t-rounded-corners form a { right: 4px; }
+
 .t-head-user { position: relative; float: right; display: inline; margin-right: 6px; }
 
-.t-head-user > a { height: 50px; padding: 0 6px; }
+.t-head-user > a { height: 40px; padding: 0 6px; }
 
-.t-head-user > a img { float: left; display: inline; width: 24px; height: 24px; border-radius: 12px; margin-top: 13px; margin-right: 6px; }
+.t-head-user > a img { float: left; display: inline; width: 24px; height: 24px; border-radius: 12px; margin-top: 8px; margin-right: 6px; }
 
 .t-head-user > a span { float: left; display: inline; font-size: 14px; }
 
@@ -214,13 +222,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-head-user > ul li a:hover { color: #fff; background: #339dd9; }
 
-.t-head-user > ul, .t-app-switcher > ul { position: absolute; top: 52px; z-index: 1100; list-style: none; float: left; display: inline; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999; text-align: left; border: 1px solid #DDD; background: #fff; }
+.t-head-user > ul, .t-app-switcher > ul { position: absolute; top: 42px; z-index: 1100; list-style: none; float: left; display: inline; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999; text-align: left; border: 1px solid #DDD; background: #fff; }
 
 .t-head-user > ul.show, .t-app-switcher > ul.show { display: block !important; visibility: visible; }
 
-.t-app-switcher { position: relative; width: 50px; height: 50px; float: left; display: inline; margin-left: 6px; text-align: center; }
+.t-app-switcher { position: relative; width: 40px; height: 40px; float: left; display: inline; margin-left: 6px; text-align: center; }
 
-.t-app-switcher > a { display: block; width: 50px; height: 50px; }
+.t-app-switcher > a { display: block; width: 40px; height: 40px; }
 
 .t-app-switcher > ul { width: 180px; left: 0; }
 

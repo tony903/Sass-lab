@@ -33,6 +33,10 @@
   }
 }
 
+#t-container {
+  background-color: nth($wrapContainerBg,2);
+}
+
 // header动态显隐
 @if $wrapHeaderDynamic and not $wrapperAbsolute {
   .t-wrap-header {
@@ -125,10 +129,6 @@
   #t-header, #t-container, #t-footer {
     width: $wrapInnerWidth;
     @include center-block;
-  }
-
-  #t-container {
-    background-color: nth($wrapContainerBg,2);
   }
 
 }

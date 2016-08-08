@@ -57,10 +57,10 @@
         display: block;
         padding: 4px 6px;
         background: $white;
-        color: lighten(nth($wrapHeader,2), 10%);
+        color: lighten(nth($wrapHeader,3), 10%);
         &:hover {
           color: $white;
-          background: nth($wrapHeader,2);
+          background: nth($wrapHeader,3);
         }
       }
 

@@ -5,7 +5,7 @@
   @include float(right);
   width: 200px;
   height: 28px;
-  background: darken(nth($wrapHeader,2), 15%);
+  background: darken(nth($wrapHeader,3), 15%);
   margin-top: (nth($wrapHeader,1) - 28px) / 2;
   margin-right: 12px;
   border-radius: 3px;
@@ -49,6 +49,19 @@
       }
     }
 
+  }
+  
+  // 圆角
+  &.t-rounded-corners {
+    border-radius: 28px;
+
+    input[type="text"] {
+      padding: 0 12px;
+    }
+
+    form a {
+      right: 4px;
+    }
   }
 
 }

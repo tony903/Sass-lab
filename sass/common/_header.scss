@@ -3,25 +3,33 @@
 /* header */
 #t-header {
   color: $white;
+  background-color: nth($wrapHeader,3);
   line-height: nth($wrapHeader,1);
   @extend %clearfix;
 }
 
 %toplink {
   display: block;
-  color: lighten(nth($wrapHeader,2), 60%);
+  color: lighten(nth($wrapHeader,3), 60%);
   cursor: pointer;
 
   @if not $headerHoverDarker {
     &:hover {
-      background: lighten(nth($wrapHeader,2), 20%);
+      background: lighten(nth($wrapHeader,3), 20%);
     }
     }@else {
     &:hover {
-      background: darken(nth($wrapHeader,2), 20%);
+      background: darken(nth($wrapHeader,3), 20%);
     }
   }
   
+}
+
+// 如果设置背景图片，header内部背景色重置为透明
+@if $wrapHeaderImgBgOutput {
+  #t-header {
+    background: transparent;
+  }
 }
 
 // logo

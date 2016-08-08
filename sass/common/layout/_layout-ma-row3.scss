@@ -2,9 +2,10 @@
 
 // 参数设置
 // -----------------------------------------------------
-$fixedWidth:            200px 240px; //左侧、右侧固定宽度
+$fixedWidth:            300px 310px; //左侧、右侧固定宽度
 $gapWidth:              10px; //间隔宽度
 $innerPadding:          10px !default; // 内间距
+$innerBg:               $white $white $white !default; // 左、中、右容器背景色
 
 // 如果不是绝对定位，销毁内部容器滚动条
 @if not $wrapperAbsolute {
@@ -40,12 +41,14 @@ $innerPadding:          10px !default; // 内间距
     .t-layout-left {
       @include float;
       width: nth($fixedWidth,1);
+      background: nth($innerBg,1);
       margin-right: - nth($fixedWidth,1);
     }
 
     .t-layout-right {
       @include float(right);
       width: nth($fixedWidth,2);
+      background: nth($innerBg,3);
       margin-left: - nth($fixedWidth,2);
     }
 
@@ -57,6 +60,7 @@ $innerPadding:          10px !default; // 内间距
     .t-layout-middleinner {
       margin-left: nth($fixedWidth,1) + $gapWidth;
       margin-right: nth($fixedWidth,2) + $gapWidth;
+      background: nth($innerBg,2);
       padding: $innerPadding;
     }
 
@@ -97,6 +101,7 @@ $innerPadding:          10px !default; // 内间距
       @extend %Yscroll;
       left: 0;
       width: nth($fixedWidth,1);
+      background: nth($innerBg,1);
     }
 
     .t-layout-right {
@@ -104,6 +109,7 @@ $innerPadding:          10px !default; // 内间距
       @extend %Yscroll;
       right: 0;
       width: nth($fixedWidth,2);
+      background: nth($innerBg,3);
     }
 
     .t-layout-middle {
@@ -119,6 +125,7 @@ $innerPadding:          10px !default; // 内间距
       left: 0;
       right: 0;
       padding: $innerPadding;
+      background: nth($innerBg,2);
     }
 
   }

@@ -148,12 +148,14 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-wrap-header { height: 40px; background-color: #32323A; top: 0; }
 
+#t-container { background-color: #fff; }
+
 .t-wrap-container { bottom: 0; background-color: #fff; }
 
 .t-wrap-footer { display: none !important; visibility: hidden; }
 
 /* header */
-#t-header { color: #fff; line-height: 40px; }
+#t-header { color: #fff; background-color: #32323A; line-height: 40px; }
 
 .t-logo a, .t-head-nav > li a, .t-head-user > a, .t-app-switcher > a { display: block; color: #cbcbd3; cursor: pointer; }
 
@@ -186,6 +188,12 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-head-search form a:hover { color: #9595a3; }
 
 .t-head-search form a i { font-size: 14px; }
+
+.t-head-search.t-rounded-corners { border-radius: 28px; }
+
+.t-head-search.t-rounded-corners input[type="text"] { padding: 0 12px; }
+
+.t-head-search.t-rounded-corners form a { right: 4px; }
 
 .t-head-user { position: relative; float: right; display: inline; margin-right: 6px; }
 

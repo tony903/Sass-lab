@@ -50,14 +50,14 @@
         color: $blackLight;
         &:hover {
           color: $white;
-          background: lighten(nth($wrapHeader,2), 10%);
+          background: lighten(nth($wrapHeader,3), 10%);
         }
       }
 
       &.current {
         a {
           color: $white;
-          background: lighten(nth($wrapHeader,2), 10%);
+          background: lighten(nth($wrapHeader,3), 10%);
         }
       }
 

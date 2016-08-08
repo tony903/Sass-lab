@@ -7,7 +7,7 @@ $wrapperAutoWidth:        false !default; // false 固定宽度
 // 绝对定位
 $wrapperAbsolute:         false !default; // false 不定位
 // 头部
-$wrapHeader:              50px $blue; // 内部高度、背景色
+$wrapHeader:              40px $blue $blue; // 高度、外部背景色、内部背景色
 // 容器
 $wrapInnerWidth:          1020px !default; // 容器内部宽度
 $wrapContainerBg:         $white $white; // 容器外部、内部背景色

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* The file dynamically generated, please do not modify.
+/* please contact tianwf@asiainfo.com if you have any questions.
+/* https://github.com/tony903/Sass-lab */
+
+
+// Core
+@import "../sass/core/setting";
+@import "../sass/core/css3";
+// @import "../sass/core/media-queries";
+@import "../sass/core/mixin";
+// @import "../sass/core/reset";
+@import "../sass/common/reset";
+
+// Config
+@import "../sass/config/config05";
+
+// Wrapper
+@import "../sass/common/wrapper";
+@import "../sass/common/header";
+@import "../sass/common/common";
+
+// Layout
+@import "../sass/common/layout";
+
+// Common
+@import "../iconfont_kfzb/iconfont.css"; //矢量图标
+@import "../lib/perfect-scrollbar/perfect-scrollbar.css"; //滚动条
+
+// Components
+@import "../sass/components/table";
+@import "../sass/components/btn";
+@import "../sass/components/tab";
+@import "../sass/components/paging";
+
+// Styles
+@import "../_custom/kfzb/sass/kfzb";
+@import "../_custom/kfzb/sass/layout-ma-row4";

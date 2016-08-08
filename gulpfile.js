@@ -65,9 +65,10 @@ gulp.task('watch', function() {
       开发是监听此任务，会实时将dev环境的代码copy到release下
       不要在release下修改代码，会被覆盖
   */
-  gulp.watch(['compile/**/*.html','tpl/**/*'], ['include']);
+  gulp.watch(['compile/**/*.html','tpl/**/*','_custom/**/*'], ['include']);
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('compile/*.scss', ['sass']);
+  gulp.watch('_custom/**/*.scss', ['sass']);
 });
 
 //开发调试

@@ -1,5 +1,5 @@
 <!-- app切换器 -->
-@@include('_app-switcher.tpl')
+<!-- @@include('_app-switcher.tpl') -->
 <!-- logo -->
 @@include('_header-logo.tpl')
 <!-- nav -->
