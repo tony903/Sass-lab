@@ -140,6 +140,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #999; }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #999; }
 
+.show { display: block; visibility: visible; }
+
+.hide { display: none; visibility: hidden; }
+
+.fl { float: left; }
+
+.fr { float: right; }
+
 .t-wrap-container, .t-wrap-header { position: absolute; left: 0; right: 0; }
 
 .t-wrap-container { top: 40px; overflow-x: hidden; overflow-y: auto; }
@@ -241,14 +249,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 #t-footer p { display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; margin-left: auto; margin-right: auto; line-height: 30px; }
 
 #t-footer a { color: #51B148; text-decoration: none; }
-
-.show { display: block; visibility: visible; }
-
-.hide { display: none; visibility: hidden; }
-
-.fl { float: left; }
-
-.fr { float: right; }
 
 /* layout */
 .t-layout .t-layout-rightinner { overflow-x: hidden; overflow-y: auto; }

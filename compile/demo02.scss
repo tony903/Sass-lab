@@ -10,17 +10,12 @@
 // Config
 @import "../sass/config/config02";
 
+// Common
+@import "../sass/common/common";
+@import "../iconfont/iconfont.css"; //矢量图标
+
 // Wrapper
 @import "../sass/common/wrapper";
-@import "../sass/common/header";
-@import "../sass/common/footer";
-@import "../sass/common/common";
-
-// Layout
-@import "../sass/common/layout";
-
-// Common
-@import "../iconfont/iconfont.css"; //矢量图标
 
 // Components
 @import "../sass/components/table";

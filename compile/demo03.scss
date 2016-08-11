@@ -10,18 +10,13 @@
 // Config
 @import "../sass/config/config03";
 
-// Wrapper
-@import "../sass/common/wrapper";
-@import "../sass/common/header";
-@import "../sass/common/footer";
-@import "../sass/common/common";
-
-// Layout
-@import "../sass/common/layout";
-
 // Common
+@import "../sass/common/common";
 @import "../iconfont/iconfont.css"; //矢量图标
 @import "../lib/perfect-scrollbar/perfect-scrollbar.css"; //滚动条
+
+// Wrapper
+@import "../sass/common/wrapper";
 
 // Components
 @import "../sass/components/nav-left";
