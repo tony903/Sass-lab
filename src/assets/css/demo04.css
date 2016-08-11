@@ -138,7 +138,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-title { position: fixed; left: 220px; top: 0; right: 0; z-index: 1000; height: 40px; line-height: 40px; background: #36a9e1; }
 
-.t-title > h2 { display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; font-size: 18px; padding-left: 15px; }
+.t-title > h2 { display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; font-size: 18px; padding-left: 15px; color: #fff; }
 
 .t-title .t-title-right { float: right; display: inline; height: 40px; }
 
@@ -177,12 +177,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-sidebar-top .t-panel-logo { height: 40px; background: #1c84b6; }
 
 .t-sidebar-top .t-panel-logo img, .t-sidebar-top .t-panel-logo embed, .t-sidebar-top .t-panel-logo svg, .t-sidebar-top .t-panel-logo image { width: 116px; height: 29px; margin-top: 6px; }
-
-.t-sidebar-top .t-panel-user img { width: 76px; border: 3px solid #fff; border-radius: 100%; margin-top: -40px; }
-
-.t-sidebar-top .t-panel-user h2 { font-size: 16px; line-height: 22px; margin-top: 4px; color: #fff; font-family: "Microsoft Yahei"; }
-
-.t-sidebar-top .t-panel-user p { font-size: 12px; font-style: italic; color: #999; }
 
 .t-panel { background: #fff; border: 1px solid #DDD; margin-bottom: 15px; }
 

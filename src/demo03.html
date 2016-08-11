@@ -8,12 +8,12 @@
   <title>右侧自适应</title>
 </head>
 <body>
-<div class="t-wrapper">
-  <div class="t-wrap-header" id="menu">
-    <div id="t-header">
-      
-        <!-- app切换器 -->
-<div class="t-app-switcher">
+  <div class="t-wrapper">
+    <!-- header -->
+    <div class="t-wrap-header" id="menu">
+      <div id="t-header">
+        
+          <div class="t-app-switcher">
         <a href="javascript:void(0)" onclick="appswitch.className='show'">
           <i class="iconfont icon-leimu"></i>
         </a>
@@ -35,15 +35,17 @@
           </li>
         </ul>
       </div>
-<!-- logo -->
-<h1 class="t-logo" href="#nogo">
+        
+        
+          <h1 class="t-logo" href="#nogo">
         <a href="#nogo">
           <i class="iconfont icon-logo"></i>
           <p>Asiainfo System</p>
         </a>
       </h1>
-<!-- nav -->
-<ul class="t-head-nav">
+        
+        
+          <ul class="t-head-nav">
         <li>
             <a href="javascript:void(0)" onclick="popupAlert.className='t-popup t-popup-alert show'">
               <span>首页</span>
@@ -75,8 +77,9 @@
             </a>
         </li>
       </ul>
-<!-- user -->
-<div class="t-head-user">
+        
+        
+          <div class="t-head-user">
         <a href="javascript:void(0)" onclick="userinfo.className='show'">
           <img src="assets/imgs/user-default.png" alt="">
           <span>tony903</span>
@@ -105,8 +108,9 @@
           </li>
         </ul>
       </div>
-<!-- search -->
-<div class="t-head-search">
+        
+        
+          <div class="t-head-search">
         <form action="">
           <input type="text" placeholder="搜索">
           <!-- 回车搜索 -->
@@ -117,13 +121,14 @@
           </a>
         </form>
       </div>
-      
+        
+      </div>
     </div>
-  </div>
-  <div class="t-wrap-container">
-    <div id="t-container">
-      
-        <!-- 两列，右侧自适应宽度 -->
+    <!-- container -->
+    <div class="t-wrap-container">
+      <div id="t-container">
+        
+          <!-- 两列，右侧自适应宽度 -->
       <div class="t-layout">
         <div class="t-layout-left"> 
           <div class="t-sidebar-navs ps-container" id="scrollbar-box" >
@@ -274,7 +279,7 @@
         <div class="t-layout-right">
           <div class="t-layout-rightinner"> 
             <!-- 选项卡 -->
-            <div class="t-tabs">
+            <div class="t-tabs" id="tab01">
               <ul class="t-tabs-items">
                 <!-- 当前页签 active -->
                 <li class="active">
@@ -808,46 +813,23 @@
             <!-- tab切换，本段JS纯属实验，项目实施时请高手们替换掉 -->
             <script type="text/javascript">
               $(function(){
-                $('.t-tabs-items li').click(function(){
+                $('#tab01 .t-tabs-items > li').click(function(){
                   var $t = $(this).index();
                   $(this).addClass('active').siblings().removeClass('active');
-                  $('.t-tabs-wrap > li').eq($t).addClass('selected').siblings().removeClass('selected');
+                  $('#tab01 .t-tabs-wrap > li').eq($t).addClass('selected').siblings().removeClass('selected');
                 })
               });
             </script>
           </div>
         </div>
       </div>
-      
+        
+      </div>
     </div>
+    
   </div>
-  <div class="t-wrap-footer">
-    <div id="t-footer">
-      
-        <p>木有版权 &copy; Sass实验室 <a href="mailto:kevin903@163.com">@tonytian</a></p>
-      
-    </div>
-  </div>
-</div>
-
-  <!-- 弹出对话框 -->
-<div class="t-popup t-popup-alert hide" id="popupAlert">
-  <div class="t-popup-overlay">
-    <!-- 半透明覆盖层 -->
-  </div>
-  <div class="t-popup-container">
-    <div class="t-popup-content">
-      <!-- 提示信息 -->
-      <i class="iconfont icon-tanhao"></i>
-      <p>该页面仅为示例，无法到达你点击的地方</p>  
-    </div>
-    <div class="t-popup-bottom">
-      <a href="javascript:void(0)" class="t-btn t-btn-blue" onclick="popupAlert.className='hide'">确定</a>
-      <a href="javascript:void(0)" class="t-btn" onclick="popupAlert.className='hide'">取消</a>
-    </div>
-  </div> 
-</div>
-<!-- 弹出层 -->
+  
+    <!-- 弹出层 -->
 <div class="t-popup t-popup-layer hide" id="popupLayer">
   <div class="t-popup-overlay">
     <!-- 半透明覆盖层 -->
@@ -867,7 +849,26 @@
     </div>
   </div> 
 </div> 
-
-
+  
+  
+    <!-- 弹出对话框 -->
+<div class="t-popup t-popup-alert hide" id="popupAlert">
+  <div class="t-popup-overlay">
+    <!-- 半透明覆盖层 -->
+  </div>
+  <div class="t-popup-container">
+    <div class="t-popup-content">
+      <!-- 提示信息 -->
+      <i class="iconfont icon-tanhao"></i>
+      <p>该页面仅为示例，无法到达你点击的地方</p>  
+    </div>
+    <div class="t-popup-bottom">
+      <a href="javascript:void(0)" class="t-btn t-btn-blue" onclick="popupAlert.className='hide'">确定</a>
+      <a href="javascript:void(0)" class="t-btn" onclick="popupAlert.className='hide'">取消</a>
+    </div>
+  </div> 
+</div>
+  
+  
 </body>
 </html>

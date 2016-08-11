@@ -8,7 +8,7 @@
 
 #t-header:after, .t-columns-group:after, .t-list-btns:after, .t-page:after, .t-stars:after, .t-tabs .t-tabs-items:after { clear: both; overflow: hidden; }
 
-.t-head-search input[type="submit"], .t-head-user > ul, .t-app-switcher > ul { display: none !important; visibility: hidden; }
+.t-app-switcher > ul, .t-head-user > ul, .t-head-search input[type="submit"] { display: none !important; visibility: hidden; }
 
 .t-columns-group > li > label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
 
@@ -157,9 +157,27 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 /* header */
 #t-header { color: #fff; background-color: #32323A; line-height: 40px; }
 
-.t-logo a, .t-head-nav > li a, .t-head-user > a, .t-app-switcher > a { display: block; color: #cbcbd3; cursor: pointer; }
+.t-app-switcher > a, .t-logo a, .t-head-nav > li a, .t-head-user > a { display: block; color: #cbcbd3; cursor: pointer; }
 
-.t-logo a:hover, .t-head-nav > li a:hover, .t-head-user > a:hover, .t-app-switcher > a:hover { background: #030303; }
+.t-app-switcher > a:hover, .t-logo a:hover, .t-head-nav > li a:hover, .t-head-user > a:hover { background: #030303; }
+
+.t-app-switcher > ul, .t-head-user > ul { position: absolute; top: 42px; z-index: 1100; list-style: none; float: left; display: inline; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999; text-align: left; border: 1px solid #DDD; background: #fff; }
+
+.t-app-switcher > ul.show, .t-head-user > ul.show { display: block !important; visibility: visible; }
+
+.t-app-switcher { position: relative; width: 40px; height: 40px; float: left; display: inline; margin-left: 6px; text-align: center; }
+
+.t-app-switcher > a { display: block; width: 40px; height: 40px; }
+
+.t-app-switcher > ul { width: 180px; left: 0; }
+
+.t-app-switcher > ul li { width: 100%; line-height: 20px; text-indent: 6px; margin-bottom: 1px; }
+
+.t-app-switcher > ul li a { display: block; padding: 4px 6px; color: #333; }
+
+.t-app-switcher > ul li a:hover { color: #fff; background: #4a4a55; }
+
+.t-app-switcher > ul li.current a { color: #fff; background: #4a4a55; }
 
 .t-logo { color: #fff; margin: 0 6px; float: left; display: inline; line-height: 40px; }
 
@@ -216,24 +234,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-head-user > ul li a { display: block; padding: 4px 6px; background: #fff; color: #4a4a55; }
 
 .t-head-user > ul li a:hover { color: #fff; background: #32323A; }
-
-.t-head-user > ul, .t-app-switcher > ul { position: absolute; top: 42px; z-index: 1100; list-style: none; float: left; display: inline; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999; text-align: left; border: 1px solid #DDD; background: #fff; }
-
-.t-head-user > ul.show, .t-app-switcher > ul.show { display: block !important; visibility: visible; }
-
-.t-app-switcher { position: relative; width: 40px; height: 40px; float: left; display: inline; margin-left: 6px; text-align: center; }
-
-.t-app-switcher > a { display: block; width: 40px; height: 40px; }
-
-.t-app-switcher > ul { width: 180px; left: 0; }
-
-.t-app-switcher > ul li { width: 100%; line-height: 20px; text-indent: 6px; margin-bottom: 1px; }
-
-.t-app-switcher > ul li a { display: block; padding: 4px 6px; color: #333; }
-
-.t-app-switcher > ul li a:hover { color: #fff; background: #4a4a55; }
-
-.t-app-switcher > ul li.current a { color: #fff; background: #4a4a55; }
 
 /* footer */
 #t-footer { color: #fff; text-align: center; }

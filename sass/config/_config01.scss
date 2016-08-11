@@ -11,8 +11,10 @@ $sidebar: (
   textBgColor:            #32323a, // 文字区域背景颜色
 );
 
-// 左侧logo
-$leftLogoSize:            128px 32px 10px !default; // logo宽度、高度、距离顶部px        
+// 左侧顶部
+$leftLogoOutput:          true !default; // logo         
+$leftLogoSize:            128px 32px 10px !default; // logo宽度、高度、距离顶部px
+$leftUserOutput:          true !default; // user        
 
 // 右侧顶部
 $rightTitleHeight:        50px !default; // 顶部标题高度

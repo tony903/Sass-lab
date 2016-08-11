@@ -32,6 +32,11 @@
   }
 }
 
+// appSwitcher
+@if $appSwitcherOutput {
+  @import "header/app-switcher"; 
+}
+
 // logo
 @if $headerLogoOutput {
   @import "header/header-logo";
@@ -50,9 +55,4 @@
 // user
 @if $headerUserOutput {
   @import "header/header-user";
-}
-
-// appSwitcher
-@if $appSwitcherOutput {
-  @import "header/app-switcher"; 
 }

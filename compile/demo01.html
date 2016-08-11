@@ -1,8 +1,20 @@
-@@include('../tpl/wrapper/_dom-header.tpl', {
+<!doctype html>
+<html>
+@@include('../tpl/wrapper/_dom-head.tpl', {
 	"title": "Sass实验",
 	"css": "demo01"
 })
-@@include('../tpl/wrapper/frame/_frame01.tpl',{
-  "outer": "popup/_popup.tpl"
+@@include('../tpl/new-frame/_frame01.tpl',{
+  "sidebar": {
+    "logo": "_logo-sasslab.tpl",
+    "user": "_sidebar-user.tpl",
+    "nav": "_nav-left.tpl" 
+  },
+  "title": "_right-title.tpl",
+  "container": "_right_container.tpl",
+  "popup": {
+    "layer": "_popup-layer.tpl",
+    "alert": "_popup-alert.tpl"
+  }
 })
-@@include('../tpl/wrapper/_dom-footer.tpl')
+</html>

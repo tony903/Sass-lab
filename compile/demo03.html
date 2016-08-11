@@ -1,12 +1,23 @@
-@@include('../tpl/wrapper/_dom-header.tpl', {
+<!doctype html>
+<html>
+@@include('../tpl/wrapper/_dom-head.tpl', {
 	"title": "右侧自适应",
 	"css": "demo03"
 })
 @@include('../tpl/wrapper/_dom-body.tpl', {
-  "header": "_header-asiainfo.tpl",
-  "inner": "layout/_layout-ra.tpl",
-  "outer": "popup/_popup.tpl",
+  "header": {
+    "switcher": "_app-switcher.tpl",
+    "logo": "_header-logo-asiainfo.tpl",
+    "nav": "_header-nav.tpl",
+    "search": "_header-search.tpl",
+    "user": "_header-user.tpl"
+  },
+  "layout": "_layout-ra.tpl",
+  "popup": {
+    "layer": "_popup-layer.tpl",
+    "alert": "_popup-alert.tpl"
+  },
   "js": "",
-  "footer": "_footer-basic.tpl"
+  "footer": ""
 })
-@@include('../tpl/wrapper/_dom-footer.tpl')
+</html>

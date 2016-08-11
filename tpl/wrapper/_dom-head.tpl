@@ -1,5 +1,3 @@
-<!doctype html>
-<html>
 <head>
   <meta charset="UTF-8">
   <meta name="renderer" content="webkit"/>
@@ -7,4 +5,3 @@
   <link rel="stylesheet" type="text/css" href="assets/css/@@css.css">
   <title>@@title</title>
 </head>
-<body>

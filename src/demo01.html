@@ -7,26 +7,28 @@
   <link rel="stylesheet" type="text/css" href="assets/css/demo01.css">
   <title>Sass实验</title>
 </head>
-<body>
 <div class="t-wrap">
   
   <div class="t-sidebar">
-
     <div class="t-sidebar-top">
-      <div class="t-panel-logo">
+      
+        <div class="t-panel-logo">
         <svg>
           <image xlink:href="assets/imgs/logo-sasslab.svg" src="assets/imgs/logo-sasslab.png" />
         </svg>
       </div>
-      <div class="t-panel-user">
+      
+      
+        <div class="t-panel-user">
         <img src="assets/temp/user_pic01.jpg" alt="tony tian">
         <h2>Tony903</h2>
         <p>超级系统管理员</p>
       </div>
+      
     </div>
-
     <!-- scrollbar-box -->
-    <div class="t-sidebar-navs ps-container" id="scrollbar-box" >
+    
+      <div class="t-sidebar-navs ps-container" id="scrollbar-box" >
         <div class="t-nav">
           <h3>受理请求</h3>
           <ul>
@@ -202,11 +204,10 @@
           $('#scrollbar-box').perfectScrollbar();
         });
       </script>
-    
+     
   </div>
   
-  <div class="t-title">
-    <h2>填单</h2>
+    <div class="t-title">
     <div class="t-title-right">
       <ul class="t-title-links">
         <li>
@@ -230,11 +231,13 @@
     </div>
     
   </div>
-
+   
+  
   <div class="t-container">
     <div class="t-container-inner">
 
-      <div class="t-panel">
+      
+        <div class="t-panel">
         <h3>我是标题</h3>
         <div class="t-panel-content">
           <!-- 表格 -->
@@ -426,6 +429,7 @@
             </table>
         </div>
       </div>
+      
 
     </div>
   </div>
@@ -433,24 +437,7 @@
 </div>
 
 
-  <!-- 弹出对话框 -->
-<div class="t-popup t-popup-alert hide" id="popupAlert">
-  <div class="t-popup-overlay">
-    <!-- 半透明覆盖层 -->
-  </div>
-  <div class="t-popup-container">
-    <div class="t-popup-content">
-      <!-- 提示信息 -->
-      <i class="iconfont icon-tanhao"></i>
-      <p>该页面仅为示例，无法到达你点击的地方</p>  
-    </div>
-    <div class="t-popup-bottom">
-      <a href="javascript:void(0)" class="t-btn t-btn-blue" onclick="popupAlert.className='hide'">确定</a>
-      <a href="javascript:void(0)" class="t-btn" onclick="popupAlert.className='hide'">取消</a>
-    </div>
-  </div> 
-</div>
-<!-- 弹出层 -->
+  <!-- 弹出层 -->
 <div class="t-popup t-popup-layer hide" id="popupLayer">
   <div class="t-popup-overlay">
     <!-- 半透明覆盖层 -->
@@ -472,5 +459,23 @@
 </div> 
 
 
-</body>
+  <!-- 弹出对话框 -->
+<div class="t-popup t-popup-alert hide" id="popupAlert">
+  <div class="t-popup-overlay">
+    <!-- 半透明覆盖层 -->
+  </div>
+  <div class="t-popup-container">
+    <div class="t-popup-content">
+      <!-- 提示信息 -->
+      <i class="iconfont icon-tanhao"></i>
+      <p>该页面仅为示例，无法到达你点击的地方</p>  
+    </div>
+    <div class="t-popup-bottom">
+      <a href="javascript:void(0)" class="t-btn t-btn-blue" onclick="popupAlert.className='hide'">确定</a>
+      <a href="javascript:void(0)" class="t-btn" onclick="popupAlert.className='hide'">取消</a>
+    </div>
+  </div> 
+</div>
+
+
 </html>

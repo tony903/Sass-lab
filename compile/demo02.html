@@ -1,12 +1,23 @@
-@@include('../tpl/wrapper/_dom-header.tpl', {
+<!doctype html>
+<html>
+@@include('../tpl/wrapper/_dom-head.tpl', {
 	"title": "定宽",
 	"css": "demo02"
 })
 @@include('../tpl/wrapper/_dom-body.tpl', {
-  "header": "_header.tpl",
-  "inner": "layout/_layout-blank.tpl",
-  "outer": "popup/_popup.tpl",
+  "header": {
+    "switcher": "",
+    "logo": "_header-logo.tpl",
+    "nav": "_header-nav.tpl",
+    "search": "_header-search.tpl",
+    "user": "_header-user.tpl"
+  },
+  "layout": "_layout-blank.tpl",
+  "popup": {
+    "layer": "_popup-layer.tpl",
+    "alert": "_popup-alert.tpl"
+  },
   "js": "_navbar-dynamic.tpl",
   "footer": "_footer-basic.tpl"
 })
-@@include('../tpl/wrapper/_dom-footer.tpl')
+</html>

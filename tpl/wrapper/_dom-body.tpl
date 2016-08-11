@@ -1,29 +1,44 @@
-<div class="t-wrapper">
-  <div class="t-wrap-header" id="menu">
-    <div id="t-header">
-      @@if (header) {
-        @@include('../header/@@header')
-      }
+<body>
+  <div class="t-wrapper">
+    <!-- header -->
+    <div class="t-wrap-header" id="menu">
+      <div id="t-header">
+        @@if (header.switcher) {
+          @@include('../header/@@header.switcher')
+        }
+        @@if (header.logo) {
+          @@include('../header/@@header.logo')
+        }
+        @@if (header.nav) {
+          @@include('../header/@@header.nav')
+        }
+        @@if (header.user) {
+          @@include('../header/@@header.user')
+        }
+        @@if (header.search) {
+          @@include('../header/@@header.search')
+        }
+      </div>
     </div>
-  </div>
-  <div class="t-wrap-container">
-    <div id="t-container">
-      @@if (inner) {
-        @@include('../@@inner')
-      }
+    <!-- container -->
+    <div class="t-wrap-container">
+      <div id="t-container">
+        @@if (layout) {
+          @@include('../layout/@@layout')
+        }
+      </div>
     </div>
+    @@if (footer) {
+      @@include('../footer/@@footer')
+    }
   </div>
-  <div class="t-wrap-footer">
-    <div id="t-footer">
-      @@if (footer) {
-        @@include('../footer/@@footer')
-      }
-    </div>
-  </div>
-</div>
-@@if (outer) {
-  @@include('../@@outer')
-}
-@@if (js) {
-  @@include('../javascript/@@js')
-}
+  @@if (popup.layer) {
+    @@include('../popup/@@popup.layer')
+  }
+  @@if (popup.alert) {
+    @@include('../popup/@@popup.alert')
+  }
+  @@if (js) {
+    @@include('../javascript/@@js')
+  }
+</body>

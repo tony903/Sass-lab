@@ -34,6 +34,15 @@
 		@include inline-block;
 		font-size: 18px;
 		padding-left: 15px;
+		// 深色文字
+		@if $rightTitleTextStyle == dark {
+			color: $blackLight;
+			
+		}
+		// 浅色文字
+		@if $rightTitleTextStyle == light {
+			color: $white;
+		}
 	}
 
 	.t-title-right {
@@ -163,40 +172,48 @@
 	width: map-get($sidebar, sidebarWidth);
 	background: map-get($sidebar, textBgColor);
 	text-align: center;
+	
+	// logo
+	@if $leftLogoOutput {
+		.t-panel-logo {
+			height: map-get($sidebar, logoHeight);
+			background: map-get($sidebar, boxBgColor);
+			img, embed, svg, image {
+				width: nth($leftLogoSize, 1);
+				height: nth($leftLogoSize, 2);
+				margin-top: nth($leftLogoSize, 3);
+			}
+		}
+	}
+	
+	// user
+	@if $leftUserOutput {
+		.t-panel-user {
+			height: map-get($sidebar, textHeight);
+			img {
+				width: 76px;
+				border: 3px solid $white;
+				border-radius: 100%;
+				margin-top: -40px;
+			}
 
-	.t-panel-logo {
-		height: map-get($sidebar, logoHeight);
-		background: map-get($sidebar, boxBgColor);
-		img, embed, svg, image {
-			width: nth($leftLogoSize, 1);
-			height: nth($leftLogoSize, 2);
-			margin-top: nth($leftLogoSize, 3);
+			h2 {
+				font-size: 16px;
+				line-height: 22px;
+				margin-top: 4px;
+				color: $white;
+				font-family: $fontYaHei;
+			}
+
+			p {
+				font-size: 12px;
+				font-style: italic;
+				color: $gray;
+			}
 		}
 	}
 
-	.t-panel-user {
-		height: map-get($sidebar, textHeight);
-		img {
-			width: 76px;
-			border: 3px solid $white;
-			border-radius: 100%;
-			margin-top: -40px;
-		}
-
-		h2 {
-			font-size: 16px;
-			line-height: 22px;
-			margin-top: 4px;
-			color: $white;
-			font-family: $fontYaHei;
-		}
-
-		p {
-			font-size: 12px;
-			font-style: italic;
-			color: $gray;
-		}
-	}
+	
 
 }
 

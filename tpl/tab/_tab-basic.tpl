@@ -1,5 +1,5 @@
 <!-- 选项卡 -->
-            <div class="t-tabs">
+            <div class="t-tabs" id="tab01">
               <ul class="t-tabs-items">
                 <!-- 当前页签 active -->
                 <li class="active">
@@ -38,10 +38,10 @@
             <!-- tab切换，本段JS纯属实验，项目实施时请高手们替换掉 -->
             <script type="text/javascript">
               $(function(){
-                $('.t-tabs-items li').click(function(){
+                $('#tab01 .t-tabs-items > li').click(function(){
                   var $t = $(this).index();
                   $(this).addClass('active').siblings().removeClass('active');
-                  $('.t-tabs-wrap > li').eq($t).addClass('selected').siblings().removeClass('selected');
+                  $('#tab01 .t-tabs-wrap > li').eq($t).addClass('selected').siblings().removeClass('selected');
                 })
               });
             </script>
