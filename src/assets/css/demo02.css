@@ -1,13 +1,13 @@
 @import url(../iconfont/iconfont.css);
 .t-logo p, .t-head-nav > li, .t-list-title > h2, .t-list-title > div { display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; }
 
-#t-header, .t-wrap-container, .t-container, .t-layout, .t-columns-group, .t-list-btns, .t-page, .t-stars, .t-tabs .t-tabs-items { *zoom: 1; }
+#t-header, .t-wrap-container, .t-container, .t-layout, .t-columns-group, .t-list-btns, .t-page, .t-stars, .t-tabs .t-tabs-items, .t-progress, .t-tags-filter dl { *zoom: 1; }
 
-#t-header:before, .t-wrap-container:before, .t-container:before, .t-layout:before, .t-columns-group:before, .t-list-btns:before, .t-page:before, .t-stars:before, .t-tabs .t-tabs-items:before, #t-header:after, .t-wrap-container:after, .t-container:after, .t-layout:after, .t-columns-group:after, .t-list-btns:after, .t-page:after, .t-stars:after, .t-tabs .t-tabs-items:after { content: ""; display: table; }
+#t-header:before, .t-wrap-container:before, .t-container:before, .t-layout:before, .t-columns-group:before, .t-list-btns:before, .t-page:before, .t-stars:before, .t-tabs .t-tabs-items:before, .t-progress:before, .t-tags-filter dl:before, #t-header:after, .t-wrap-container:after, .t-container:after, .t-layout:after, .t-columns-group:after, .t-list-btns:after, .t-page:after, .t-stars:after, .t-tabs .t-tabs-items:after, .t-progress:after, .t-tags-filter dl:after { content: ""; display: table; }
 
-#t-header:after, .t-wrap-container:after, .t-container:after, .t-layout:after, .t-columns-group:after, .t-list-btns:after, .t-page:after, .t-stars:after, .t-tabs .t-tabs-items:after { clear: both; overflow: hidden; }
+#t-header:after, .t-wrap-container:after, .t-container:after, .t-layout:after, .t-columns-group:after, .t-list-btns:after, .t-page:after, .t-stars:after, .t-tabs .t-tabs-items:after, .t-progress:after, .t-tags-filter dl:after { clear: both; overflow: hidden; }
 
-.t-app-switcher > ul, .t-head-user > ul, .t-head-search input[type="submit"] { display: none !important; visibility: hidden; }
+.t-head-user > ul, .t-head-search input[type="submit"] { display: none !important; visibility: hidden; }
 
 .t-columns-group > li > label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
 
@@ -168,29 +168,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 /* header */
 #t-header { color: #fff; background-color: #339dd9; line-height: 40px; }
 
-.t-app-switcher > a, .t-logo a, .t-head-nav > li a, .t-head-user > a { display: block; color: white; cursor: pointer; }
+.t-logo a, .t-head-nav > li a, .t-head-user > a { display: block; color: white; cursor: pointer; }
 
-.t-app-switcher > a:hover, .t-logo a:hover, .t-head-nav > li a:hover, .t-head-user > a:hover { background: #1a638c; }
+.t-logo a:hover, .t-head-nav > li a:hover, .t-head-user > a:hover { background: #1a638c; }
+
+.t-head-user > ul { position: absolute; top: 42px; z-index: 1100; list-style: none; float: left; display: inline; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999; text-align: left; border: 1px solid #DDD; background: #fff; }
+
+.t-head-user > ul.show { display: block !important; visibility: visible; }
 
 #t-header { background: transparent; }
-
-.t-app-switcher > ul, .t-head-user > ul { position: absolute; top: 42px; z-index: 1100; list-style: none; float: left; display: inline; -webkit-box-shadow: 1px 1px 3px #999; box-shadow: 1px 1px 3px #999; text-align: left; border: 1px solid #DDD; background: #fff; }
-
-.t-app-switcher > ul.show, .t-head-user > ul.show { display: block !important; visibility: visible; }
-
-.t-app-switcher { position: relative; width: 40px; height: 40px; float: left; display: inline; margin-left: 6px; text-align: center; }
-
-.t-app-switcher > a { display: block; width: 40px; height: 40px; }
-
-.t-app-switcher > ul { width: 180px; left: 0; }
-
-.t-app-switcher > ul li { width: 100%; line-height: 20px; text-indent: 6px; margin-bottom: 1px; }
-
-.t-app-switcher > ul li a { display: block; padding: 4px 6px; color: #333; }
-
-.t-app-switcher > ul li a:hover { color: #fff; background: #5eb2e1; }
-
-.t-app-switcher > ul li.current a { color: #fff; background: #5eb2e1; }
 
 .t-logo { color: #fff; margin: 0 6px; float: left; display: inline; line-height: 40px; }
 
@@ -476,9 +462,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-btn-link { padding: 0; border: none; text-decoration: none; cursor: pointer; position: relative; white-space: nowrap; outline: none; font-size: 12px; color: #347AC7; }
 
 /* ========== paging components ========== */
-.t-page { text-align: right; font-size: 12px; position: relative; }
+.t-page { text-align: center; font-size: 12px; position: relative; }
 
-.t-page > .page-btns { float: left; display: inline; }
+.t-page > .page-btns { display: none !important; visibility: hidden; }
 
 .t-page > ul { margin: 0; padding: 0; display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; }
 
@@ -486,13 +472,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-page > ul li.active span, .t-page > ul li.disabled span, .t-page > ul li a { float: left; display: inline; padding: 0 8px; height: 24px; line-height: 24px; text-decoration: none; }
 
-.t-page > ul li.active span { background: #339dd9; color: #FFF; border-radius: 3px; border: 1px solid #339dd9; }
+.t-page > ul li.active span { background: #000; color: #FFF; border-radius: 3px; border: 1px solid #000; }
 
 .t-page > ul li.disabled span { color: #AAA; }
 
 .t-page > ul li a { border: 1px solid #DDD; border-radius: 3px; color: #666; background: #fff; }
 
-.t-page > ul li a:hover { text-decoration: none; color: #fff; background-color: #339dd9; border: 1px solid #339dd9; }
+.t-page > ul li a:hover { text-decoration: none; color: #fff; background-color: #000; border: 1px solid #000; }
 
 /* ========== tag components ========== */
 .t-tag, .t-tag-todo, .t-tag-done, .t-tag-del { display: inline-block; line-height: 1.5; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: normal; font-size: 12px; }
@@ -540,17 +526,17 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .t-badge-red { background: #cc3300; }
 
 /* t-tabs */
-.t-tabs .t-tabs-items { margin: 0; padding: 0; border-bottom: 1px solid #DDD; font-size: 14px; text-align: center; }
+.t-tabs .t-tabs-items { margin: 0; padding: 0; border-bottom: 1px solid #DDD; font-size: 12px; text-align: center; }
 
 .t-tabs .t-tabs-items > li { list-style: none; }
 
-.t-tabs .t-tabs-items > li a { display: block; padding: 0 20px; height: 36px; line-height: 36px; border: 1px solid transparent; color: #666; text-decoration: none; outline: none; transition: background-color .4s ease-out,color .4s ease-out; }
+.t-tabs .t-tabs-items > li a { display: block; padding: 0 20px; height: 30px; line-height: 30px; border: 1px solid transparent; color: #666; text-decoration: none; outline: none; transition: background-color .4s ease-out,color .4s ease-out; }
 
 .t-tabs .t-tabs-items > li a:hover, .t-tabs .t-tabs-items > li a:active { background: #fff; color: #333; }
 
 .t-tabs .t-tabs-items > li.active a { background: #fff; color: #333; font-weight: 700; }
 
-.t-tabs .t-tabs-items li { float: left; display: inline; }
+.t-tabs .t-tabs-items li { display: inline-block; *vertical-align: auto; *display: inline; zoom: 1; }
 
 .t-tabs .t-tabs-items li { margin-right: 4px; }
 
@@ -639,3 +625,59 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
   50% { border-right-color: transparent;
     background-color: transparent; }
   75% { border-right-color: transparent; } }
+
+/* ========== progress components ========== */
+.t-progress { box-sizing: border-box; height: 20px; line-height: 20px; margin-bottom: 15px; background: #f5f5f5; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 2px rgba(0, 0, 0, 0.07); border-radius: 4px; }
+
+.t-progress-bar { width: 0; height: 100%; background: #339dd9; float: left; font-size: 12px; color: #fff; text-align: center; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.1); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2); }
+
+.t-progress-xs, .t-progress-sm { border-radius: 500px; }
+
+.t-progress-xs .t-progress-bar, .t-progress-sm .t-progress-bar { font-size: 0; line-height: 0; }
+
+.t-progress-xs { height: 6px; }
+
+.t-progress-sm { height: 12px; }
+
+.t-progress-bar-green { background: #51B148; }
+
+.t-progress-bar-orange { background: #F47837; }
+
+.t-progress-bar-red { background: #cc3300; }
+
+.t-progress-striped .t-progress-bar { background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-size: 30px 30px; }
+
+.t-progress-striped.t-progress-active .t-progress-bar { -webkit-animation: t-progress-bar-stripes 2s linear infinite; animation: t-progress-bar-stripes 2s linear infinite; }
+
+@-webkit-keyframes t-progress-bar-stripes { 0% { background-position: 0 0; }
+  100% { background-position: 30px 0; } }
+
+@keyframes t-progress-bar-stripes { 0% { background-position: 0 0; }
+  100% { background-position: 30px 0; } }
+
+/* ========== tagsfilter components ========== */
+.t-tags-filter { margin: 10px auto; border: 1px #E6E6E6 solid; }
+
+.t-tags-filter dl { display: block; border-bottom: 1px #DDD dotted; padding-left: 90px; background: #f5f5f5; }
+
+.t-tags-filter dl:last-child { border-bottom: none; }
+
+.t-tags-filter dl dt { display: inline; width: 90px; float: left; display: inline; padding-top: 3px; text-align: right; clear: left; line-height: 30px; margin-left: -90px; color: #333; font-weight: bold; }
+
+.t-tags-filter dl dd { display: inline; width: 90%; float: left; display: inline; background: #fff; padding-left: 1%; padding-right: 9%; margin-right: -9%; position: relative; }
+
+.t-tags-filter dl dd .more { background: #fff; position: absolute; right: 1%; top: 5px; text-align: right; line-height: 22px; outline-style: none; outline-color: invert; padding-left: 18px; outline-width: medium; width: 8%; height: 22px; color: #51B148; text-decoration: none; }
+
+.t-tags-filter-list { display: inline; float: left; display: inline; padding: 2px 0; margin-left: -6px; list-style: none; }
+
+.t-tags-filter-list > li { display: inline; float: left; display: inline; text-overflow: ellipsis; overflow: hidden; line-height: 1.5; }
+
+.t-tags-filter-list > li.moreValue { float: none; padding: 0; margin: 0; display: none; clear: left; }
+
+.t-tags-filter-list > li a { display: block; color: #666; cursor: pointer; margin: 4px 10px; padding: 3px 6px 1px 6px; white-space: nowrap; text-decoration: none; }
+
+.t-tags-filter-list > li a.active, .t-tags-filter-list > li a:hover { background: #51B148; color: #FFF; text-decoration: none; }
+
+.t-tags-filter-list > li ul { float: none; margin: 0; padding: 0; clear: both; }
+
+.t-tags-filter-list > li ul li { display: inline; float: left; display: inline; text-overflow: ellipsis; overflow: hidden; }

@@ -352,37 +352,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-btn-link { padding: 0; border: none; text-decoration: none; cursor: pointer; position: relative; white-space: nowrap; outline: none; font-size: 12px; color: #347AC7; }
 
-/* ========== loading components ========== */
-.t-loading, .t-loading-cmcc, .t-loading-cmcc-lg { display: inline-block; line-height: 1.5; color: #666; }
-
-.t-loading { font-size: 12px; padding: 8px 20px 8px 40px; background: #fff url(../imgs/loading.gif) no-repeat 10px 4px; }
-
-.t-loading-cmcc { font-size: 12px; padding: 8px 20px 8px 35px; background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px; }
-
-.t-loading-cmcc-lg { font-size: 14px; padding: 14px 20px 14px 50px; background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px; }
-
-.t-loading-dot-css3 { color: #51B148; font-size: 14px; }
-
-.t-loading-dot-css3 span { display: inline-block; width: 10px; min-height: 2px; padding-right: 2px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; background-color: currentColor; background-clip: content-box; box-sizing: border-box; -webkit-animation: dot 1s infinite step-start both; animation: dot 1s infinite step-start both; *zoom: expression(this.innerHTML = '...'); /* IE7 */ /* IE8 */ }
-
-.t-loading-dot-css3 span:before { content: '...'; }
-
-.t-loading-dot-css3 span:before { content: ''; }
-
-:root .t-loading-dot-css3 span { margin-left: 2px; padding-left: 2px; /* IE9+ */ }
-
-@-webkit-keyframes dot { 25% { border-color: transparent;
-    background-color: transparent; }
-  50% { border-right-color: transparent;
-    background-color: transparent; }
-  75% { border-right-color: transparent; } }
-
-@keyframes dot { 25% { border-color: transparent;
-    background-color: transparent; }
-  50% { border-right-color: transparent;
-    background-color: transparent; }
-  75% { border-right-color: transparent; } }
-
 /* ========== popup components ========== */
 .t-popup, .t-popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
 

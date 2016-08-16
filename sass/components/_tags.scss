@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+// tags
+$tagOutput:               true !default; // 默认标签
+$tagDeleteOutput:         true !default; // 可关闭标签
+$tagCategoryOutput:       true !default; // 可选择标签
+$tagCategoryLargeOutput:  true !default; // 大号可选择标签
+$starsOutput:             true !default; // 星级
+$badgeOutput:             true !default; // 徽章
+
 /* ========== tag components ========== */
 %tagBox {
   display: inline-block;

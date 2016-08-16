@@ -1,71 +1,71 @@
 @charset "UTF-8";
 
 // loading
-@if $loadingOutput {
-  /* ========== loading components ========== */
-  %loadingBox {
-    display: inline-block;
-    line-height: 1.5;
-    color: $grayDark;
-    @if $loadingBorder {
-      border: 1px solid $grayLight;
-      border-radius: 5px;
-      -webkit-box-shadow: 1px 1px 3px $grayLight;
-      -moz-box-shadow: 1px 1px 3px $grayLight;
-      box-shadow:1px 1px 3px $grayLight;
-    }
-  }
+$loadingBorder:           false !default; // 边线
 
-  .t-loading {
-    @extend %loadingBox;
-    font-size: 12px;
-    padding: 8px 20px 8px 40px;
-    background: #fff url(../imgs/loading.gif) no-repeat 10px 4px;
+/* ========== loading components ========== */
+%loadingBox {
+  display: inline-block;
+  line-height: 1.5;
+  color: $grayDark;
+  @if $loadingBorder {
+    border: 1px solid $grayLight;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 3px $grayLight;
+    -moz-box-shadow: 1px 1px 3px $grayLight;
+    box-shadow:1px 1px 3px $grayLight;
   }
-
-  .t-loading-cmcc {
-    @extend %loadingBox;
-    font-size: 12px;
-    padding: 8px 20px 8px 35px;
-    background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px;
-  }
-
-  .t-loading-cmcc-lg {
-    @extend %loadingBox;
-    font-size: 14px;
-    padding: 14px 20px 14px 50px; 
-    background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px;
-  }
-
-  .t-loading-dot-css3 {
-    color: $green;
-    font-size: 14px;
-    span {
-      display: inline-block; width: 10px; min-height: 2px;
-      padding-right: 2px;
-      border-left: 2px solid currentColor; border-right: 2px solid currentColor;
-      background-color: currentColor; background-clip: content-box;
-      box-sizing: border-box;
-      -webkit-animation: dot 1s infinite step-start both;
-      animation: dot 1s infinite step-start both;
-      *zoom: expression(this.innerHTML = '...'); /* IE7 */
-      &:before { content: '...'; } /* IE8 */
-      &:before { content: ''; }
-      :root & {
-        margin-left: 2px; padding-left: 2px; /* IE9+ */
-      }
-    }
-  }
-
-  @-webkit-keyframes dot {
-    25% { border-color: transparent; background-color: transparent; }
-    50% { border-right-color: transparent; background-color: transparent; }
-    75% { border-right-color: transparent; }
-  }
-  @keyframes dot {
-    25% { border-color: transparent; background-color: transparent; }
-    50% { border-right-color: transparent; background-color: transparent; }
-    75% { border-right-color: transparent; }
-  }
-
 }
+
+.t-loading {
+  @extend %loadingBox;
+  font-size: 12px;
+  padding: 8px 20px 8px 40px;
+  background: #fff url(../imgs/loading.gif) no-repeat 10px 4px;
+}
+
+.t-loading-cmcc {
+  @extend %loadingBox;
+  font-size: 12px;
+  padding: 8px 20px 8px 35px;
+  background: #fff url(../imgs/cmcc_loading.gif) no-repeat 12px 8px;
+}
+
+.t-loading-cmcc-lg {
+  @extend %loadingBox;
+  font-size: 14px;
+  padding: 14px 20px 14px 50px; 
+  background: #fff url(../imgs/cmcc_loading_lg.gif) no-repeat 12px 8px;
+}
+
+.t-loading-dot-css3 {
+  color: $green;
+  font-size: 14px;
+  span {
+    display: inline-block; width: 10px; min-height: 2px;
+    padding-right: 2px;
+    border-left: 2px solid currentColor; border-right: 2px solid currentColor;
+    background-color: currentColor; background-clip: content-box;
+    box-sizing: border-box;
+    -webkit-animation: dot 1s infinite step-start both;
+    animation: dot 1s infinite step-start both;
+    *zoom: expression(this.innerHTML = '...'); /* IE7 */
+    &:before { content: '...'; } /* IE8 */
+    &:before { content: ''; }
+    :root & {
+      margin-left: 2px; padding-left: 2px; /* IE9+ */
+    }
+  }
+}
+
+@-webkit-keyframes dot {
+  25% { border-color: transparent; background-color: transparent; }
+  50% { border-right-color: transparent; background-color: transparent; }
+  75% { border-right-color: transparent; }
+}
+@keyframes dot {
+  25% { border-color: transparent; background-color: transparent; }
+  50% { border-right-color: transparent; background-color: transparent; }
+  75% { border-right-color: transparent; }
+}
+

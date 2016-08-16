@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+// list
+$listTitleOutput:         true !default; // 标题
+$listTitleStyle:          40px $white #bdddf2 !default; // 标题高度、背景色、边线颜色
+$listInputBoxShadow:      false !default; // 文本框内阴影
+$listWarningInputOutput:  true !default; // 警示文本框
+$listInputIconBgOutput:   true !default; // 文本框右侧位图图标
+
 /* ========== list components ========== */
 
 // 查询表单自适应多列布局，支持1,2,3,4列及混排

@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+// tab
+$tabStyle:                basic !default; // 样式, basic, line
+$tabAlignCenter:          false !default; // 居中
+$tabBorderRadius:         true !default; // 圆角
+$tabSize:                 30px 20px 12px !default; // 高度、左右间距、文字大小
+$tabContainerPadding:     10px 0 !default; // 内容区域内边距
+
 /* t-tabs */
 .t-tabs {
   .t-tabs-items { 

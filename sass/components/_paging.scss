@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// paging
+$pageAlign:               right !default; // 方向， left, right, center
+$pageActiveColor:         $blue !default; // 当前页码背景颜色
+$pageHasBtns:             true !default; // 包含操作按钮
+
 /* ========== paging components ========== */
 .t-page {
   // 分页位于左侧

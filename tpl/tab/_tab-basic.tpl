@@ -22,14 +22,15 @@
                   @@include('../table/_table-info2.tpl')
                 </li>
                 <li>
+                  @@include('../tags-filter/_tags-filter.tpl')
+                </li>
+                <li>
                   @@include('../list/_list.tpl')
                 </li>
                 <li>
-                  @@include('../table/_table-info.tpl')
-                  @@include('../loading/_loading-dot-css3.tpl')
-                </li>
-                <li>
+                  @@include('../progress/_progress-basic.tpl')
                   <img src="assets/imgs/sb_loading.gif" width="220" align="center" alt="">
+                  @@include('../loading/_loading-dot-css3.tpl')
                 </li>
               </ul>
             </div>

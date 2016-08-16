@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+// nav-left
+$tagsCurrentColor:        $orange !default; // 当前标签颜色
+
+/* ========== tagsfilter components ========== */
+
+.t-tags-filter {
+  margin: 10px auto;
+  border: 1px #E6E6E6 solid;
+  dl {
+    display: block;
+    border-bottom: 1px #DDD dotted;
+    padding-left: 90px;
+    background: $grayLightest;
+    @extend %clearfix;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    dt {
+      display: inline;
+      width: 90px;
+      @include float;
+      padding-top: 3px;
+      text-align: right;
+      clear: left;
+      line-height: 30px;
+      margin-left: -90px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    dd {
+      display: inline;
+      width: 90%;
+      @include float;
+      background: $white;
+      padding-left: 1%;
+      padding-right: 9%;
+      margin-right: -9%;
+      position: relative;
+      
+      // 更多按钮
+      .more {
+        background: $white;
+        position: absolute;
+        right: 1%;
+        top: 5px;
+        text-align: right;
+        line-height: 22px;
+        outline-style: none;
+        outline-color: invert;
+        padding-left: 18px;
+        outline-width: medium;
+        width: 8%;
+        height: 22px;
+        color: $tagsCurrentColor;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+}
+
+.t-tags-filter-list {
+  display: inline;
+  @include float;
+  padding: 2px 0;
+  margin-left: -6px;
+  list-style: none;
+  & > li {
+    display: inline;
+    @include float;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.5;
+
+    // 默认隐藏掉标签
+    &.moreValue {
+      float: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+      clear: left;
+    }
+
+    a {
+      display: block;
+      color: #666;
+      cursor: pointer;
+      margin: 4px 10px;
+      padding: 3px 6px 1px 6px;
+      white-space: nowrap;
+      text-decoration: none;
+      &.active, &:hover {
+        background: $tagsCurrentColor;
+        color: #FFF;
+        text-decoration: none;
+      }
+      
+    }
+
+    ul {
+      float: none;
+      margin: 0;
+      padding: 0;
+      clear: both;
+
+      li {
+        display: inline;
+        @include float;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+    }
+
+  }
+}

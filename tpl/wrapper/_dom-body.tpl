@@ -39,6 +39,6 @@
     @@include('../popup/@@popup.alert')
   }
   @@if (js) {
-    @@include('../javascript/@@js')
+    @@include('../js-files/@@js')
   }
 </body>

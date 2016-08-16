@@ -3,64 +3,25 @@
 // 包装器设置, 采用frame01.scss
 // -----------------------------------------------------
 // 左侧区域
-$sidebar: (
-  sidebarWidth:           200px, // 左侧宽度
-  boxHeight:              190px, // 左侧标题区域高度
-  boxBgColor:             #212126, // 左侧标题区域背景颜色
-  logoHeight:             100px, // logo区域高度
-  textBgColor:            #32323a, // 文字区域背景颜色
-);
+$sidebarWidth:            200px; // 左侧宽度
+$boxHeight:               190px; // 左侧标题区域高度
+$boxBgColor:              #212126; // 左侧标题区域背景颜色
+$logoHeight:              100px; // logo区域高度
+$textBgColor:             #32323a; // 文字区域背景颜色
 
-// 左侧顶部
-$leftLogoOutput:          true !default; // logo         
-$leftLogoSize:            128px 32px 10px !default; // logo宽度、高度、距离顶部px
-$leftUserOutput:          true !default; // user        
+// 左侧顶部        
+$leftLogoSize:            128px 32px 10px; // logo宽度、高度、距离顶部px
+$leftUserOutput:          true; // user        
 
 // 右侧顶部
-$rightTitleHeight:        50px !default; // 顶部标题高度
-$rightTitleBg:            $white !default; // 背景
-$rightTitleShadow:        true !default; // 投影
-$rightTitleTextStyle:     dark !default; // 文字风格, dark, light
+$rightTitleHeight:        50px; // 顶部标题高度
+$rightTitleBg:            $white; // 背景
+$rightTitleShadow:        true; // 投影
+$rightTitleTextStyle:     dark; // 文字风格, dark, light
 
 // 组件样式
 // -----------------------------------------------------
 
 // nav-left
-$leftNavStyle:            dark01 !default; // 风格, dark01, dark02, light01
-$leftNavRight:            arrow !default; // 导航菜单右侧提示信息, arrow 箭头; number 数字
-$leftNavHasBigTitle:      false !default; // 含一级菜单标题
-$leftNavMenuBorder:       transparent transparent transparent !default; // 左侧菜单左边线颜色, 默认; 鼠标上移; 当前
-
-// table
-$tableCaptionOutput:      true !default; // 标题
-$tableAppendOutput:       true !default; // 支持样式追加
-$trStatusOutput:          true !default; // 整行选中、警告、错误等状态
-$norecordOutput:          true !default; // 暂无数据
-$tableInfoOutput:         true !default; // 表格信息
-
-// tags
-$tagOutput:               true !default; // 默认标签
-$tagDeleteOutput:         true !default; // 可关闭标签
-$tagCategoryOutput:       true !default; // 可选择标签
-$tagCategoryLargeOutput:  true !default; // 大号可选择标签
-$starsOutput:             true !default; // 星级
-$badgeOutput:             true !default; // 徽章
-
-// popup
-$popupHasOverlay:         true !default; // 半透明遮罩
-$popupHasBoxshadow:       true !default; // 阴影
-$popupTitleStyle:         40px $grayLightest #E8E8E8; // 弹出层标题高度、背景色、底部边线颜色
-$popupBottomHeight:       50px; // 弹出层底部高度
-
-$popupLayerOutput:        true !default; // 弹出层
-$popupLayerSize:          600px 320px !default; // 弹出层宽度、高度
-$popupLayerGap:           10px; // 弹出层上下间距
-$popupLayerHaveBottom:    true !default; //底部操作区
-
-$popupAlertOutput:        true !default; // 弹出消息
-$popupAlertSize:          380px 200px !default; // 弹出消息宽度、高度
-
-// loading
-$loadingOutput:           true !default; // loading
-$loadingBorder:           false !default; // 边线
-
+$leftNavStyle:            dark01; // 风格, dark01, dark02, light01
+$leftNavHasBigTitle:      false; // 含一级菜单标题
