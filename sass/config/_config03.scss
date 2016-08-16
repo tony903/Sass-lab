@@ -26,3 +26,7 @@ $headerHoverDarker:       false; // 背景色加深，false背景色变浅
 $leftNavStyle:            light01; // 风格, dark01, dark02, light01
 $leftNavRight:            number; // 导航菜单右侧提示信息, arrow 箭头; number 数字
 $leftNavMenuBorder:       transparent #AAA $orange; // 左侧菜单左边线颜色, 默认; 鼠标上移; 当前
+
+
+// progress
+$progressStriped:         false !default; // 条纹
