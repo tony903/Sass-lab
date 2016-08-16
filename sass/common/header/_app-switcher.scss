@@ -1,23 +1,5 @@
 @charset "UTF-8";
 
-%toplayer {
-  @extend %hidden;//默认隐藏
-  position: absolute;
-  top: nth($wrapHeader,1) + 2px;
-  z-index: $zindexModal;
-  list-style: none;
-  @include float;
-  @include box-shadow(1px 1px 3px #999);
-  text-align: left;
-  border: 1px solid #DDD;
-  background: $white;
-  
-  &.show {
-    display: block !important;
-    visibility: visible;
-  }
-}
-
 // app-switcher
 .t-app-switcher {
   position: relative;

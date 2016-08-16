@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+// app切换器
+$appSwitcherOutput:       true !default;
+
+// logo
+$headerLogoOutput:        true !default;
+$headerLogoColor:         $white !default;
+$headerImgLogo:           false !default; // 使用图片，默认使用iconfont
+$headerImgLogoWidth:      30px !default; // 宽度
+
+// 导航
+$headerNavOutput:         true !default;
+// 搜索
+$headerSearchOutput:      true !default;
+// 用户信息
+$headerUserOutput:        true !default;
+// 链接hover状态
+$headerHoverDarker:       true !default; // 背景色加深，false背景色变浅
+
 /* header */
 #t-header {
   color: $white;
@@ -23,6 +41,24 @@
     }
   }
   
+}
+
+%toplayer {
+  @extend %hidden;//默认隐藏
+  position: absolute;
+  top: nth($wrapHeader,1) + 2px;
+  z-index: $zindexModal;
+  list-style: none;
+  @include float;
+  @include box-shadow(1px 1px 3px #999);
+  text-align: left;
+  border: 1px solid #DDD;
+  background: $white;
+  
+  &.show {
+    display: block !important;
+    visibility: visible;
+  }
 }
 
 // 如果设置背景图片，header内部背景色重置为透明

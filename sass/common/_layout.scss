@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+// 布局 layout
+// -----------------------------------------------------
+// 列
+$layoutRow:               2 !default; // 1, 2, 3
+// 自适应方向
+$widthAutoSide:           right !default; // left, right, middle
+
 // 一列
 @if $layoutRow == 1 {
   @import "layout/layout-blank";

@@ -1,22 +1,40 @@
 @charset "UTF-8";
 
+// 左侧
+$sidebarWidth:						220px !default; // 左侧宽度
+$boxHeight:								40px !default; // 左侧标题区域高度
+$boxBgColor:							#1c84b6 !default; // 左侧标题区域背景颜色
+$logoHeight:							40px !default; // logo区域高度
+$textBgColor:							#5c4774 !default; // 文字区域背景颜色
+
+// 左侧顶部
+$leftLogoOutput:          true !default; // logo 
+$leftLogoSize:            116px 29px 6px !default; // logo宽度、高度、距离顶部px        
+$leftUserOutput:          false !default; // user 
+
+// 右侧顶部
+$rightTitleHeight:        40px !default; // 顶部标题高度
+$rightTitleBg:            #36a9e1 !default; // 背景
+$rightTitleShadow:        false !default; // 投影
+$rightTitleTextStyle:     light !default; // 文字风格, dark, light
+
 // 包装器
 .t-wrap {}
 
 // 左侧栏
 .t-sidebar {
-	width: map-get($sidebar, sidebarWidth);
+	width: $sidebarWidth;
 	position: fixed;
 	z-index: 4;
 	left: 0;
-	top: map-get($sidebar, boxHeight);
+	top: $boxHeight;
 	bottom: 0;
 }
 
 // 主体标题
 .t-title {
 	position: fixed;
-	left: map-get($sidebar, sidebarWidth);
+	left: $sidebarWidth;
 	top: 0;
 	right: 0;
 	z-index: 1000;
@@ -149,7 +167,7 @@
 // 右侧区域
 .t-container {
 	position: fixed;
-	left: map-get($sidebar, sidebarWidth);
+	left: $sidebarWidth;
 	top: $rightTitleHeight + 1px;
 	right: 0;
 	bottom: 0;
@@ -168,16 +186,16 @@
 	position: fixed;
 	top: 0;
 	z-index: 98;
-	height: map-get($sidebar, boxHeight);
-	width: map-get($sidebar, sidebarWidth);
-	background: map-get($sidebar, textBgColor);
+	height: $boxHeight;
+	width: $sidebarWidth;
+	background: $textBgColor;
 	text-align: center;
 	
 	// logo
 	@if $leftLogoOutput {
 		.t-panel-logo {
-			height: map-get($sidebar, logoHeight);
-			background: map-get($sidebar, boxBgColor);
+			height: $logoHeight;
+			background: $boxBgColor;
 			img, embed, svg, image {
 				width: nth($leftLogoSize, 1);
 				height: nth($leftLogoSize, 2);
@@ -189,7 +207,7 @@
 	// user
 	@if $leftUserOutput {
 		.t-panel-user {
-			height: map-get($sidebar, textHeight);
+			// height: map-get($sidebar, textHeight);
 			img {
 				width: 76px;
 				border: 3px solid $white;

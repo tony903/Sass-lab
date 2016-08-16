@@ -1,5 +1,31 @@
 @charset "UTF-8";
 
+// 包装器设置
+// -----------------------------------------------------
+// 自适应宽度
+$wrapperAutoWidth:        true !default; // false 固定宽度
+// 绝对定位
+$wrapperAbsolute:         true !default; // false 不定位
+// 头部
+$wrapHeader:              40px $color01 $color01 !default; // 高度、外部背景色、内部背景色         
+// 容器
+$wrapInnerWidth:          1200px !default; // 容器内部宽度
+$wrapContainerBg:         $white $white; // 容器外部、内部背景色
+$innerBoxScroll:          true !default; // 超出显示滚动条，false 不显示
+$fixedBoxScroll:          false !default; // 固定区域滚动条，false 不显示
+
+// 底部
+$wrapHasFooter:           false !default; // false 不含底部
+$wrapFooter:              30px $blackLight; // 底部高度及背景色
+
+// header背景图片
+$wrapHeaderImgBgOutput:   false !default; // 输出头部背景图片
+$wrapHeaderImgBgUrl:      #010f34 !default; // 路径、平铺方式
+$wrapHeaderImgBgSize:     cover !default; // 大小
+
+// header动态显隐
+$wrapHeaderDynamic:       false !default; // 仅在流布局使用
+
 // 公用
 %layoutAbsolute {
   position: absolute;
