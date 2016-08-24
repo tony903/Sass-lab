@@ -34,12 +34,12 @@ $tagsCurrentColor:        $orange !default; // 当前标签颜色
 
     dd {
       display: inline;
+      box-sizing: content-box;
       width: 90%;
       @include float;
       background: $white;
       padding-left: 1%;
       padding-right: 9%;
-      margin-right: -9%;
       position: relative;
       
       // 更多按钮

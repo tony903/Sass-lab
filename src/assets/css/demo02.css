@@ -664,7 +664,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 
 .t-tags-filter dl dt { display: inline; width: 90px; float: left; display: inline; padding-top: 3px; text-align: right; clear: left; line-height: 30px; margin-left: -90px; color: #333; font-weight: bold; }
 
-.t-tags-filter dl dd { display: inline; width: 90%; float: left; display: inline; background: #fff; padding-left: 1%; padding-right: 9%; margin-right: -9%; position: relative; }
+.t-tags-filter dl dd { display: inline; box-sizing: content-box; width: 90%; float: left; display: inline; background: #fff; padding-left: 1%; padding-right: 9%; position: relative; }
 
 .t-tags-filter dl dd .more { background: #fff; position: absolute; right: 1%; top: 5px; text-align: right; line-height: 22px; outline-style: none; outline-color: invert; padding-left: 18px; outline-width: medium; width: 8%; height: 22px; color: #51B148; text-decoration: none; }
 
