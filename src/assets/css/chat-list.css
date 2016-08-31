@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* reset */
+body { line-height: 1.4; color: #333; font-size: 12px; font-family: arial; }
+
+input, select, textarea { font-size: 100%; font-family: inherit; }
+
+body, form, h1, h2, h3, h4, h5, h6, ol, p, ul { margin: 0; }
+
+h4, h5, h6 { font-size: 1em; }
+
+ol, ul { padding-left: 0; list-style-type: none; }
+
+img { border: 0; }
+
+/* ========== chat-list components ========== */
+.time { width: 110px; height: 20px; padding: 0; color: #FFF; line-height: 20px; text-align: center; margin: 10px auto 0 auto; background: url(../imgs/chat-img/bg_time.png); background-repeat: no-repeat; background-image: -webkit-image-set(url(../imgs/chat-img/bg_time.png) 1x, url(../imgs/chat-img/bg_time_2x.png) 2x); }
+
+.t-chat-list { overflow-x: hidden; overflow-y: auto; height: 400px; padding: 10px; border-bottom: 1px solid #D8D8D8; }
+
+.t-chat-list li { width: 100%; float: left; margin-bottom: 10px; list-style: none; }
+
+.t-chat-list li .chatbox { float: left; }
+
+.t-chat-list li.t-chat-user .chatbox { float: right; }
+
+/* @20160826 聊天气泡，background实现方式，支持低级浏览器及Retina高清屏 */
+.chatbox { max-width: 460px; position: relative; }
+
+.chatbox table { width: 100%; background: #FFF; border: none; position: relative; }
+
+.chatbox span.tail { display: block; position: absolute; top: 15px; content: ""; width: 10px; height: 8px; }
+
+.t-chat-list li.t-chat-operator .chatbox { margin-left: 10px; }
+
+.t-chat-list li.t-chat-user .chatbox { margin-right: 10px; }
+
+.t-chat-list li.t-chat-operator .chatbox span.tail { left: -9px; background-image: url(../imgs/chat-img/bg_a4.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_a4.png) 1x, url(../imgs/chat-img/bg_a4_2x.png) 2x); }
+
+.t-chat-list li.t-chat-user .chatbox span.tail { right: -9px; background-image: url(../imgs/chat-img/bg_b2.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_b2.png) 1x, url(../imgs/chat-img/bg_b2_2x.png) 2x); }
+
+.chatbox table .c-corners { height: 10px; font-size: 0; }
+
+.t-chat-list li.t-chat-operator .chatbox table .c-corners td { height: 10px; background-image: url(../imgs/chat-img/bg_a1.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_a1.png) 1x, url(../imgs/chat-img/bg_a1_2x.png) 2x); background-repeat: no-repeat; }
+
+.t-chat-list li.t-chat-user .chatbox table .c-corners td { height: 10px; background-image: url(../imgs/chat-img/bg_b1.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_b1.png) 1x, url(../imgs/chat-img/bg_b1_2x.png) 2x); background-repeat: no-repeat; }
+
+.t-chat-list li .chatbox.guidebox table .c-corners td.bl, .t-chat-list li .chatbox.guidebox table .c-corners td.br { background-image: url(../imgs/chat-img/bg_a5.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_a5.png) 1x, url(../imgs/chat-img/bg_a5_2x.png) 2x); background-repeat: no-repeat; }
+
+.t-chat-list li .chatbox.guidebox table .c-corners td.bm { background-color: #FFF; background-image: none; }
+
+.t-chat-list li .chatbox.guidebox table .c-middle td { padding-bottom: 6px; }
+
+.chatbox table .c-corners td.tl { width: 10px; background-position: left top !important; }
+
+.chatbox table .c-corners td.tr { width: 10px; background-position: right top !important; }
+
+.chatbox table .c-corners td.bl { width: 10px; background-position: left bottom !important; }
+
+.chatbox table .c-corners td.br { width: 10px; background-position: right bottom !important; }
+
+.t-chat-list li.t-chat-operator .chatbox table .c-corners td.tm, .t-chat-list li.t-chat-operator .chatbox table .c-corners td.bm { background-image: url(../imgs/chat-img/bg_a3.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_a3.png) 1x, url(../imgs/chat-img/bg_a3_2x.png) 2x); background-repeat: repeat-x; }
+
+.t-chat-list li.t-chat-user .chatbox table .c-corners td.tm, .t-chat-list li.t-chat-user .chatbox table .c-corners td.bm { background: #339dd9; }
+
+.chatbox table .c-corners td.tm { background-color: #F6F6F6; background-position: left top !important; }
+
+.chatbox table .c-corners td.bm { background-color: #F6F6F6; background-position: left bottom !important; }
+
+.chatbox table .c-bottom td { padding-top: 6px; }
+
+.chatbox table .c-middle td, .chatbox table .c-bottom td { background-image: url(../imgs/chat-img/bg_a2.png); background-image: -webkit-image-set(url(../imgs/chat-img/bg_a2.png) 1x, url(../imgs/chat-img/bg_a2_2x.png) 2x); background-repeat: repeat-y; }
+
+.t-chat-list li.t-chat-user .chatbox table .c-middle td { background-color: #339dd9; background-image: none; }
+
+.chatbox table .c-middle td.ml { width: 10px; background-color: #F6F6F6; background-position: left top; }
+
+.chatbox table .c-middle td.mr { width: 10px; background-color: #F6F6F6; background-position: right top; }
+
+.chatbox table .c-middle td.mm { background-color: #F6F6F6; background-image: none; color: #333; font-size: 12px; line-height: 20px; }
+
+.chatbox table .c-bottom td.ml { width: 10px; background-color: #FFF; background-position: left top; border-top: 1px solid #e6e6e6; }
+
+.chatbox table .c-bottom td.mr { width: 10px; background-color: #FFF; background-position: right top; border-top: 1px solid #e6e6e6; }
+
+.chatbox table .c-bottom td.mm { background-color: #FFF; background-image: none; border-top: 1px solid #e6e6e6; color: #333; font-size: 12px; line-height: 20px; }
+
+.t-chat-list li.t-chat-user .chatbox table .c-middle td.mm { color: #FFF; }
+
+.t-chat-list li div.head-customer { width: 36px; height: 36px; float: right; background: url(../imgs/chat-img/head_a.png); background-image: -webkit-image-set(url(../imgs/chat-img/head_a.png) 1x, url(../imgs/chat-img/head_a_2x.png) 2x); }
+
+.t-chat-list li div.head-operator { width: 36px; height: 36px; float: left; background: url(../imgs/chat-img/head_b.png); background-image: -webkit-image-set(url(../imgs/chat-img/head_b.png) 1x, url(../imgs/chat-img/head_b_2x.png) 2x); }
+
+.t-chat-list li div.head-robot { width: 36px; height: 36px; float: left; background: url(../imgs/chat-img/head_c.png); background-image: -webkit-image-set(url(../imgs/chat-img/head_c.png) 1x, url(../imgs/chat-img/head_c_2x.png) 2x); }
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2) { .time { background-image: url(../imgs/chat-img/bg_time_2x.png); background-size: 110px 20px; }
+  .t-chat-list li.t-chat-operator .chatbox span.tail { background-image: url(../imgs/chat-img/bg_a4_2x.png); background-size: 10px 8px; }
+  .t-chat-list li.t-chat-user .chatbox span.tail { background-image: url(../imgs/chat-img/bg_b2_2x.png); background-size: 10px 8px; }
+  .t-chat-list li.t-chat-operator .chatbox table .c-corners td { background-image: url(../imgs/chat-img/bg_a1_2x.png); background-size: 20px 16px; }
+  .t-chat-list li.t-chat-user .chatbox table .c-corners td { background-image: url(../imgs/chat-img/bg_b1_2x.png); background-size: 20px 16px; }
+  .t-chat-list li .chatbox.guidebox table .c-corners td.bl, .t-chat-list li .chatbox.guidebox table .c-corners td.br { background-image: url(../imgs/chat-img/bg_a5_2x.png); background-size: 20px 16px; }
+  .t-chat-list li.t-chat-operator .chatbox table .c-corners td.tm, .t-chat-list li.t-chat-operator .chatbox table .c-corners td.bm { background-image: url(../imgs/chat-img/bg_a3_2x.png); background-size: 20px 16px; }
+  .chatbox table .c-middle td, .chatbox table .c-bottom td { background-image: url(../imgs/chat-img/bg_a2_2x.png); background-size: 20px 16px; }
+  .t-chat-list li div.head-customer { background-image: url(../imgs/chat-img/head_a_2x.png); background-size: 36px 36px; }
+  .t-chat-list li div.head-operator { background-image: url(../imgs/chat-img/head_b_2x.png); background-size: 36px 36px; }
+  .t-chat-list li div.head-robot { background-image: url(../imgs/chat-img/head_c_2x.png); background-size: 36px 36px; } }
+
+.welcome-msg-list { width: auto; margin-bottom: -3px; }
+
+.welcome-msg-list a { display: block; border-bottom: 1px solid #e6e6e6; padding: 5px 0; color: #39A9EF; text-decoration: none; }
+
+.welcome-msg-list a:last-child { border-bottom: none; }
+
+.welcome-msg-list a span { float: right; padding-left: 4px; color: #e6e6e6; }
